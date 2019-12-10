@@ -1,2 +1,1 @@
-# deep-learning-tutorial
-Deep Learning Tutorial with PyTorch
+## Deep Learning Tutorial with PyTorch
