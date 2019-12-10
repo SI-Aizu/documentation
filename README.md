@@ -21,6 +21,24 @@
 
 
 
+## Getting started
+
+```sh
+git clone git@github.com:SI-Aizu/deep-learning-tutorial.git
+cd ./deep-learning-tutorial
+
+# コンテナをビルドしてバックグラウンドで起動
+docker-compose up -d --build
+
+# コンテナにログイン
+docker-compose exec dev bash
+
+# コンテナの終了と削除
+docker-compose down
+```
+
+
+
 ## Setup
 
 ### Install Docker
