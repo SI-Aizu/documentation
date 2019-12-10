@@ -23,6 +23,8 @@
 
 ## Getting started
 
+### Git and Docker
+
 ```sh
 git clone git@github.com:SI-Aizu/deep-learning-tutorial.git
 cd ./deep-learning-tutorial
@@ -35,6 +37,12 @@ docker-compose exec dev bash
 
 # コンテナの終了と削除
 docker-compose down
+```
+
+### Jupyter Lab
+
+```sh
+jupyter-lab --ip=0.0.0.0 --no-browser --allow-root
 ```
 
 
