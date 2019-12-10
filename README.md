@@ -25,6 +25,9 @@
 
 ### Install Docker
 
+`which docker` や `which docker-compose` などで確認し、インストールされていなければ以下のようにインストールする。
+macOS の場合 **Docker for Mac** は `docker-compose` も含んでいる。
+
 #### macOS
 
 > [Install Docker Desktop on Mac | Docker Documentation](https://docs.docker.com/docker-for-mac/install/)
