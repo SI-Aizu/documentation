@@ -9,7 +9,8 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Deep Learning Tutorial with PyTorch](#deep-learning-tutorial-with-pytorch)
+
+- [Getting started](#getting-started)
 - [Setup](#setup)
   - [Install Docker](#install-docker)
     - [macOS](#macos)
