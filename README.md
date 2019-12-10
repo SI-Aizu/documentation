@@ -4,6 +4,23 @@
 
 
 
+## Table of Contents
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Deep Learning Tutorial with PyTorch](#deep-learning-tutorial-with-pytorch)
+- [Setup](#setup)
+  - [Install Docker](#install-docker)
+    - [macOS](#macos)
+    - [Ubuntu 18.04](#ubuntu-1804)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+*TOC is generated with [DocToc](https://github.com/thlorenz/doctoc).*
+
+
+
 ## Setup
 
 ### Install Docker
