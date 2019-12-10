@@ -11,10 +11,9 @@
 
 
 - [Getting started](#getting-started)
-- [Setup](#setup)
-  - [Install Docker](#install-docker)
-    - [macOS](#macos)
-    - [Ubuntu 18.04](#ubuntu-1804)
+- [Setup Docker](#setup-docker)
+  - [macOS](#macos)
+  - [Ubuntu 18.04](#ubuntu-1804)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -40,18 +39,16 @@ docker-compose down
 
 
 
-## Setup
-
-### Install Docker
+## Setup Docker
 
 `which docker` や `which docker-compose` などで確認し、インストールされていなければ以下のようにインストールする。
 macOS の場合 **Docker for Mac** は `docker-compose` も含んでいる。
 
-#### macOS
+### macOS
 
 > [Install Docker Desktop on Mac | Docker Documentation](https://docs.docker.com/docker-for-mac/install/)
 
-#### Ubuntu 18.04
+### Ubuntu 18.04
 
 Rootless Docker をオススメする。
 
