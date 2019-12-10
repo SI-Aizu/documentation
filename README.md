@@ -27,13 +27,13 @@
 
 #### macOS
 
-- [Install Docker Desktop on Mac | Docker Documentation](https://docs.docker.com/docker-for-mac/install/)
+> [Install Docker Desktop on Mac | Docker Documentation](https://docs.docker.com/docker-for-mac/install/)
 
 #### Ubuntu 18.04
 
 Rootless Docker をオススメする。
 
-- [Docker 19.03新機能 (root権限不要化、GPU対応強化、CLIプラグイン) - nttlabs - Medium](https://medium.com/nttlabs/docker-1903-5155754ff8ac)
+> [Docker 19.03新機能 (root権限不要化、GPU対応強化、CLIプラグイン) - nttlabs - Medium](https://medium.com/nttlabs/docker-1903-5155754ff8ac)
 
 ```sh
 cd ~
@@ -60,4 +60,16 @@ systemctl --user start docker
 
 # Docker の動作確認
 docker run hello-world
+```
+
+続いて Docker Compose のインストール。
+
+> [Install Docker Compose | Docker Documentation](https://docs.docker.com/compose/install/)
+
+```console
+$ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+$ sudo chmod +x /usr/local/bin/docker-compose
+
+$ docker-compose --version
+docker-compose version 1.25.0, build 0a186604
 ```
