@@ -38,8 +38,11 @@
 git clone git@github.com:SI-Aizu/deep-learning-tutorial.git
 cd ./deep-learning-tutorial
 
-# コンテナをビルドしてバックグラウンドで起動
-docker-compose up -d --build
+# コンテナをビルド
+docker-compose build
+
+# コンテナをバックグラウンドで起動
+docker-compose up -d
 
 # コンテナにログイン
 docker-compose exec dev bash
