@@ -12,4 +12,3 @@ services:
     tty: true
     command:
       - bash
-
