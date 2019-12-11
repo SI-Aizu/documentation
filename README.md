@@ -1,6 +1,16 @@
 ## Deep Learning Tutorial with PyTorch
 
-- [PyTorch](https://pytorch.org/)
+研究室の新規メンバー向けの教材。以下を学ぶ。
+
+- Deep Learning 深層学習
+- Python
+- Git, GitHub
+- Docker
+- Ubuntu, GPU
+
+Deep Learning framework は主に [PyTorch] を取り扱う。
+
+[PyTorch]: https://pytorch.org/
 
 
 
