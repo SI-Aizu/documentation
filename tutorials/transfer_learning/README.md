@@ -9,3 +9,15 @@
 ```sh
 bash ./download_hymenoptera_data.sh
 ```
+
+
+
+## Jupyter Lab
+
+[notebook.ipynb](./notebook.ipynb) を Jupyter Lab で開く。
+
+
+
+## Command line
+
+TBW.
