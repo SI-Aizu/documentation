@@ -28,6 +28,12 @@
 
 - [チュートリアル一覧](./tutorials/README.md)
 
+外部リソース
+
+- [yoyoyo-yo/Gasyori100knock: 画像処理100本ノック](https://github.com/yoyoyo-yo/Gasyori100knock)
+- [yoyoyo-yo/DeepLearningMugenKnock: 深層学習無限ノック](https://github.com/yoyoyo-yo/DeepLearningMugenKnock)
+- [言語処理100本ノック](http://www.cl.ecei.tohoku.ac.jp/nlp100/)
+
 
 
 ## Getting started
