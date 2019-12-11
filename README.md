@@ -20,7 +20,9 @@ Deep Learning framework は主に [PyTorch] を取り扱う。
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [Tutorials](#tutorials)
+- [Links](#links)
+  - [Internal](#internal)
+  - [External](#external)
 - [Getting started](#getting-started)
   - [Git and Docker](#git-and-docker)
   - [Jupyter Lab](#jupyter-lab)
