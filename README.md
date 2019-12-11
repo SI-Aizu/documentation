@@ -34,15 +34,19 @@ Deep Learning framework は主に [PyTorch] を取り扱う。
 
 
 
-## Tutorials
+## Links
+
+### Internal
 
 - [チュートリアル一覧](./tutorials/README.md)
 
-外部リソース
+### External
 
 - [yoyoyo-yo/Gasyori100knock: 画像処理100本ノック](https://github.com/yoyoyo-yo/Gasyori100knock)
 - [yoyoyo-yo/DeepLearningMugenKnock: 深層学習無限ノック](https://github.com/yoyoyo-yo/DeepLearningMugenKnock)
 - [言語処理100本ノック](http://www.cl.ecei.tohoku.ac.jp/nlp100/)
+- [arXivTimes/arXivTimes](https://github.com/arXivTimes/arXivTimes)
+    - [DataSets](https://github.com/arXivTimes/arXivTimes/tree/master/datasets)
 
 
 
