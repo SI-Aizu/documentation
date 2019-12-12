@@ -40,15 +40,19 @@ Deep Learning framework は主に [PyTorch] を取り扱う。
 
 ### Internal
 
-- [チュートリアル一覧](./tutorials/README.md)
+- [チュートリアル一覧](./tutorials/README.md) - このリポジトリのチュートリアル一覧
 
 ### External
 
-- [yoyoyo-yo/Gasyori100knock: 画像処理100本ノック](https://github.com/yoyoyo-yo/Gasyori100knock)
-- [yoyoyo-yo/DeepLearningMugenKnock: 深層学習無限ノック](https://github.com/yoyoyo-yo/DeepLearningMugenKnock)
-- [言語処理100本ノック](http://www.cl.ecei.tohoku.ac.jp/nlp100/)
-- [arXivTimes/arXivTimes](https://github.com/arXivTimes/arXivTimes)
-    - [DataSets](https://github.com/arXivTimes/arXivTimes/tree/master/datasets)
+- [yoyoyo-yo/Gasyori100knock: 画像処理100本ノック](https://github.com/yoyoyo-yo/Gasyori100knock) - Image Processing 入門
+- [yoyoyo-yo/DeepLearningMugenKnock: 深層学習無限ノック](https://github.com/yoyoyo-yo/DeepLearningMugenKnock) - Deep Learning 入門
+- [言語処理100本ノック](http://www.cl.ecei.tohoku.ac.jp/nlp100/) - Natural Language Processing (NLP) 入門
+- [arXivTimes/arXivTimes](https://github.com/arXivTimes/arXivTimes) - 論文の Abstract 要約を集めたリポジトリ
+
+### Datasets
+
+- [DataSets - arXivTimes/arXivTimes](https://github.com/arXivTimes/arXivTimes/tree/master/datasets) - データセット一覧
+- [ObjectNet](https://objectnet.dev/index.html) - ImageNet より難易度の高いテスト用データセット
 
 
 
