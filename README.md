@@ -52,6 +52,7 @@ Deep Learning framework は主に [PyTorch] を取り扱う。
 
 ### Datasets
 
+- [zalandoresearch/fashion-mnist](https://github.com/zalandoresearch/fashion-mnist) - FMNIST 衣服データセット
 - [DataSets - arXivTimes/arXivTimes](https://github.com/arXivTimes/arXivTimes/tree/master/datasets) - データセット一覧
 - [ObjectNet](https://objectnet.dev/index.html) - ImageNet より難易度の高いテスト用データセット
 
