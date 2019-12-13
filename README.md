@@ -52,9 +52,16 @@ Deep Learning framework は主に [PyTorch] を取り扱う。
 
 ### Datasets
 
+- [Food-101](https://www.vision.ee.ethz.ch/datasets_extra/food-101/)
 - [zalandoresearch/fashion-mnist](https://github.com/zalandoresearch/fashion-mnist) - FMNIST 衣服データセット
 - [DataSets - arXivTimes/arXivTimes](https://github.com/arXivTimes/arXivTimes/tree/master/datasets) - データセット一覧
 - [ObjectNet](https://objectnet.dev/index.html) - ImageNet より難易度の高いテスト用データセット
+- Logo ロゴ
+    - [msn199959/Logo-2k-plus-Dataset: Logo-2k-plus-Dataset](https://github.com/msn199959/Logo-2k-plus-Dataset)
+    - [LLD - Large Logo Dataset](https://data.vision.ee.ethz.ch/sagea/lld/)
+    - [WebLogo-2M Dataset](http://www.eecs.qmul.ac.uk/~hs308/WebLogo-2M.html/)
+    - [QMUL-OpenLogo](https://qmul-openlogo.github.io/)
+    - [Flickr Logos dataset | IVA](http://image.ntua.gr/iva/datasets/flickr_logos/)
 
 
 
