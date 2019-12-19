@@ -30,6 +30,8 @@ Deep Learning framework は主に [PyTorch] を取り扱う。
 - [Setup Docker](#setup-docker)
   - [macOS](#macos)
   - [Ubuntu 18.04](#ubuntu-1804)
+- [Notes](#notes)
+  - [Update deps](#update-deps)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
