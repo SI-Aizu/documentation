@@ -149,3 +149,14 @@ $ sudo chmod +x /usr/local/bin/docker-compose
 $ docker-compose --version
 docker-compose version 1.25.0, build 0a186604
 ```
+
+
+
+## Notes
+
+### Update deps
+
+```sh
+pip install torch torchvision matplotlib jupyterlab black
+pip freeze > ./requirements.txt
+```
