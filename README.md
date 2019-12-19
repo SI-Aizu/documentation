@@ -3,7 +3,7 @@
 研究室の新規メンバー向けの教材。以下を学ぶ。
 
 - Deep Learning 深層学習
-- Python
+- Python, 依存関係の管理
 - Git, GitHub
 - Docker
 - Ubuntu, GPU
