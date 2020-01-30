@@ -141,16 +141,14 @@ docker run hello-world
 ```
 
 続いて Docker Compose のインストール。
+バージョンは各自確認して最新のものをインストールする。
 
 > [Install Docker Compose | Docker Documentation](https://docs.docker.com/compose/install/)
 
-```console
-$ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-$ sudo chmod +x /usr/local/bin/docker-compose
-
-$ docker-compose --version
-docker-compose version 1.25.3, build d4d1b42b
+```sh
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
+    sudo chmod +x /usr/local/bin/docker-compose \
+    docker-compose --version
 ```
 
 
