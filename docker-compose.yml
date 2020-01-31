@@ -2,8 +2,9 @@ version: '3'
 
 services:
   dev:
-    container_name: deep_learning_tutorial_pytorch
     build: .
+    image: deep_learning_tutorial_dev
+    container_name: deep_learning_tutorial_pytorch
     ports:
       - 8888:8888
     volumes:
