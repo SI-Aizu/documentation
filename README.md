@@ -141,12 +141,12 @@ docker run hello-world
 ```
 
 続いて Docker Compose のインストール。
-バージョンは各自確認して最新のものをインストールする。
 
 > [Install Docker Compose | Docker Documentation](https://docs.docker.com/compose/install/)
 
 ```sh
-export DOCKER_COMPOSE_VERSION="1.25.5"
+sudo apt install -y curl jq
+export DOCKER_COMPOSE_VERSION=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r '.tag_name')
 sudo curl -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
     sudo chmod +x /usr/local/bin/docker-compose && \
     docker-compose --version
