@@ -137,7 +137,7 @@ exec bash
 systemctl --user start docker
 
 # Docker の動作確認
-docker run hello-world
+docker run --rm -it hello-world
 ```
 
 続いて Docker Compose のインストール。
