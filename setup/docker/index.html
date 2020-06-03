@@ -528,8 +528,13 @@ macOS の場合 <strong>Docker for Mac</strong> は <code>docker-compose</code> 
 <blockquote>
 <p><a href="https://docs.docker.com/compose/install/">Install Docker Compose | Docker Documentation</a></p>
 </blockquote>
+<p>compose のインストールに利用するツールをインストールする。</p>
 <div class="codehilite"><pre><span></span><code>sudo apt install -y curl jq
-<span class="nb">export</span> <span class="nv">DOCKER_COMPOSE_VERSION</span><span class="o">=</span><span class="k">$(</span>curl -s https://api.github.com/repos/docker/compose/releases/latest <span class="p">|</span> jq -r <span class="s1">&#39;.tag_name&#39;</span><span class="k">)</span>
+</code></pre></div>
+
+
+<p>以下のコマンドで compose のインストールとアップグレードができる。</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">DOCKER_COMPOSE_VERSION</span><span class="o">=</span><span class="k">$(</span>curl -s https://api.github.com/repos/docker/compose/releases/latest <span class="p">|</span> jq -r <span class="s1">&#39;.tag_name&#39;</span><span class="k">)</span>
 sudo curl -L <span class="s2">&quot;https://github.com/docker/compose/releases/download/</span><span class="si">${</span><span class="nv">DOCKER_COMPOSE_VERSION</span><span class="si">}</span><span class="s2">/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&quot;</span> -o /usr/local/bin/docker-compose <span class="o">&amp;&amp;</span> <span class="se">\</span>
     sudo chmod +x /usr/local/bin/docker-compose <span class="o">&amp;&amp;</span> <span class="se">\</span>
     docker-compose --version
