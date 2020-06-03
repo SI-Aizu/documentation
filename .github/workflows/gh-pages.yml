@@ -9,6 +9,7 @@ on:
       - 'docker-compose.yml'
       - 'docs/**'
       - 'mkdocs.yml'
+  pull_request:
 
 jobs:
   deploy:
@@ -20,6 +21,7 @@ jobs:
         run: docker-compose run --rm mkdocs build
 
       - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/master'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ github.token }}
