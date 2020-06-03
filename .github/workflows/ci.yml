@@ -18,6 +18,9 @@ jobs:
     strategy:
       matrix:
         python-version: [3.8]
+    defaults:
+      run:
+        working-directory: docs/tutorials/deep_learning
     steps:
       - uses: actions/checkout@v2
 
