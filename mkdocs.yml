@@ -23,7 +23,8 @@ theme:
     previous: 80 # p
     search: 83   # s
   palette:
-    scheme: slate
+    primary: indigo
+    accent: orange
   # features:
   #   - tabs
   #font:
@@ -53,8 +54,8 @@ plugins:
 # Customization
 extra_javascript:
   - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML'
-# extra_css:
-#   - 'assets/css/custom.css'
+extra_css:
+  - 'assets/css/custom.css'
 extra:
   # manifest: 'manifest.json'
   social:
