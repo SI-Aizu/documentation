@@ -22,7 +22,13 @@
 git clone https://github.com/SI-Aizu/documentation.git
 # OR git clone git@github.com:SI-Aizu/documentation.git
 
+# mkdocs serve
 docker-compose up
 ```
 
 - http://localhost:8888
+
+```sh
+# 終わったらコンテナを片付ける
+docker-compose down
+```
