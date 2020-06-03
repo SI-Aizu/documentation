@@ -1,3 +1,8 @@
+[Site on GitHub Pages](https://si-aizu.github.io/documentation/) |
+[Dependabot Dashboard](https://github.com/SI-Aizu/documentation/network/updates)
+
+
+
 ## Documentation
 
 研究室メンバー向けドキュメント。
