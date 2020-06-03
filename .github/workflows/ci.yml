@@ -6,11 +6,9 @@ on:
       - master
     paths-ignore:
       - '**.md'
-      - 'docs/**'
   pull_request:
     paths-ignore:
       - '**.md'
-      - 'docs/**'
 
 jobs:
   test:
@@ -28,14 +26,6 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-
-      - name: Cache pip
-        uses: actions/cache@v2
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
 
       - name: Install dependencies
         run: |
