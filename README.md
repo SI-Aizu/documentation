@@ -13,3 +13,16 @@
 - Docker
 - Ubuntu, GPU
 - 上記の環境構築など
+
+
+
+## サイトのローカルプレビュー
+
+```sh
+git clone https://github.com/SI-Aizu/documentation.git
+# OR git clone git@github.com:SI-Aizu/documentation.git
+
+docker-compose up
+```
+
+- http://localhost:8888
