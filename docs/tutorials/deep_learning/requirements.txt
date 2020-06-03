@@ -30,7 +30,7 @@ nbformat==5.0.6
 notebook==6.0.3
 numpy==1.17.4
 pandocfilters==1.4.2
-parso==0.5.2
+parso==0.7.0
 pathspec==0.8.0
 pexpect==4.7.0
 pickleshare==0.7.5
