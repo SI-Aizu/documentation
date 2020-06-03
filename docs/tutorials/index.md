@@ -1,12 +1,7 @@
-# Tutorials チュートリアル
-
-- [Transfer Learning - 転移学習](./transfer_learning/README.md)
+# Getting started
 
 
-
-## Getting started
-
-### Docker Compose
+## Docker Compose
 
 ```sh
 # コンテナをビルド
@@ -22,7 +17,7 @@ docker-compose exec dev bash
 docker-compose down
 ```
 
-### Jupyter Lab
+## Jupyter Lab
 
 ```sh
 # コンテナ内

@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  mkdocs:
+    image: peaceiris/mkdocs-material:v2.2.2
+    container_name: siaizu_documentation_mkdocs
+    ports:
+      - 8888:8888
+    volumes:
+      - ${PWD}:/root
+    stdin_open: true
+    tty: true
+    command:
+      - "serve"
+      - "--dev-addr=0.0.0.0:8888"
