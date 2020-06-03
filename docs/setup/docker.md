@@ -20,8 +20,15 @@ macOS の場合 **Docker for Mac** は `docker-compose` も含んでいる。
 
 > [Install Docker Compose | Docker Documentation](https://docs.docker.com/compose/install/)
 
+compose のインストールに利用するツールをインストールする。
+
 ```sh
 sudo apt install -y curl jq
+```
+
+以下のコマンドで compose のインストールとアップグレードができる。
+
+```sh
 export DOCKER_COMPOSE_VERSION=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r '.tag_name')
 sudo curl -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
     sudo chmod +x /usr/local/bin/docker-compose && \
