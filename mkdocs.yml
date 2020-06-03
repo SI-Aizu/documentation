@@ -2,7 +2,7 @@
 site_name: 'SI-Aizu Documentation'
 site_description: 'SI-Aizu Documentation'
 site_author: 'SI-Aizu'
-site_url: 'https://SI-Aizu.github.io/documentation'
+site_url: 'https://si-aizu.github.io/documentation'
 
 # Copyright
 copyright: '&copy; 2019 SI-Aizu'
