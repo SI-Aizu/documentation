@@ -10,6 +10,11 @@ on:
       - 'docs/**'
       - 'mkdocs.yml'
   pull_request:
+    paths:
+      - '.github/workflows/gh-pages.yml'
+      - 'docker-compose.yml'
+      - 'docs/**'
+      - 'mkdocs.yml'
 
 jobs:
   deploy:
