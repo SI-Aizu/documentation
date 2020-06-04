@@ -4,7 +4,7 @@
 
 - 古いドライバーと cuda を削除
 
-```shell
+```sh
 $ sudo apt-get --purge remove nvidia-*
 $ sudo apt-get --purge remove cuda-*
 ```
@@ -64,4 +64,3 @@ nvidia-smi
 ```
 
 ここまでできたら勝ち
-
