@@ -11,7 +11,7 @@
         <meta name="description" content="SI-Aizu Documentation">
       
       
-        <link rel="canonical" href="https://si-aizu.github.io/documentation/setup/docker/">
+        <link rel="canonical" href="https://si-aizu.github.io/documentation/setup/1-install-ubuntu/">
       
       
         <meta name="author" content="SI-Aizu">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Docker - SI-Aizu Documentation</title>
+        <title>1. Install Ubuntu - SI-Aizu Documentation</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#docker" class="md-skip">
+        <a href="#1_install_ubuntu" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -93,7 +93,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Docker
+              1. Install Ubuntu
             
           </span>
         </div>
@@ -230,18 +230,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../1-install-ubuntu/" title="1. Install Ubuntu" class="md-nav__link">
-      1. Install Ubuntu
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -253,14 +241,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Docker
+        1. Install Ubuntu
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
         </span>
       </label>
     
-    <a href="./" title="Docker" class="md-nav__link md-nav__link--active">
-      Docker
+    <a href="./" title="1. Install Ubuntu" class="md-nav__link md-nav__link--active">
+      1. Install Ubuntu
     </a>
     
       
@@ -279,36 +267,9 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
+  <a href="#create_boot_usb_disk" class="md-nav__link">
+    Create Boot USB Disk
   </a>
-  
-    <nav class="md-nav" aria-label="Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    macOS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ubuntu_1804" class="md-nav__link">
-    Ubuntu 18.04
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ubuntu_1804_rootless" class="md-nav__link">
-    Ubuntu 18.04 Rootless
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -316,6 +277,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
   </li>
 
         
@@ -476,36 +449,9 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
+  <a href="#create_boot_usb_disk" class="md-nav__link">
+    Create Boot USB Disk
   </a>
-  
-    <nav class="md-nav" aria-label="Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    macOS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ubuntu_1804" class="md-nav__link">
-    Ubuntu 18.04
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ubuntu_1804_rootless" class="md-nav__link">
-    Ubuntu 18.04 Rootless
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -521,7 +467,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/SI-Aizu/documentation/edit/master/docs/setup/docker.md" title="編集" class="md-content__button md-icon">
+                  <a href="https://github.com/SI-Aizu/documentation/edit/master/docs/setup/1-install-ubuntu.md" title="編集" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -529,65 +475,12 @@
                   
                 
                 
-                <h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p><code>which docker</code> や <code>which docker-compose</code> などで確認し、インストールされていなければ以下のようにインストールする。
-macOS の場合 <strong>Docker for Mac</strong> は <code>docker-compose</code> も含んでいる。</p>
-<h3 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p><a href="https://docs.docker.com/docker-for-mac/install/">Install Docker Desktop on Mac | Docker Documentation</a></p>
-</blockquote>
-<h3 id="ubuntu_1804">Ubuntu 18.04<a class="headerlink" href="#ubuntu_1804" title="Permanent link">&para;</a></h3>
-<p>公式ドキュメントに従って Docker をインストール。</p>
-<blockquote>
-<p><a href="https://docs.docker.com/engine/install/ubuntu/">Install Docker Engine on Ubuntu | Docker Documentation</a></p>
-</blockquote>
-<p>続いて Docker Compose のインストール。</p>
-<blockquote>
-<p><a href="https://docs.docker.com/compose/install/">Install Docker Compose | Docker Documentation</a></p>
-</blockquote>
-<p>compose のインストールに利用するツールをインストールする。</p>
-<div class="codehilite"><pre><span></span><code>sudo apt install -y curl jq
-</code></pre></div>
-
-
-<p>以下のコマンドで compose のインストールとアップグレードができる。</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">DOCKER_COMPOSE_VERSION</span><span class="o">=</span><span class="k">$(</span>curl -s https://api.github.com/repos/docker/compose/releases/latest <span class="p">|</span> jq -r <span class="s1">&#39;.tag_name&#39;</span><span class="k">)</span>
-sudo curl -L <span class="s2">&quot;https://github.com/docker/compose/releases/download/</span><span class="si">${</span><span class="nv">DOCKER_COMPOSE_VERSION</span><span class="si">}</span><span class="s2">/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&quot;</span> -o /usr/local/bin/docker-compose <span class="o">&amp;&amp;</span> <span class="se">\</span>
-    sudo chmod +x /usr/local/bin/docker-compose <span class="o">&amp;&amp;</span> <span class="se">\</span>
-    docker-compose --version
-</code></pre></div>
-
-
-<h3 id="ubuntu_1804_rootless">Ubuntu 18.04 Rootless<a class="headerlink" href="#ubuntu_1804_rootless" title="Permanent link">&para;</a></h3>
-<p>Rootless Docker はオススメ。</p>
-<blockquote>
-<p><a href="https://medium.com/nttlabs/docker-1903-5155754ff8ac">Docker 19.03新機能 (root権限不要化、GPU対応強化、CLIプラグイン) - nttlabs - Medium</a></p>
-</blockquote>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> ~
-sudo apt update
-sudo apt upgrade -y
-sudo apt install -y curl uidmap
-curl -fsSL https://get.docker.com/rootless <span class="p">|</span> sh
-</code></pre></div>
-
-
-<p>以下を <code>~/.bashrc</code> に追記する。</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Rootless Docker</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/bin:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">export</span> <span class="nv">DOCKER_HOST</span><span class="o">=</span><span class="s2">&quot;unix:///run/user/1000/docker.sock&quot;</span>
-</code></pre></div>
-
-
-<div class="codehilite"><pre><span></span><code><span class="c1"># ~/.bashrc への変更を反映するために Bash を再起動</span>
-<span class="nb">exec</span> bash
-
-<span class="c1"># Docker daemon を起動</span>
-systemctl --user start docker
-
-<span class="c1"># Docker の動作確認</span>
-docker run --rm -it hello-world
-</code></pre></div>
+                <h1 id="1_install_ubuntu">1. Install Ubuntu<a class="headerlink" href="#1_install_ubuntu" title="Permanent link">&para;</a></h1>
+<h2 id="create_boot_usb_disk">Create Boot USB Disk<a class="headerlink" href="#create_boot_usb_disk" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.balena.io/etcher/">balenaEtcher - Flash OS images to SD cards &amp; USB drives</a></li>
+</ul>
+<p>balenaEtcher が便利。</p>
                 
               
               
@@ -606,7 +499,7 @@ docker run --rm -it hello-world
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../1-install-ubuntu/" title="1. Install Ubuntu" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../.." title="Documentation" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -615,19 +508,19 @@ docker run --rm -it hello-world
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                1. Install Ubuntu
+                Documentation
               </div>
             </div>
           </a>
         
         
-          <a href="../../tutorials/" title="Getting started" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../docker/" title="Docker" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                Getting started
+                Docker
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
