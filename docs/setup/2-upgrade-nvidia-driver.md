@@ -18,7 +18,7 @@ dpkg -l | grep cuda
 
 ## 新しいドライバーのインストール
 
-このとき **control-C** を押さないこと。
+このとき `ctrl-c` などで作業を中断しないように気をつけること。
 
 ```sh
 sudo add-apt-repository ppa:graphics-drivers/ppa
