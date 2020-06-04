@@ -4,9 +4,19 @@ on:
   push:
     branches:
       - master
+    paths:
+      - 'docs/tutorials/**/*.py'
+      - 'docs/tutorials/**/Dockerfile'
+      - 'docs/tutorials/**/docker-compose.yml'
+      - 'docs/tutorials/**/requirements.txt'
     paths-ignore:
       - '**.md'
   pull_request:
+    paths:
+      - 'docs/tutorials/**/*.py'
+      - 'docs/tutorials/**/Dockerfile'
+      - 'docs/tutorials/**/docker-compose.yml'
+      - 'docs/tutorials/**/requirements.txt'
     paths-ignore:
       - '**.md'
 
