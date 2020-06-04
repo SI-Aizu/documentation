@@ -5,13 +5,13 @@
 - 古いドライバーと cuda を削除
 
 ```sh
-$ sudo apt-get --purge remove nvidia-*
-$ sudo apt-get --purge remove cuda-*
+sudo apt-get --purge remove nvidia-*
+sudo apt-get --purge remove cuda-*
 ```
 
 ```
-$ dpkg -l | grep nvidia
-$ dpkg -l | grep cuda
+dpkg -l | grep nvidia
+dpkg -l | grep cuda
 ```
 
 で残りがないかを確認。
@@ -29,7 +29,6 @@ sudo add-apt-repository ppa:graphics-drivers/ppa
 
 
 - カーネルをアップデート。
-
 - 推奨ドライバーを確認。
 
 ```
@@ -59,7 +58,7 @@ sudo apt-get install nvidia-430
 - 再起動して、GPU が認識しているか確認
 
 ```
-reboot
+sudo reboot
 nvidia-smi
 ```
 
