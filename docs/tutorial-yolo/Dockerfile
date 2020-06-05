@@ -27,10 +27,10 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /src
-COPY Makefile /src/Makefile
-COPY yolov4_weights.sh /src/yolov4_weights.sh
 RUN git clone --depth=1 https://github.com/AlexeyAB/darknet.git -b darknet_yolo_v4_pre
 WORKDIR /src/darknet
+COPY Makefile /src/darknet/Makefile
+COPY yolov4_weights.sh /src/darknet/yolov4_weights.sh
 RUN wget --quiet https://pjreddie.com/media/files/yolov3.weights && \
     bash yolov4_weights.sh && \
     make -j8
