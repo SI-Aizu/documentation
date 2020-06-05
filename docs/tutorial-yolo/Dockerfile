@@ -1,4 +1,5 @@
-FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04
+ARG BASE_IMAGE
+FROM $BASE_IMAGE
 
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
