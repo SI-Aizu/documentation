@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#documentation" class="md-skip">
+        <a href="#si_lab_documentation" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -93,7 +93,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Documentation
+              SI Lab Documentation
             
           </span>
         </div>
@@ -201,9 +201,42 @@
       
     
     
-    <a href="." title="Documentation" class="md-nav__link md-nav__link--active">
-      Documentation
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        SI Lab Documentation
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="." title="SI Lab Documentation" class="md-nav__link md-nav__link--active">
+      SI Lab Documentation
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    サイトのローカルプレビュー
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -459,6 +492,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    サイトのローカルプレビュー
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -477,7 +527,31 @@
                   
                 
                 
-                <h1 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+                <h1 id="si_lab_documentation">SI Lab Documentation<a class="headerlink" href="#si_lab_documentation" title="Permanent link">&para;</a></h1>
+<p>研究室メンバー向けドキュメント。</p>
+<ul>
+<li>Deep Learning 深層学習</li>
+<li>Python, 依存関係の管理</li>
+<li>Git, GitHub</li>
+<li>Docker</li>
+<li>Ubuntu, GPU</li>
+<li>上記の環境構築など</li>
+</ul>
+<h2 id="_1">サイトのローカルプレビュー<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>git clone https://github.com/SI-Aizu/documentation.git
+<span class="c1"># OR git clone git@github.com:SI-Aizu/documentation.git</span>
+
+<span class="c1"># mkdocs serve</span>
+docker-compose up
+</code></pre></div>
+
+
+<ul>
+<li>http://localhost:8888</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 終わったらコンテナを片付ける</span>
+docker-compose down
+</code></pre></div>
                 
               
               
