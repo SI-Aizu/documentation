@@ -544,6 +544,11 @@
                 
                 
                 <h1 id="nvidia_driver">NVIDIA Driver の更新<a class="headerlink" href="#nvidia_driver" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">To Docker user</p>
+<p>Docker container から GPU を利用する場合は CUDA や cuDNN をホストマシンにインストールする必要はないので、
+CUDA の部分は関係ない。</p>
+</div>
 <h2 id="cuda">古いドライバーと cuda を削除<a class="headerlink" href="#cuda" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code>sudo apt-get --purge remove nvidia-*
 sudo apt-get --purge remove cuda-*
