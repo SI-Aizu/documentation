@@ -5,17 +5,13 @@ on:
     branches:
       - master
     paths:
-      - 'docs/tutorials/**/*.py'
-      - 'docs/tutorials/**/Dockerfile'
-      - 'docs/tutorials/**/docker-compose.yml'
-      - 'docs/tutorials/**/requirements.txt'
+      - '.github/workflows/ci.yml'
+      - 'docs/Tutorial-PyTorch/**'
       - '!**.md'
   pull_request:
     paths:
-      - 'docs/tutorials/**/*.py'
-      - 'docs/tutorials/**/Dockerfile'
-      - 'docs/tutorials/**/docker-compose.yml'
-      - 'docs/tutorials/**/requirements.txt'
+      - '.github/workflows/ci.yml'
+      - 'docs/Tutorial-PyTorch/**'
       - '!**.md'
 
 jobs:
@@ -23,7 +19,7 @@ jobs:
     runs-on: ubuntu-18.04
     defaults:
       run:
-        working-directory: docs/tutorials/deep_learning
+        working-directory: docs/Tutorial-PyTorch
     steps:
       - uses: actions/checkout@v2
       - run: docker-compose build
