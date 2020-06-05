@@ -1,7 +1,7 @@
 version: 2
 updates:
 - package-ecosystem: pip
-  directory: "docs/tutorials/deep_learning"
+  directory: "docs/Tutorial-PyTorch"
   schedule:
     interval: daily
     time: '10:00'
