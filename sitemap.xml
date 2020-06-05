@@ -4,7 +4,31 @@
      <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://si-aizu.github.io/documentation/setup/1-install-ubuntu/</loc>
+     <loc>https://si-aizu.github.io/documentation/Tutorial-VoTT/</loc>
+     <lastmod>2020-06-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://si-aizu.github.io/documentation/Useful-Links/</loc>
+     <lastmod>2020-06-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://si-aizu.github.io/documentation/Tutorial-PyTorch/</loc>
+     <lastmod>2020-06-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://si-aizu.github.io/documentation/Tutorial-PyTorch/transfer_learning/</loc>
+     <lastmod>2020-06-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://si-aizu.github.io/documentation/Tutorial-YOLO-Darknet/</loc>
+     <lastmod>2020-06-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://si-aizu.github.io/documentation/setup/</loc>
+     <lastmod>2020-06-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://si-aizu.github.io/documentation/setup/1-ubuntu/</loc>
      <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -13,22 +37,6 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://si-aizu.github.io/documentation/setup/upgrade-nvidia-driver/</loc>
-     <lastmod>2020-06-05</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://si-aizu.github.io/documentation/tutorial-yolo/</loc>
-     <lastmod>2020-06-05</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://si-aizu.github.io/documentation/tutorials/</loc>
-     <lastmod>2020-06-05</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://si-aizu.github.io/documentation/tutorials/vott/</loc>
-     <lastmod>2020-06-05</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://si-aizu.github.io/documentation/tutorials/deep_learning/transfer_learning/</loc>
      <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url>

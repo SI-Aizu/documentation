@@ -11,7 +11,7 @@
         <meta name="description" content="SI-Aizu Documentation">
       
       
-        <link rel="canonical" href="https://si-aizu.github.io/documentation/setup/1-install-ubuntu/">
+        <link rel="canonical" href="https://si-aizu.github.io/documentation/Tutorial-PyTorch/transfer_learning/">
       
       
         <meta name="author" content="SI-Aizu">
@@ -21,7 +21,7 @@
     
     
       
-        <title>1. Install Ubuntu - SI-Aizu Documentation</title>
+        <title>転移学習 - SI-Aizu Documentation</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1_install_ubuntu" class="md-skip">
+        <a href="#_1" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -93,7 +93,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              1. Install Ubuntu
+              転移学習
             
           </span>
         </div>
@@ -203,25 +203,88 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../../Tutorial-VoTT/" title="Tutorial VoTT" class="md-nav__link">
+      Tutorial VoTT
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../Useful-Links/" title="Useful Links" class="md-nav__link">
+      Useful Links
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
-    <label class="md-nav__link" for="nav-2">
-      Setup
+    <label class="md-nav__link" for="nav-4">
+      Tutorial PyTorch
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
-    <nav class="md-nav" aria-label="Setup" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
+    <nav class="md-nav" aria-label="Tutorial PyTorch" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
-        Setup
+        Tutorial PyTorch
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" checked>
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Transfer learning
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Transfer learning" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Transfer learning
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -241,14 +304,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        1. Install Ubuntu
+        転移学習
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
         </span>
       </label>
     
-    <a href="./" title="1. Install Ubuntu" class="md-nav__link md-nav__link--active">
-      1. Install Ubuntu
+    <a href="./" title="転移学習" class="md-nav__link md-nav__link--active">
+      転移学習
     </a>
     
       
@@ -267,8 +330,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create_boot_usb_disk" class="md-nav__link">
-    Create Boot USB Disk
+  <a href="#download_dataset" class="md-nav__link">
+    Download dataset
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jupyter_lab" class="md-nav__link">
+    Jupyter Lab
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command_line" class="md-nav__link">
+    Command line
   </a>
   
 </li>
@@ -280,14 +357,91 @@
   </li>
 
         
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Tutorial YOLO Darknet
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Tutorial YOLO Darknet" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Tutorial YOLO Darknet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
           
           
 
 
   <li class="md-nav__item">
-    <a href="../2-docker/" title="Docker" class="md-nav__link">
-      Docker
+    <a href="../../Tutorial-YOLO-Darknet/" title="Darknet YOLO v3 and v4" class="md-nav__link">
+      Darknet YOLO v3 and v4
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Setup
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Setup" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Setup
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/" title="環境構築" class="md-nav__link">
+      環境構築
     </a>
   </li>
 
@@ -298,177 +452,33 @@
 
 
   <li class="md-nav__item">
-    <a href="../upgrade-nvidia-driver/" title="NVIDIA Driver の更新" class="md-nav__link">
+    <a href="../../setup/1-ubuntu/" title="1. Ubuntu" class="md-nav__link">
+      1. Ubuntu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/2-docker/" title="2. Docker" class="md-nav__link">
+      2. Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/upgrade-nvidia-driver/" title="NVIDIA Driver の更新" class="md-nav__link">
       NVIDIA Driver の更新
     </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
-    <label class="md-nav__link" for="nav-3">
-      Tutorial yolo
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Tutorial yolo" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Tutorial yolo
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorial-yolo/" title="YOLO v3 and v4" class="md-nav__link">
-      YOLO v3 and v4
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Tutorials
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Tutorials
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/" title="Getting started" class="md-nav__link">
-      Getting started
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/vott/" title="VoTT" class="md-nav__link">
-      VoTT
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
-    
-    <label class="md-nav__link" for="nav-4-3">
-      Deep learning
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Deep learning" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Deep learning
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3-1" type="checkbox" id="nav-4-3-1">
-    
-    <label class="md-nav__link" for="nav-4-3-1">
-      Transfer learning
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Transfer learning" data-md-level="3">
-      <label class="md-nav__title" for="nav-4-3-1">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Transfer learning
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tutorials/deep_learning/transfer_learning/" title="転移学習" class="md-nav__link">
-      転移学習
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
         
@@ -503,8 +513,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create_boot_usb_disk" class="md-nav__link">
-    Create Boot USB Disk
+  <a href="#download_dataset" class="md-nav__link">
+    Download dataset
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jupyter_lab" class="md-nav__link">
+    Jupyter Lab
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command_line" class="md-nav__link">
+    Command line
   </a>
   
 </li>
@@ -521,7 +545,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/SI-Aizu/documentation/edit/master/docs/setup/1-install-ubuntu.md" title="編集" class="md-content__button md-icon">
+                  <a href="https://github.com/SI-Aizu/documentation/edit/master/docs/Tutorial-PyTorch/transfer_learning/index.md" title="編集" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -529,12 +553,24 @@
                   
                 
                 
-                <h1 id="1_install_ubuntu">1. Install Ubuntu<a class="headerlink" href="#1_install_ubuntu" title="Permanent link">&para;</a></h1>
-<h2 id="create_boot_usb_disk">Create Boot USB Disk<a class="headerlink" href="#create_boot_usb_disk" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://www.balena.io/etcher/">balenaEtcher - Flash OS images to SD cards &amp; USB drives</a></li>
-</ul>
-<p>balenaEtcher が便利。</p>
+                <h1 id="_1">転移学習<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><a href="https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html">Transfer Learning for Computer Vision Tutorial — PyTorch Tutorials 1.3.1 documentation</a></p>
+</blockquote>
+<p>学習済み ResNet18 を用いて転移学習をするチュートリアル。</p>
+<ol>
+<li>全層を再学習する (Fine tuning と呼ばれる)</li>
+<li>全結合層のみを再学習する (こっちを指して転移学習と呼ぶこともある)</li>
+</ol>
+<h2 id="download_dataset">Download dataset<a class="headerlink" href="#download_dataset" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>bash ./download_hymenoptera_data.sh
+</code></pre></div>
+
+
+<h2 id="jupyter_lab">Jupyter Lab<a class="headerlink" href="#jupyter_lab" title="Permanent link">&para;</a></h2>
+<p><a href="notebook.ipynb">notebook.ipynb</a> を Jupyter Lab で開く。</p>
+<h2 id="command_line">Command line<a class="headerlink" href="#command_line" title="Permanent link">&para;</a></h2>
+<p>TBW.</p>
                 
               
               
@@ -553,7 +589,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../.." title="Home" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../" title="Getting started" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -562,19 +598,19 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                Home
+                Getting started
               </div>
             </div>
           </a>
         
         
-          <a href="../2-docker/" title="Docker" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../Tutorial-YOLO-Darknet/" title="Darknet YOLO v3 and v4" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                Docker
+                Darknet YOLO v3 and v4
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
