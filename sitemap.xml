@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://si-aizu.github.io/documentation/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://si-aizu.github.io/documentation/setup/1-install-ubuntu/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://si-aizu.github.io/documentation/setup/2-upgrade-nvidia-driver/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://si-aizu.github.io/documentation/setup/docker/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://si-aizu.github.io/documentation/tutorial-yolo/</loc>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://si-aizu.github.io/documentation/tutorials/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://si-aizu.github.io/documentation/tutorials/vott/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://si-aizu.github.io/documentation/tutorials/deep_learning/transfer_learning/</loc>
-     <lastmod>2020-06-04</lastmod>
+     <lastmod>2020-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
