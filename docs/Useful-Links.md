@@ -1,40 +1,15 @@
-# Getting started
+# Useful Links
 
 
-## Docker Compose
-
-```sh
-# コンテナをビルド
-docker-compose build
-
-# コンテナをバックグラウンドで起動
-docker-compose up -d
-
-# コンテナにログイン
-docker-compose exec dev bash
-
-# コンテナの終了と削除
-docker-compose down
-```
-
-## Jupyter Lab
-
-```sh
-# コンテナ内
-cd ./tutorials/transfer_learning
-jupyter-lab --ip=0.0.0.0 --no-browser --allow-root
-```
-
-
-
-## External Links
+## 教材
 
 - [yoyoyo-yo/Gasyori100knock: 画像処理100本ノック](https://github.com/yoyoyo-yo/Gasyori100knock) - Image Processing 入門
 - [yoyoyo-yo/DeepLearningMugenKnock: 深層学習無限ノック](https://github.com/yoyoyo-yo/DeepLearningMugenKnock) - Deep Learning 入門
 - [言語処理100本ノック](http://www.cl.ecei.tohoku.ac.jp/nlp100/) - Natural Language Processing (NLP) 入門
 - [arXivTimes/arXivTimes](https://github.com/arXivTimes/arXivTimes) - 論文の Abstract 要約を集めたリポジトリ
 
-### Datasets
+
+## Datasets
 
 - [Food-101](https://www.vision.ee.ethz.ch/datasets_extra/food-101/)
 - [zalandoresearch/fashion-mnist](https://github.com/zalandoresearch/fashion-mnist) - FMNIST 衣服データセット

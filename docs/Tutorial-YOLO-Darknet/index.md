@@ -1,4 +1,4 @@
-# YOLO v3 and v4
+# Darknet YOLO v3 and v4
 
 - v4 Paper: [[2004.10934] YOLOv4: Optimal Speed and Accuracy of Object Detection](https://arxiv.org/abs/2004.10934)
 - Repository: [AlexeyAB/darknet: YOLOv4 - Neural Networks for Object Detection (Windows and Linux version of Darknet )](https://github.com/AlexeyAB/darknet)

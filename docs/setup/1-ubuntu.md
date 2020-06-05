@@ -1,4 +1,4 @@
-# 1. Install Ubuntu
+# 1. Ubuntu
 
 
 ## Create Boot USB Disk

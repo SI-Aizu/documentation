@@ -2,12 +2,25 @@
 
 研究室メンバー向けドキュメント。
 
-- Deep Learning 深層学習
-- Python, 依存関係の管理
-- Git, GitHub
-- Docker
-- Ubuntu, GPU
-- 上記の環境構築など
+- [環境構築](./setup)
+- Deep Learning Framework, Python project management
+- Git, GitHub の使い方
+- [VoTT の使い方](./Tutorial-VoTT)
+- [Useful Links](./Useful-Links/)
+- [PyTorch](./Tutorial-PyTorch)
+- TensorFlow
+
+
+
+## 関係者以外の閲覧者へ
+
+このサイト・リポジトリのコンテンツについて
+
+- 閲覧はご自由にどうぞ
+- [MIT License] のもとで利用していただけますが、サポートや保証は一切しません
+- Google Analytics 等のアクセス解析ツールは設置していません
+
+[MIT License]: https://github.com/SI-Aizu/documentation/blob/master/LICENSE
 
 
 
