@@ -1,7 +1,8 @@
 # NVIDIA Driver の更新
 
-Docker container から GPU を利用する場合は CUDA や cuDNN をホストマシンにインストールする必要はないので、
-CUDA の部分は関係ない。
+!!! note "To Docker user"
+    Docker container から GPU を利用する場合は CUDA や cuDNN をホストマシンにインストールする必要はないので、
+    CUDA の部分は関係ない。
 
 
 ## 古いドライバーと cuda を削除
