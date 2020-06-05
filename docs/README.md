@@ -1,4 +1,4 @@
-# SI Lab Documentation
+# Home
 
 研究室メンバー向けドキュメント。
 
