@@ -8,6 +8,10 @@
 
 ## Build Docker Image
 
+```sh
+cd ./docs/Tutorial-YOLO-Darknet
+```
+
 ### Edit Makefile
 
 利用する GPU ごとに `Makefile` を編集する必要がある。
