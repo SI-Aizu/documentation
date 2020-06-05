@@ -13,6 +13,10 @@
 
 ## サイトのローカルプレビュー
 
+利用できる拡張記法やサイト設定方法については以下を参照。
+
+- [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
+
 ```sh
 git clone https://github.com/SI-Aizu/documentation.git
 # OR git clone git@github.com:SI-Aizu/documentation.git
@@ -21,7 +25,7 @@ git clone https://github.com/SI-Aizu/documentation.git
 docker-compose up
 ```
 
-- http://localhost:8888
+- [http://localhost:8888](http://localhost:8888)
 
 ```sh
 # 終わったらコンテナを片付ける
