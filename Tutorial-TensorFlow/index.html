@@ -581,8 +581,12 @@
                 
                 <h1 id="getting_started">Getting Started<a class="headerlink" href="#getting_started" title="Permanent link">&para;</a></h1>
 <h2 id="build_docker_image">Build Docker image<a class="headerlink" href="#build_docker_image" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> docs/Tutorial-TensorFlow
+</code></pre></div>
+
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># Build</span>
-docker build . -t siaizu/tensorflow:v2.2.0-gpu
+make build
 </code></pre></div>
 
 
@@ -591,7 +595,7 @@ docker build . -t siaizu/tensorflow:v2.2.0-gpu
 <li><a href="https://hub.docker.com/r/siaizu/tensorflow">siaizu/tensorflow - Docker Hub</a></li>
 </ul>
 <h2 id="run_container">Run Container<a class="headerlink" href="#run_container" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>docker run -i -t --gpus all -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/src --name siaizu_tensorflow siaizu/tensorflow:v2.2.0-gpu bash
+<div class="codehilite"><pre><span></span><code>make run
 </code></pre></div>
                 
               
