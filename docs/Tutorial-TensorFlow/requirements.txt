@@ -43,7 +43,7 @@ scikit-learn==0.23.1
 scipy==1.4.1
 seaborn==0.10.1
 SecretStorage==2.3.1
-six==1.14.0
+six==1.15.0
 sklearn==0.0
 tensorboard==2.2.1
 tensorboard-plugin-wit==1.6.0.post3
