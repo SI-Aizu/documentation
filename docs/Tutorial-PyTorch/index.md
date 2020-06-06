@@ -1,9 +1,11 @@
-# Getting started
+# Getting Started
 
 
 ## Docker Compose
 
 ```sh
+cd ./docs/Tutorial-PyTorch
+
 # コンテナをビルド
 docker-compose build
 
@@ -21,6 +23,6 @@ docker-compose down
 
 ```sh
 # コンテナ内
-cd ./tutorials/transfer_learning
+cd ./transfer_learning
 jupyter-lab --ip=0.0.0.0 --no-browser --allow-root
 ```
