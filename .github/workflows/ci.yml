@@ -7,15 +7,17 @@ on:
     paths:
       - '.github/workflows/ci.yml'
       - 'docs/Tutorial-PyTorch/**'
+      - 'docs/Tutorial-TensorFlow/**'
       - '!**.md'
   pull_request:
     paths:
       - '.github/workflows/ci.yml'
       - 'docs/Tutorial-PyTorch/**'
+      - 'docs/Tutorial-TensorFlow/**'
       - '!**.md'
 
 jobs:
-  test:
+  test-Tutorial-PyTorch:
     runs-on: ubuntu-18.04
     defaults:
       run:
@@ -24,3 +26,12 @@ jobs:
       - uses: actions/checkout@v2
       - run: docker-compose build
       - run: docker-compose run --rm dev python3 -m pip check
+
+  test-Tutorial-TensorFlow:
+    runs-on: ubuntu-18.04
+    defaults:
+      run:
+        working-directory: docs/Tutorial-TensorFlow
+    steps:
+      - uses: actions/checkout@v2
+      - run: make build
