@@ -5,6 +5,10 @@
 ## Build Docker image
 
 ```sh
+cd docs/Tutorial-TensorFlow
+```
+
+```sh
 # Build
 docker build . -t siaizu/tensorflow:v2.2.0-gpu
 ```

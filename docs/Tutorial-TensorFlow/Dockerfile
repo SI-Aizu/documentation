@@ -1,11 +1,20 @@
 FROM tensorflow/tensorflow:2.2.0-gpu
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    wget \
+    vim \
     emacs \
     build-essential \
     libsm6 \
     libxrender1 \
-    libxext-dev && \
+    libxext-dev \
+    libcairo2-dev \
+    libgirepository1.0-dev \
+    python3-gi \
+    python3-gi-cairo \
+    gir1.2-gtk-3.0 \
+    pkg-config \
+    python3-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
