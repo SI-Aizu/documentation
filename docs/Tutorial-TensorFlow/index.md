@@ -5,8 +5,12 @@
 ## Build Docker image
 
 ```sh
+cd docs/Tutorial-TensorFlow
+```
+
+```sh
 # Build
-docker build . -t siaizu/tensorflow:v2.2.0-gpu
+make build
 ```
 
 ビルド済み docker image を公開しているので build せずに run でも良い。
@@ -18,5 +22,5 @@ docker build . -t siaizu/tensorflow:v2.2.0-gpu
 ## Run Container
 
 ```sh
-docker run -i -t --gpus all -v ${PWD}:/src --name siaizu_tensorflow siaizu/tensorflow:v2.2.0-gpu bash
+make run
 ```
