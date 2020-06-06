@@ -11,7 +11,7 @@
         <meta name="description" content="SI-Aizu Documentation">
       
       
-        <link rel="canonical" href="https://si-aizu.github.io/documentation/setup/2-docker/">
+        <link rel="canonical" href="https://si-aizu.github.io/documentation/setup/2-nvidia-driver/">
       
       
         <meta name="author" content="SI-Aizu">
@@ -21,7 +21,7 @@
     
     
       
-        <title>2. Docker - SI-Aizu Documentation</title>
+        <title>2. NVIDIA Driver - SI-Aizu Documentation</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2_docker" class="md-skip">
+        <a href="#2_nvidia_driver" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -93,7 +93,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              2. Docker
+              2. NVIDIA Driver
             
           </span>
         </div>
@@ -457,14 +457,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        2. Docker
+        2. NVIDIA Driver
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
         </span>
       </label>
     
-    <a href="./" title="2. Docker" class="md-nav__link md-nav__link--active">
-      2. Docker
+    <a href="./" title="2. NVIDIA Driver" class="md-nav__link md-nav__link--active">
+      2. NVIDIA Driver
     </a>
     
       
@@ -491,22 +491,42 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    macOS
+  <a href="#nvidia_driver" class="md-nav__link">
+    NVIDIA Driver
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ubuntu_1804" class="md-nav__link">
-    Ubuntu 18.04
+  <a href="#cuda_cudnn" class="md-nav__link">
+    CUDA cuDNN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade" class="md-nav__link">
+    Upgrade
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuda" class="md-nav__link">
+    古いドライバーと cuda を削除
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ubuntu_1804_rootless" class="md-nav__link">
-    Ubuntu 18.04 Rootless
+  <a href="#_1" class="md-nav__link">
+    新しいドライバーのインストール
   </a>
   
 </li>
@@ -529,8 +549,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../upgrade-nvidia-driver/" title="NVIDIA Driver の更新" class="md-nav__link">
-      NVIDIA Driver の更新
+    <a href="../3-docker/" title="3. Docker" class="md-nav__link">
+      3. Docker
     </a>
   </li>
 
@@ -574,22 +594,42 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    macOS
+  <a href="#nvidia_driver" class="md-nav__link">
+    NVIDIA Driver
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ubuntu_1804" class="md-nav__link">
-    Ubuntu 18.04
+  <a href="#cuda_cudnn" class="md-nav__link">
+    CUDA cuDNN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade" class="md-nav__link">
+    Upgrade
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuda" class="md-nav__link">
+    古いドライバーと cuda を削除
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ubuntu_1804_rootless" class="md-nav__link">
-    Ubuntu 18.04 Rootless
+  <a href="#_1" class="md-nav__link">
+    新しいドライバーのインストール
   </a>
   
 </li>
@@ -611,7 +651,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/SI-Aizu/documentation/edit/master/docs/setup/2-docker.md" title="編集" class="md-content__button md-icon">
+                  <a href="https://github.com/SI-Aizu/documentation/edit/master/docs/setup/2-nvidia-driver.md" title="編集" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -619,65 +659,99 @@
                   
                 
                 
-                <h1 id="2_docker">2. Docker<a class="headerlink" href="#2_docker" title="Permanent link">&para;</a></h1>
+                <h1 id="2_nvidia_driver">2. NVIDIA Driver<a class="headerlink" href="#2_nvidia_driver" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">To Docker user</p>
+<p>Docker container から GPU を利用する場合は CUDA や cuDNN をホストマシンにインストールする必要はないので、
+CUDA の部分は関係ない。</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p><code>ctrl-c</code> などで作業を中断しないように気をつけること。</p>
+</div>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p><code>which docker</code> や <code>which docker-compose</code> などで確認し、インストールされていなければ以下のようにインストールする。
-macOS の場合 <strong>Docker for Mac</strong> は <code>docker-compose</code> も含んでいる。</p>
-<h3 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p><a href="https://docs.docker.com/docker-for-mac/install/">Install Docker Desktop on Mac | Docker Documentation</a></p>
-</blockquote>
-<h3 id="ubuntu_1804">Ubuntu 18.04<a class="headerlink" href="#ubuntu_1804" title="Permanent link">&para;</a></h3>
-<p>公式ドキュメントに従って Docker をインストール。</p>
-<blockquote>
-<p><a href="https://docs.docker.com/engine/install/ubuntu/">Install Docker Engine on Ubuntu | Docker Documentation</a></p>
-</blockquote>
-<p>続いて Docker Compose のインストール。</p>
-<blockquote>
-<p><a href="https://docs.docker.com/compose/install/">Install Docker Compose | Docker Documentation</a></p>
-</blockquote>
-<p>compose のインストールに利用するツールをインストールする。</p>
-<div class="codehilite"><pre><span></span><code>sudo apt install -y curl jq
-</code></pre></div>
-
-
-<p>以下のコマンドで compose のインストールとアップグレードができる。</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">DOCKER_COMPOSE_VERSION</span><span class="o">=</span><span class="k">$(</span>curl -s https://api.github.com/repos/docker/compose/releases/latest <span class="p">|</span> jq -r <span class="s1">&#39;.tag_name&#39;</span><span class="k">)</span>
-sudo curl -L <span class="s2">&quot;https://github.com/docker/compose/releases/download/</span><span class="si">${</span><span class="nv">DOCKER_COMPOSE_VERSION</span><span class="si">}</span><span class="s2">/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&quot;</span> -o /usr/local/bin/docker-compose <span class="o">&amp;&amp;</span> <span class="se">\</span>
-    sudo chmod +x /usr/local/bin/docker-compose <span class="o">&amp;&amp;</span> <span class="se">\</span>
-    docker-compose --version
-</code></pre></div>
-
-
-<h3 id="ubuntu_1804_rootless">Ubuntu 18.04 Rootless<a class="headerlink" href="#ubuntu_1804_rootless" title="Permanent link">&para;</a></h3>
-<p>Rootless Docker はオススメ。</p>
-<blockquote>
-<p><a href="https://medium.com/nttlabs/docker-1903-5155754ff8ac">Docker 19.03新機能 (root権限不要化、GPU対応強化、CLIプラグイン) - nttlabs - Medium</a></p>
-</blockquote>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> ~
+<h3 id="nvidia_driver">NVIDIA Driver<a class="headerlink" href="#nvidia_driver" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt update
-sudo apt upgrade -y
-sudo apt install -y curl uidmap
-curl -fsSL https://get.docker.com/rootless <span class="p">|</span> sh
+ubuntu-drivers devices
 </code></pre></div>
 
 
-<p>以下を <code>~/.bashrc</code> に追記する。</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Rootless Docker</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/bin:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">export</span> <span class="nv">DOCKER_HOST</span><span class="o">=</span><span class="s2">&quot;unix:///run/user/1000/docker.sock&quot;</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> ubuntu-drivers devices
+<span class="go">== /sys/devices/pci0000:16/0000:16:00.0/0000:17:00.0 ==</span>
+<span class="go">modalias : pci:v000010DEd00001E07sv00001043sd00008666bc03sc00i00</span>
+<span class="go">vendor   : NVIDIA Corporation</span>
+<span class="go">driver   : nvidia-driver-435 - distro non-free</span>
+<span class="go">driver   : nvidia-driver-440 - third-party free recommended</span>
+<span class="go">driver   : nvidia-driver-415 - third-party free</span>
+<span class="go">driver   : nvidia-driver-410 - third-party free</span>
+<span class="go">driver   : xserver-xorg-video-nouveau - distro free builtin</span>
 </code></pre></div>
 
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># ~/.bashrc への変更を反映するために Bash を再起動</span>
-<span class="nb">exec</span> bash
-
-<span class="c1"># Docker daemon を起動</span>
-systemctl --user start docker
-
-<span class="c1"># Docker の動作確認</span>
-docker run --rm -it hello-world
+<p>recommended のものをインストールする。</p>
+<div class="codehilite"><pre><span></span><code>sudo apt install -y nvidia-driver-440
+sudo reboot
 </code></pre></div>
+
+
+<p>再起動後に <code>nvidia-smi</code> で GPU status を取得できれば成功。</p>
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span> nvidia-smi
+<span class="go">Sat Jun  6 13:22:56 2020</span>
+<span class="go">+-----------------------------------------------------------------------------+</span>
+<span class="go">| NVIDIA-SMI 440.82       Driver Version: 440.82       CUDA Version: 10.2     |</span>
+<span class="go">|-------------------------------+----------------------+----------------------+</span>
+<span class="go">| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |</span>
+<span class="go">| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |</span>
+<span class="go">|===============================+======================+======================|</span>
+<span class="go">|   0  GeForce RTX 208...  Off  | 00000000:17:00.0 Off |                  N/A |</span>
+<span class="go">| 24%   35C    P8    14W / 250W |    119MiB / 11018MiB |      0%      Default |</span>
+<span class="go">+-------------------------------+----------------------+----------------------+</span>
+
+<span class="go">...</span>
+</code></pre></div>
+
+
+<h3 id="cuda_cudnn">CUDA cuDNN<a class="headerlink" href="#cuda_cudnn" title="Permanent link">&para;</a></h3>
+<p>conda もしくは nvidia-docker を利用する場合は CUDA や cuDNN のインストールは不要。</p>
+<h2 id="upgrade">Upgrade<a class="headerlink" href="#upgrade" title="Permanent link">&para;</a></h2>
+<h3 id="cuda">古いドライバーと cuda を削除<a class="headerlink" href="#cuda" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>sudo apt --purge remove nvidia-*
+sudo apt --purge remove cuda-*
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code>dpkg -l <span class="p">|</span> grep nvidia
+dpkg -l <span class="p">|</span> grep cuda
+</code></pre></div>
+
+
+<p>で残りがないかを確認。</p>
+<h3 id="_1">新しいドライバーのインストール<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>パッケージ一覧をアップデートした後に、推奨ドライバーを確認する。</p>
+<div class="codehilite"><pre><span></span><code>sudo apt update
+ubuntu-drivers devices
+</code></pre></div>
+
+
+<p>を実行すると</p>
+<div class="codehilite"><pre><span></span><code><span class="n">driver</span>    <span class="o">:</span> <span class="n">nvidia</span><span class="o">-</span><span class="mi">415</span> <span class="o">-</span> <span class="n">thrid</span><span class="o">-</span><span class="n">party</span> <span class="n">free</span>
+<span class="n">driver</span>    <span class="o">:</span> <span class="n">nvidia</span><span class="o">-</span><span class="mi">430</span> <span class="o">-</span> <span class="n">thrid</span><span class="o">-</span><span class="n">party</span> <span class="n">free</span> <span class="n">recommended</span>
+</code></pre></div>
+
+
+<p>など(一部省略)が出力されるので、推奨 (recommended) されたドライバーをインストールする。</p>
+<div class="codehilite"><pre><span></span><code>sudo apt install -y nvidia-430
+</code></pre></div>
+
+
+<p>再起動した後に GPU が認識できるか確認する。</p>
+<div class="codehilite"><pre><span></span><code>sudo reboot
+nvidia-smi
+</code></pre></div>
+
+
+<p>ここまでできたら勝ち。</p>
                 
               
               
@@ -711,13 +785,13 @@ docker run --rm -it hello-world
           </a>
         
         
-          <a href="../upgrade-nvidia-driver/" title="NVIDIA Driver の更新" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../3-docker/" title="3. Docker" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                NVIDIA Driver の更新
+                3. Docker
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
