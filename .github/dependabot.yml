@@ -1,16 +1,27 @@
 version: 2
 updates:
+
+- package-ecosystem: "github-actions"
+  directory: "/"
+  schedule:
+    interval: "daily"
+    time: '10:00'
+    timezone: Japan
+  open-pull-requests-limit: 1
+  labels:
+  - "dependencies"
+  commit-message:
+    prefix: deps
+
 - package-ecosystem: pip
   directory: "docs/Tutorial-PyTorch"
   schedule:
     interval: daily
     time: '10:00'
     timezone: Japan
-  pull-request-branch-name:
-    separator: "-"
   open-pull-requests-limit: 1
   labels:
-  - dependencies
+  - "dependencies"
   commit-message:
     prefix: deps
 
@@ -20,10 +31,8 @@ updates:
     interval: daily
     time: '10:00'
     timezone: Japan
-  pull-request-branch-name:
-    separator: "-"
   open-pull-requests-limit: 1
   labels:
-  - dependencies
+  - "dependencies"
   commit-message:
     prefix: deps
