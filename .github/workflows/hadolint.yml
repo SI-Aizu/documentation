@@ -1,0 +1,32 @@
+name: hadolint
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/hadolint.yml'
+      - '.github/.hadolint.yaml'
+      - '**/Dockerfile'
+  pull_request:
+    paths:
+      - '.github/workflows/hadolint.yml'
+      - '.github/.hadolint.yaml'
+      - '**/Dockerfile'
+
+jobs:
+  hadolint:
+    runs-on: ubuntu-18.04
+    container:
+      image: 'hadolint/hadolint:v1.18.0-alpine'
+    strategy:
+      matrix:
+        path:
+          - 'docs/Tutorial-PyTorch'
+          - 'docs/Tutorial-TensorFlow'
+          - 'docs/Tutorial-YOLO-Darknet'
+    steps:
+      - uses: actions/checkout@v2
+      - name: lint
+        working-directory: ${{ matrix.path }}
+        run: hadolint
