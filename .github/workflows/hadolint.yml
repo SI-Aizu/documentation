@@ -6,12 +6,12 @@ on:
       - master
     paths:
       - '.github/workflows/hadolint.yml'
-      - '.github/.hadolint.yaml'
+      - '**/.hadolint.yaml'
       - '**/Dockerfile'
   pull_request:
     paths:
       - '.github/workflows/hadolint.yml'
-      - '.github/.hadolint.yaml'
+      - '**/.hadolint.yaml'
       - '**/Dockerfile'
 
 jobs:
