@@ -19,14 +19,14 @@ jobs:
     runs-on: ubuntu-18.04
     container:
       image: 'hadolint/hadolint:v1.18.0-alpine'
-    strategy:
-      matrix:
-        path:
-          - 'docs/Tutorial-PyTorch'
-          - 'docs/Tutorial-TensorFlow'
-          - 'docs/Tutorial-YOLO-Darknet'
     steps:
       - uses: actions/checkout@v2
-      - name: lint
-        working-directory: ${{ matrix.path }}
+      - name: Lint PyTorch
+        working-directory: 'docs/Tutorial-PyTorch'
+        run: hadolint ./Dockerfile
+      - name: Lint TensorFlow
+        working-directory: 'docs/Tutorial-TensorFlow'
+        run: hadolint ./Dockerfile
+      - name: Lint 
+        working-directory: 'docs/Tutorial-YOLO-Darknet'
         run: hadolint ./Dockerfile
