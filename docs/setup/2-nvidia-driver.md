@@ -76,14 +76,23 @@ dpkg -l | grep nvidia
 dpkg -l | grep cuda
 ```
 
-で残りがないかを確認。
+で残りがないかを確認。   
+
+もし cuda で残りがあったら `autoremove` で削除を試みる。 
+
+```sh
+sudo apt autoremove cuda
+```
+
+これでもまだ消えない場合には個別に `remove` する。
 
 ### 新しいドライバーのインストール
 
 
-パッケージ一覧をアップデートした後に、推奨ドライバーを確認する。
+リポジトリを追加して、パッケージ一覧をアップデートした後に、推奨ドライバーを確認する。
 
 ```sh
+sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt update
 ubuntu-drivers devices
 ```
