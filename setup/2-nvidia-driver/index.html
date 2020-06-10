@@ -726,10 +726,17 @@ dpkg -l <span class="p">|</span> grep cuda
 </code></pre></div>
 
 
-<p>で残りがないかを確認。</p>
+<p>で残りがないかを確認。   </p>
+<p>もし cuda で残りがあったら <code>autoremove</code> で削除を試みる。 </p>
+<div class="codehilite"><pre><span></span><code>sudo apt autoremove cuda
+</code></pre></div>
+
+
+<p>これでもまだ消えない場合には個別に <code>remove</code> する。</p>
 <h3 id="_1">新しいドライバーのインストール<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>パッケージ一覧をアップデートした後に、推奨ドライバーを確認する。</p>
-<div class="codehilite"><pre><span></span><code>sudo apt update
+<p>リポジトリを追加して、パッケージ一覧をアップデートした後に、推奨ドライバーを確認する。</p>
+<div class="codehilite"><pre><span></span><code>sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt update
 ubuntu-drivers devices
 </code></pre></div>
 
