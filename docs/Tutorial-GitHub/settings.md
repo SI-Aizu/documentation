@@ -11,3 +11,5 @@
 <img width="892" alt="GitHub Email notification preferences" src="https://user-images.githubusercontent.com/30958501/84338454-106b3080-abd7-11ea-91b4-6659e1a998dd.png">
 
 これで通知が対象のメールアドレスに届くようになる。
+
+- [通知を設定する - GitHub ヘルプ](https://help.github.com/ja/github/managing-subscriptions-and-notifications-on-github/configuring-notifications)
