@@ -4,21 +4,21 @@
 
 - [環境構築](./setup)
 - Deep Learning Framework, Python project management
-- [Git, GitHub の使い方](./Tutorial-GitHub)
-- [VoTT の使い方](./Tutorial-VoTT)
+- [Git and GitHub Tutorial](./Tutorial-GitHub)
+- [VoTT Tutorial](./Tutorial-VoTT)
 - [Useful Links](./Useful-Links/)
-- [PyTorch](./Tutorial-PyTorch)
-- [TensorFlow](./Tutorial-TensorFlow)
+- [PyTorch Tutorial](./Tutorial-PyTorch)
+- [TensorFlow Tutorial](./Tutorial-TensorFlow)
 
 
 
 ## 関係者以外の閲覧者へ
 
-このサイト・リポジトリのコンテンツについて
+このサイト・リポジトリのコンテンツについて。
 
-- 閲覧はご自由にどうぞ
-- [MIT License] のもとで利用していただけますが、サポートや保証は一切しません
-- Google Analytics 等のアクセス解析ツールは設置していません
+- 閲覧はご自由にどうぞ。
+- [MIT License] のもとで利用していただけます。サポートや保証は一切しません。
+- このサイトはアクセス解析ツールを設置していません。
 
 [MIT License]: https://github.com/SI-Aizu/documentation/blob/master/LICENSE
 
