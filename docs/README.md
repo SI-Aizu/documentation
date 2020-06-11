@@ -4,7 +4,7 @@
 
 - [環境構築](./setup)
 - Deep Learning Framework, Python project management
-- Git, GitHub の使い方
+- [Git, GitHub の使い方](./Tutorial-GitHub)
 - [VoTT の使い方](./Tutorial-VoTT)
 - [Useful Links](./Useful-Links/)
 - [PyTorch](./Tutorial-PyTorch)
