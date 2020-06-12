@@ -1,3 +1,5 @@
+# Layer
+
 ## 畳み込み層 Convolutional Layer
 
 ```python
@@ -44,4 +46,3 @@ print(out.shape)
 
 
 <img src="https://user-images.githubusercontent.com/39023477/84370861-ceacab00-ac13-11ea-9113-ec1da955ca0e.jpg" style="zoom:67%;" />
-
