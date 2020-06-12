@@ -1,4 +1,4 @@
-# Layer
+# Layers
 
 ## 畳み込み層 Convolutional Layer
 
