@@ -461,6 +461,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dropout_layer" class="md-nav__link">
+    ドロップアウト層 Dropout Layer
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -639,6 +646,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dropout_layer" class="md-nav__link">
+    ドロップアウト層 Dropout Layer
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -661,7 +675,7 @@
                 
                 <h1 id="layers">Layers<a class="headerlink" href="#layers" title="Permanent link">&para;</a></h1>
 <h2 id="convolutional_layer">畳み込み層 Convolutional Layer<a class="headerlink" href="#convolutional_layer" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># tf.keras.layers.Conv2D(filters, kernel_size, strides=(1, 1), padding=&#39;valid&#39;, activation=None, input_shape)</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># tf.keras.layers.Conv2D(filters, kernel_size, strides=(1, 1), padding=&#39;valid&#39;, activation=None)</span>
 <span class="n">input_shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># batch, I_h, I_w, channel</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">input_shape</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="n">input_shape</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
@@ -696,6 +710,26 @@
 
 
 <p><img src="https://user-images.githubusercontent.com/39023477/84370861-ceacab00-ac13-11ea-9113-ec1da955ca0e.jpg" style="zoom:67%;" /></p>
+<h2 id="dropout_layer">ドロップアウト層 Dropout Layer<a class="headerlink" href="#dropout_layer" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="c1"># tf.keras.layers.Dropout(rate, noise_shape=None)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mf">7.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="mf">9.</span><span class="p">]])</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">outputs</span> <span class="o">=</span> <span class="n">layer</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">training</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">outputs</span>
+<span class="c1"># &lt;tf.Tensor: shape=(3, 3), dtype=float32, numpy=</span>
+<span class="c1"># array([[ 1.25,  2.5 ,  3.75],</span>
+<span class="c1">#        [ 5.  ,  6.25,  7.5 ],</span>
+<span class="c1">#        [ 8.75, 10.  ,  0.  ]], dtype=float32)&gt;</span>
+</code></pre></div>
+
+
+<p><strong>Note</strong>: </p>
+<ul>
+<li>インプットをランダムに0にする(過学習防止)</li>
+<li>各インプットに 1 / (1 - rate) が加算される</li>
+</ul>
                 
               
               
