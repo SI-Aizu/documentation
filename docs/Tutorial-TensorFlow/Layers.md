@@ -3,7 +3,7 @@
 ## 畳み込み層 Convolutional Layer
 
 ```python
-# tf.keras.layers.Conv2D(filters, kernel_size, strides=(1, 1), padding='valid', activation=None, input_shape)
+# tf.keras.layers.Conv2D(filters, kernel_size, strides=(1, 1), padding='valid', activation=None)
 input_shape = (4, 5, 5, 3) # batch, I_h, I_w, channel
 x = tf.random.normal(input_shape)
 y = tf.keras.layers.Conv2D(2, 3, activation='relu', input_shape=input_shape)(x)
@@ -46,3 +46,25 @@ print(out.shape)
 
 
 <img src="https://user-images.githubusercontent.com/39023477/84370861-ceacab00-ac13-11ea-9113-ec1da955ca0e.jpg" style="zoom:67%;" />
+
+## ドロップアウト層 Dropout Layer
+
+```python
+# tf.keras.layers.Dropout(rate, noise_shape=None)
+x = tf.constant([[1., 2., 3.],
+                 [4., 5., 6.],
+                 [7., 8., 9.]])
+layer = tf.keras.layers.Dropout(0.2)
+outputs = layer(x, training=True)
+outputs
+# <tf.Tensor: shape=(3, 3), dtype=float32, numpy=
+# array([[ 1.25,  2.5 ,  3.75],
+#        [ 5.  ,  6.25,  7.5 ],
+#        [ 8.75, 10.  ,  0.  ]], dtype=float32)>
+```
+
+**Note**: 
+
+- インプットをランダムに0にする(過学習防止)
+- 各インプットに 1 / (1 - rate) が加算される
+
