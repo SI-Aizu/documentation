@@ -40,50 +40,6 @@ sudo curl -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPO
 
 
 
-## Install Rootless Docker
-
-Ubuntu のみ。
-
-Rootless Docker もオススメ。
-
-> [Docker 19.03新機能 (root権限不要化、GPU対応強化、CLIプラグイン) - nttlabs - Medium](https://medium.com/nttlabs/docker-1903-5155754ff8ac)
-
-```sh
-cd ~
-sudo apt update
-sudo apt upgrade -y
-sudo apt install -y curl uidmap
-curl -fsSL https://get.docker.com/rootless | sh
-```
-
-以下を `~/.bashrc` に追記する。
-
-```sh
-# Rootless Docker
-export PATH="${HOME}/bin:${PATH}"
-export DOCKER_HOST="unix:///run/user/1000/docker.sock"
-```
-
-```sh
-# ~/.bashrc への変更を反映するために Bash を再起動
-exec bash
-
-# Docker daemon を起動
-systemctl --user start docker
-
-# Docker の動作確認
-docker run --rm -it hello-world
-```
-
-マシンを再起動した後は再び `systemctl --user start docker` を実行する必要がある。
-でないと次のようなエラーメッセージが表示されて docker を実行できない。
-
-```
-Cannot connect to the Docker daemon at unix:///run/user/1000/docker.sock. Is the docker daemon running?
-```
-
-
-
 ## Install nvidia-docker
 
 ### nvidia-docker
