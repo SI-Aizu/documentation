@@ -589,13 +589,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install_rootless_docker" class="md-nav__link">
-    Install Rootless Docker
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#install_nvidia-docker" class="md-nav__link">
     Install nvidia-docker
   </a>
@@ -714,13 +707,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install_rootless_docker" class="md-nav__link">
-    Install Rootless Docker
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#install_nvidia-docker" class="md-nav__link">
     Install nvidia-docker
   </a>
@@ -824,44 +810,6 @@
 sudo curl -L <span class="s2">&quot;https://github.com/docker/compose/releases/download/</span><span class="si">${</span><span class="nv">DOCKER_COMPOSE_VERSION</span><span class="si">}</span><span class="s2">/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&quot;</span> -o /usr/local/bin/docker-compose <span class="o">&amp;&amp;</span> <span class="se">\</span>
     sudo chmod +x /usr/local/bin/docker-compose <span class="o">&amp;&amp;</span> <span class="se">\</span>
     docker-compose --version
-</code></pre></div>
-
-
-<h2 id="install_rootless_docker">Install Rootless Docker<a class="headerlink" href="#install_rootless_docker" title="Permanent link">&para;</a></h2>
-<p>Ubuntu のみ。</p>
-<p>Rootless Docker もオススメ。</p>
-<blockquote>
-<p><a href="https://medium.com/nttlabs/docker-1903-5155754ff8ac">Docker 19.03新機能 (root権限不要化、GPU対応強化、CLIプラグイン) - nttlabs - Medium</a></p>
-</blockquote>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> ~
-sudo apt update
-sudo apt upgrade -y
-sudo apt install -y curl uidmap
-curl -fsSL https://get.docker.com/rootless <span class="p">|</span> sh
-</code></pre></div>
-
-
-<p>以下を <code>~/.bashrc</code> に追記する。</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Rootless Docker</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/bin:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">export</span> <span class="nv">DOCKER_HOST</span><span class="o">=</span><span class="s2">&quot;unix:///run/user/1000/docker.sock&quot;</span>
-</code></pre></div>
-
-
-<div class="codehilite"><pre><span></span><code><span class="c1"># ~/.bashrc への変更を反映するために Bash を再起動</span>
-<span class="nb">exec</span> bash
-
-<span class="c1"># Docker daemon を起動</span>
-systemctl --user start docker
-
-<span class="c1"># Docker の動作確認</span>
-docker run --rm -it hello-world
-</code></pre></div>
-
-
-<p>マシンを再起動した後は再び <code>systemctl --user start docker</code> を実行する必要がある。
-でないと次のようなエラーメッセージが表示されて docker を実行できない。</p>
-<div class="codehilite"><pre><span></span><code><span class="err">Cannot connect to the Docker daemon at unix:///run/user/1000/docker.sock. Is the docker daemon running?</span>
 </code></pre></div>
 
 
