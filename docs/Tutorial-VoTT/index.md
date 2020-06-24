@@ -41,9 +41,9 @@ TBW.
 
 ## Setup a new project
 
-You can use [vott_sample_project] for your tutorial.
+You can use [sample_project] for your tutorial.
 
-[vott_sample_project]: https://github.com/SI-Aizu/documentation/releases/download/v0.1.0/vott.zip
+[sample_project]: https://github.com/SI-Aizu/documentation/releases/download/v0.1.0/vott.zip
 
 The following is a project structure. Put your images in a `source` directory.
 
@@ -90,9 +90,9 @@ Finally, click `Save Project`
 
 ## Annotation
 
-You can also view [the video that shows a manner of annotation (vott.mp4)].
+You can also view [the video that shows a manner of annotation (sample.mp4)].
 
-[the video that shows a manner of annotation (vott.mp4)]: https://github.com/SI-Aizu/documentation/releases/download/v0.1.0/vott.zip
+[the video that shows a manner of annotation (sample.mp4)]: https://github.com/SI-Aizu/documentation/releases/download/v0.1.0/vott.zip
 
 ### Keyboard Shortcuts
 
@@ -166,9 +166,9 @@ sample_project
 
 ## Open existing project
 
-You can use [vott_sample_existing_project] as an example for opening local project.
+You can use [sample_existing_project] as an example for opening local project.
 
-[vott_sample_existing_project]: https://github.com/SI-Aizu/documentation/releases/download/v0.1.0/vott.zip
+[sample_existing_project]: https://github.com/SI-Aizu/documentation/releases/download/v0.1.0/vott.zip
 
 1. Click `Open Local Project`
 2. Select VoTT project file (e.g. `sample_project.vott`)
