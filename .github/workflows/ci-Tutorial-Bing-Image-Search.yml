@@ -1,0 +1,25 @@
+name: CI Tutorial-Bing-Image-Search
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/ci-Tutorial-Bing-Image-Search.yml'
+      - 'docs/ci-Tutorial-Bing-Image-Search/**'
+      - '!**.md'
+  pull_request:
+    paths:
+      - '.github/workflows/ci-Tutorial-Bing-Image-Search.yml'
+      - 'docs/ci-Tutorial-Bing-Image-Search/**'
+      - '!**.md'
+
+jobs:
+  test-Tutorial-Bing-Image-Search:
+    runs-on: ubuntu-18.04
+    defaults:
+      run:
+        working-directory: docs/Tutorial-Bing-Image-Search
+    steps:
+      - uses: actions/checkout@v2.3.1
+      - run: docker-compose build
