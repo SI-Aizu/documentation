@@ -1,0 +1,25 @@
+name: CI Tutorial-google-images-download
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/ci-Tutorial-google-images-download.yml'
+      - 'docs/ci-Tutorial-google-images-download/**'
+      - '!**.md'
+  pull_request:
+    paths:
+      - '.github/workflows/ci-Tutorial-google-images-download.yml'
+      - 'docs/ci-Tutorial-google-images-download/**'
+      - '!**.md'
+
+jobs:
+  test-Tutorial-google-images-download:
+    runs-on: ubuntu-18.04
+    defaults:
+      run:
+        working-directory: docs/Tutorial-google-images-download
+    steps:
+      - uses: actions/checkout@v2.3.1
+      - run: docker-compose build
