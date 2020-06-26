@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  dev:
+    build: .
+    image: bing_image_search
+    container_name: bing_image_search
+    volumes:
+      - ${PWD}:/src
+    stdin_open: true
+    tty: true
+    command:
+      - bash
