@@ -12,7 +12,7 @@ from io import BytesIO
 parser = argparse.ArgumentParser(
     description="A script for the Bing Image Search"
 )
-num_downloads_default = 16
+num_downloads_default = 4
 parser.add_argument(
     "-n", "--num-downloads", default=num_downloads_default,
     help=f"A number of download images. default: {num_downloads_default}"
