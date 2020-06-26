@@ -4,11 +4,13 @@
 
 - [環境構築](./setup)
 - Deep Learning Framework, Python project management
-- [Git and GitHub Tutorial](./Tutorial-GitHub)
-- [VoTT Tutorial](./Tutorial-VoTT)
-- [Useful Links](./Useful-Links/)
-- [PyTorch Tutorial](./Tutorial-PyTorch)
-- [TensorFlow Tutorial](./Tutorial-TensorFlow)
+- Tutorials
+  - [Git and GitHub](./Tutorial-GitHub)
+  - [Bing Image Search](./Tutorial-Bing-Image-Search)
+  - [VoTT](./Tutorial-VoTT)
+  - [PyTorch](./Tutorial-PyTorch)
+  - [TensorFlow](./Tutorial-TensorFlow)
+- [Useful Links](./Useful-Links)
 
 
 
