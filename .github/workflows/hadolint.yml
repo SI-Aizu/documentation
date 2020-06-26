@@ -27,6 +27,9 @@ jobs:
       - name: Lint TensorFlow
         working-directory: 'docs/Tutorial-TensorFlow'
         run: hadolint ./Dockerfile
-      - name: Lint 
+      - name: Lint Darknet YOLO
         working-directory: 'docs/Tutorial-YOLO-Darknet'
+        run: hadolint ./Dockerfile
+      - name: Lint Bing Image Search
+        working-directory: 'docs/Tutorial-Bing-Image-Search'
         run: hadolint ./Dockerfile
