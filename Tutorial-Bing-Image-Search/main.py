@@ -11,10 +11,10 @@ from io import BytesIO
 parser = argparse.ArgumentParser(
     description="A script for the Bing Image Search"
 )
-num_downloads_default = 4
+num_downloads_default = 35
 parser.add_argument(
     "-n", "--num-downloads", default=num_downloads_default,
-    help=f"A number of download images. default: {num_downloads_default}"
+    help=f"The number of images to return in the response. The actual number delivered may be less than requested. The default is {num_downloads_default}. The maximum value is 150."
 )
 keyword_default = 'soccer game'
 parser.add_argument(
@@ -31,10 +31,13 @@ if __name__ == '__main__':
     endpoint = config['azure']['endpoint']
 
     num_downloads = int(args.num_downloads)
+    if 150 < num_downloads:
+        print('The maximum value is 150.')
+        exit(1)
 
     headers = {'Ocp-Apim-Subscription-Key' : subscription_key}
     search_term = args.keyword
-    params  = {'q': search_term, 'license': 'public', 'imageType': 'photo'}
+    params  = {'q': search_term, 'license': 'public', 'imageType': 'photo', 'count': num_downloads}
     response = requests.get(endpoint, headers=headers, params=params)
     response.raise_for_status()
     search_results = response.json()
