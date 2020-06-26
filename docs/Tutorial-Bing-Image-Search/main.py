@@ -43,7 +43,7 @@ if __name__ == '__main__':
 
     dt_now = datetime.datetime.now()
     save_dir = 'downloads_' + dt_now.strftime('%Y%m%d_%H%M%S')
-    os.makedirs(save_dir, exist_ok=True)
+    os.makedirs(save_dir)
     num_downloads_sqrt = int(math.sqrt(num_downloads))
     for i in range(num_downloads_sqrt):
         for j in range(num_downloads_sqrt):
