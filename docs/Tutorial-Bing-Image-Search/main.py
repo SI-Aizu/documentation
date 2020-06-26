@@ -1,5 +1,7 @@
 import configparser
 import os
+import datetime
+import math
 
 import requests
 import matplotlib.pyplot as plt
@@ -12,8 +14,8 @@ if __name__ == '__main__':
     config.read('settings.ini')
     subscription_key = config['azure']['subscription_key']
     endpoint = config['azure']['endpoint']
-    # print(f'{subscription_key=}')
-    # print(f'{endpoint=}')
+
+    num_downloads = 25
 
     headers = {'Ocp-Apim-Subscription-Key' : subscription_key}
     search_term = 'soccer game'
@@ -21,14 +23,16 @@ if __name__ == '__main__':
     response = requests.get(endpoint, headers=headers, params=params)
     response.raise_for_status()
     search_results = response.json()
-    thumbnail_urls = [img['thumbnailUrl'] for img in search_results['value'][:16]]
+    thumbnail_urls = [img['thumbnailUrl'] for img in search_results['value'][:num_downloads]]
 
-    save_dir = 'downloads'
+    dt_now = datetime.datetime.now()
+    save_dir = 'downloads_' + dt_now.strftime('%Y%m%d_%H%M%S')
     os.makedirs(save_dir, exist_ok=True)
-    f, axes = plt.subplots(4, 4)
-    for i in range(4):
-        for j in range(4):
-            image_data = requests.get(thumbnail_urls[i+4*j])
+    num_downloads_sqrt = int(math.sqrt(num_downloads))
+    f, axes = plt.subplots(num_downloads_sqrt, num_downloads_sqrt)
+    for i in range(num_downloads_sqrt):
+        for j in range(num_downloads_sqrt):
+            image_data = requests.get(thumbnail_urls[i+num_downloads_sqrt*j])
             image_data.raise_for_status()
             image = Image.open(BytesIO(image_data.content))
             axes[i][j].imshow(image)
