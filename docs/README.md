@@ -3,14 +3,15 @@
 研究室メンバー向けドキュメント。
 
 - [環境構築](./setup)
-- Deep Learning Framework, Python project management
-- Tutorials
-  - [Git and GitHub](./Tutorial-GitHub)
-  - [Bing Image Search](./Tutorial-Bing-Image-Search)
-  - [VoTT](./Tutorial-VoTT)
-  - [PyTorch](./Tutorial-PyTorch)
-  - [TensorFlow](./Tutorial-TensorFlow)
 - [Useful Links](./Useful-Links)
+
+Tutorials
+
+- [Git and GitHub](./Tutorial-GitHub)
+- [Bing Image Search](./Tutorial-Bing-Image-Search)
+- [VoTT](./Tutorial-VoTT)
+- [PyTorch](./Tutorial-PyTorch)
+- [TensorFlow](./Tutorial-TensorFlow)
 
 
 
