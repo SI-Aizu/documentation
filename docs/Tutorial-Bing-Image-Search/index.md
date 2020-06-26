@@ -1,6 +1,7 @@
 # Tutorial
 
 - [Bing Image Search API | Microsoft Azure](https://azure.microsoft.com/en-us/services/cognitive-services/bing-image-search-api/)
+- [Quickstart: Search for images using the Bing Image Search REST API and Python - Azure Cognitive Services | Microsoft Docs](https://docs.microsoft.com/en-us/azure/cognitive-services/Bing-Image-Search/quickstarts/python)
 
 
 
@@ -23,6 +24,10 @@ docker-compose run --rm dev bash
     ここらへんの手順は頻繁に変わるので公式ドキュメントを参照して最新の情報を確認すること。
     ここでは解説しない。
     Check the latest official Azure documentation.
+
+- [Pricing - Bing Search API v7 | Microsoft Azure](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/)
+
+INSTANCE を Free で作成すれば 1000回/月 まで無料で利用できる。
 
 
 
