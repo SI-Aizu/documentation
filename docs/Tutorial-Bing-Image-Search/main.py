@@ -2,10 +2,27 @@ import configparser
 import os
 import datetime
 import math
+import argparse
 
 import requests
 from PIL import Image
 from io import BytesIO
+
+
+parser = argparse.ArgumentParser(
+    description="A script for the Bing Image Search"
+)
+num_downloads_default = 16
+parser.add_argument(
+    "-n", "--num-downloads", default=num_downloads_default,
+    help=f"A number of download images. default: {num_downloads_default}"
+)
+keyword_default = 'soccer game'
+parser.add_argument(
+    "-k", "--keyword", default=keyword_default,
+    help=f"A search keyword. default: {keyword_default}"
+)
+args = parser.parse_args()
 
 
 if __name__ == '__main__':
@@ -14,10 +31,10 @@ if __name__ == '__main__':
     subscription_key = config['azure']['subscription_key']
     endpoint = config['azure']['endpoint']
 
-    num_downloads = 25
+    num_downloads = int(args.num_downloads)
 
     headers = {'Ocp-Apim-Subscription-Key' : subscription_key}
-    search_term = 'soccer game'
+    search_term = args.keyword
     params  = {'q': search_term, 'license': 'public', 'imageType': 'photo'}
     response = requests.get(endpoint, headers=headers, params=params)
     response.raise_for_status()
