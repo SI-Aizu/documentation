@@ -1,4 +1,4 @@
-# Tutorial Bing Image Search
+# Tutorial
 
 - [Bing Image Search API | Microsoft Azure](https://azure.microsoft.com/en-us/services/cognitive-services/bing-image-search-api/)
 
