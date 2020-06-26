@@ -45,9 +45,11 @@ if __name__ == '__main__':
     save_dir = 'downloads_' + dt_now.strftime('%Y%m%d_%H%M%S')
     os.makedirs(save_dir)
     num_downloads_sqrt = int(math.sqrt(num_downloads))
+    image_count = 0
     for i in range(num_downloads_sqrt):
         for j in range(num_downloads_sqrt):
             image_data = requests.get(thumbnail_urls[i+num_downloads_sqrt*j])
             image_data.raise_for_status()
             image = Image.open(BytesIO(image_data.content))
-            image.save(f'{save_dir}/thumbnail_{i}_{j}.jpg')
+            image.save(f'{save_dir}/thumbnail_{image_count}.jpg')
+            image_count += 1
