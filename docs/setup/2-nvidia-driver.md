@@ -67,8 +67,8 @@ conda もしくは nvidia-docker を利用する場合は CUDA や cuDNN のイ�
 ### 古いドライバーと cuda を削除
 
 ```sh
-sudo apt --purge remove nvidia-*
-sudo apt --purge remove cuda-*
+sudo apt --purge remove 'nvidia-*'
+sudo apt --purge remove 'cuda-*'
 ```
 
 ```sh
