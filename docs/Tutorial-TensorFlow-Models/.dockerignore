@@ -1,3 +1,4 @@
 .*
 *
-!requirements.txt
+!conda.yml
+!.bash_aliases
