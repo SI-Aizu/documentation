@@ -53,7 +53,7 @@ class BingImageSearchAPI:
 
     def generate_save_dir_name(self) -> None:
         dt_now = datetime.datetime.now()
-        self.save_dir = 'downloads_' + dt_now.strftime('%Y%m%d_%H%M%S')
+        self.save_dir = 'downloads/images_' + dt_now.strftime('%Y%m%d_%H%M%S')
 
     def create_save_dir(self) -> None:
         self.generate_save_dir_name()
@@ -64,22 +64,20 @@ class BingImageSearchAPI:
             json.dump(self.json_result, f)
 
     def download_images(self) -> None:
-        image_count = 0
-        for i in range(num_downloads):
+        for image_count in range(num_downloads):
             image_data = requests.get(self.image_urls[image_count])
             image_data.raise_for_status()
             image = Image.open(BytesIO(image_data.content))
             image.save(f'{self.save_dir}/image_{image_count}.jpg')
-            image_count += 1
 
     def save_images(self) -> None:
         self.generate_save_dir_name()
+        self.create_save_dir()
         self.get_json()
         self.save_json()
         if self.is_skip_downloading_images:
             return
         else:
-            self.create_save_dir()
             self.get_image_urls()
             self.download_images()
 
