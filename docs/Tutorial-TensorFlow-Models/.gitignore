@@ -1,0 +1,6 @@
+/data/**
+/exported_graphs/*
+/saved_model/*
+
+nohup.log
+!.gitkeep
