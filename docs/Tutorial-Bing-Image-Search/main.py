@@ -83,9 +83,9 @@ class BingImageSearchAPI:
             image_data = requests.get(url)
             # image_data.raise_for_status()
             if image_data.status_code == requests.codes.ok:
-                print(f'Downloaded {url}')
+                print(f'{num}: Downloaded {url}')
             else:
-                print(f'Failed to download {url}')
+                print(f'{num}: Failed to download {url}')
             image = Image.open(BytesIO(image_data.content))
             image.save(f'{self.save_dir}/image_{num}.jpg')
 
