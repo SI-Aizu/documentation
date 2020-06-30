@@ -15,7 +15,7 @@ on:
       - '!**.md'
 
 jobs:
-  test-Tutorial-Bing-Image-Search:
+  test:
     runs-on: ubuntu-18.04
     defaults:
       run:
