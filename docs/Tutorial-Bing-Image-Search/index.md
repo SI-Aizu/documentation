@@ -57,12 +57,6 @@ endpoint = https://YOUR_ENDPOINT.cognitiveservices.azure.com/bing/v7.0/images/se
 python main.py --help
 ```
 
-### Donload Size
-
-```sh
-python main.py -n 4
-```
-
 ### Search Keyword
 
 ```sh
