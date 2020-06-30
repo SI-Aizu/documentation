@@ -57,23 +57,6 @@ sudo apt update && sudo apt install -y nvidia-container-toolkit
 sudo systemctl restart docker
 ```
 
-### Notes for Rootless Docker
-
-- [nvidia-container-runtime doesn't work with rootless mode · Issue #38729 · moby/moby](https://github.com/moby/moby/issues/38729)
-
-現在 Rootless Docker から GPU を利用するには上記リンク先のような対応が必要。
-
-```sh
-sudo vim /etc/nvidia-container-runtime/config.toml
-```
-
-具体的には上記ファイルを以下のように書き換える。
-
-```diff
-- #no-cgroups = false
-+ no-cgroups = true
-```
-
 
 
 ## Container から GPU を利用する
@@ -81,7 +64,7 @@ sudo vim /etc/nvidia-container-runtime/config.toml
 `nvidia-smi` で確認できる CUDA version と docker image tag の CUDA version を一致させる必要がある。
 
 ```sh
-docker run --rm -i -t --gpus all nvidia/cuda:10.2-devel-ubuntu18.04 bash
+docker run --rm -i -t --gpus all nvidia/cuda:10.2-base-ubuntu18.04 bash
 ```
 
 コンテナ内で `nvidia-smi` を実行して GPU status を確認できれば問題ない。
