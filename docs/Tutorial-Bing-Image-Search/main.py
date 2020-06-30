@@ -31,7 +31,7 @@ args = parser.parse_args()
 
 class BingImageSearchAPI:
     save_dir = ''
-    json_result = {}
+    json_results = []
     image_urls = []
 
     def __init__(self, options: Dict) -> None:
@@ -46,10 +46,12 @@ class BingImageSearchAPI:
         params  = {'q': self.keyword, 'license': 'public', 'imageType': 'photo', 'count': self.num_downloads}
         response = requests.get(self.endpoint, headers=headers, params=params)
         response.raise_for_status()
-        self.json_result = response.json()
+        self.json_results.append(response.json())
 
     def get_image_urls(self) -> None:
-        self.image_urls = [img['thumbnailUrl'] for img in self.json_result['value'][:self.num_downloads]]
+        for json_result in self.json_results:
+            for img in json_result['value'][:self.num_downloads]:
+                self.image_urls.append(img['thumbnailUrl'])
 
     def generate_save_dir_name(self) -> None:
         dt_now = datetime.datetime.now()
@@ -60,8 +62,9 @@ class BingImageSearchAPI:
         os.makedirs(self.save_dir)
 
     def save_json(self) -> None:
-        with open(f'{self.save_dir}.json', 'w') as f:
-            json.dump(self.json_result, f)
+        for num, result in enumerate(self.json_results):
+            with open(f'{self.save_dir}_{num}.json', 'w') as f:
+                json.dump(result, f)
 
     def download_images(self) -> None:
         for image_count in range(num_downloads):
