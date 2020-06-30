@@ -1,5 +1,56 @@
 # Tutorial
 
+Inception v2 base SSD 300 の転移学習 (Transfer Learning)
+
+
+
+## Prepare dataset
+
+### train val
+
+`.tfrecord` を以下のように配置。
+
+- `data/train`: 教師データ
+- `data/val`: 検証データ
+
+```console
+$ tree data
+data
+├── change_tfrecord_filename.sh
+├── tf_label_map.pbtxt
+├── train
+│   ├── frame0000.tfrecord
+│   ├── frame0001.tfrecord
+│   ├── frame0002.tfrecord
+...
+│   └── frame0305.tfrecord
+└── val
+    ├── frame0000.tfrecord
+    ├── frame0001.tfrecord
+    ├── frame0002.tfrecord
+...
+```
+
+```sh
+cd docs/Tutorial-TensorFlow-Models/data
+bash ./change_tfrecord_filename.sh 
+```
+
+### tf_label_map.pbtxt
+
+```
+item {
+ id: 1
+ name: 'cat'
+}
+```
+
+
+
+## config
+
+`config/ssd_inception_v2_coco.config` を編集することで前処理 (data augmentation) を追加・削除できる。
+
 
 
 ## Build Docker image
