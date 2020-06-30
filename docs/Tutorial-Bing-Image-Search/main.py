@@ -10,13 +10,10 @@ from PIL import Image
 from io import BytesIO
 
 
+API_MAX_COUNT = 150
+
 parser = argparse.ArgumentParser(
     description="A script for the Bing Image Search"
-)
-num_downloads_default = 35
-parser.add_argument(
-    "-n", "--num-downloads", default=num_downloads_default,
-    help=f"The number of fetching images. The actual number delivered may be less than requested. The default is {num_downloads_default}. The maximum value is 150. Set 0 to download all estimated images"
 )
 keyword_default = 'soccer game'
 parser.add_argument(
@@ -38,19 +35,34 @@ class BingImageSearchAPI:
         self.subscription_key = options['subscription_key']
         self.endpoint = options['endpoint']
         self.keyword = options['keyword']
-        self.num_downloads = options['num_downloads']
         self.is_skip_downloading_images = options['is_skip_downloading_images']
 
-    def get_json(self) -> None:
+    def send_request(self, offset: int, count: int):
         headers = {'Ocp-Apim-Subscription-Key' : self.subscription_key}
-        params  = {'q': self.keyword, 'license': 'public', 'imageType': 'photo', 'count': self.num_downloads}
+        params  = {
+            'q': self.keyword,
+            'license': 'public',
+            'imageType': 'photo',
+            'offset': offset,
+            'count': count}
         response = requests.get(self.endpoint, headers=headers, params=params)
         response.raise_for_status()
-        self.json_results.append(response.json())
+        json = response.json()
+        self.json_results.append(json)
+        total_num_images = json['totalEstimatedMatches']
+        next_offset = json['nextOffset']
+        return total_num_images, next_offset
+
+    def get_json(self) -> None:
+        total_num_images, next_offset = self.send_request(offset=0, count=API_MAX_COUNT)
+        print(f'{total_num_images=}, {next_offset=}')
+        while next_offset < total_num_images:
+            _, next_offset = self.send_request(offset=next_offset, count=API_MAX_COUNT)
+            print(f'{total_num_images=}, {next_offset=}')
 
     def get_image_urls(self) -> None:
         for json_result in self.json_results:
-            for img in json_result['value'][:self.num_downloads]:
+            for img in json_result['value']:
                 self.image_urls.append(img['thumbnailUrl'])
 
     def generate_save_dir_name(self) -> None:
@@ -67,11 +79,15 @@ class BingImageSearchAPI:
                 json.dump(result, f)
 
     def download_images(self) -> None:
-        for image_count in range(num_downloads):
-            image_data = requests.get(self.image_urls[image_count])
-            image_data.raise_for_status()
+        for num, url in enumerate(self.image_urls):
+            image_data = requests.get(url)
+            # image_data.raise_for_status()
+            if image_data.status_code == requests.codes.ok:
+                print(f'Downloaded {url}')
+            else:
+                print(f'Failed to download {url}')
             image = Image.open(BytesIO(image_data.content))
-            image.save(f'{self.save_dir}/image_{image_count}.jpg')
+            image.save(f'{self.save_dir}/image_{num}.jpg')
 
     def save_images(self) -> None:
         self.generate_save_dir_name()
@@ -91,16 +107,10 @@ if __name__ == '__main__':
     subscription_key = config['azure']['subscription_key']
     endpoint = config['azure']['endpoint']
 
-    num_downloads = int(args.num_downloads)
-    if num_downloads < 0:
-        print(f'Invalid input number of fetching images: {num_downloads}')
-        exit(1)
-
     options: Dict = {
         'subscription_key': subscription_key,
         'endpoint': endpoint,
         'keyword': args.keyword,
-        'num_downloads': num_downloads,
         'is_skip_downloading_images': args.skip_downloading_images
     }
     api = BingImageSearchAPI(options)
