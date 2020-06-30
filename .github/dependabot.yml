@@ -8,9 +8,9 @@ updates:
     time: '10:00'
     timezone: Japan
   labels:
-  - "dependencies"
+  - "CI/CD"
   commit-message:
-    prefix: deps
+    prefix: ci
 
 - package-ecosystem: pip
   directory: "docs/Tutorial-Bing-Image-Search"
