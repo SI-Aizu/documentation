@@ -881,13 +881,19 @@ ubuntu-drivers devices
 
 
 <p>を実行すると</p>
-<div class="codehilite"><pre><span></span><code><span class="n">driver</span>    <span class="o">:</span> <span class="n">nvidia</span><span class="o">-</span><span class="mi">415</span> <span class="o">-</span> <span class="n">thrid</span><span class="o">-</span><span class="n">party</span> <span class="n">free</span>
-<span class="n">driver</span>    <span class="o">:</span> <span class="n">nvidia</span><span class="o">-</span><span class="mi">430</span> <span class="o">-</span> <span class="n">thrid</span><span class="o">-</span><span class="n">party</span> <span class="n">free</span> <span class="n">recommended</span>
+<div class="codehilite"><pre><span></span><code><span class="err">== /sys/devices/pci0000:16/0000:16:00.0/0000:17:00.0 ==</span>
+<span class="err">modalias : pci:v000010DEd00001E07sv00001043sd00008666bc03sc00i00</span>
+<span class="err">vendor   : NVIDIA Corporation</span>
+<span class="err">driver   : nvidia-driver-415 - third-party free</span>
+<span class="err">driver   : nvidia-driver-435 - distro non-free</span>
+<span class="err">driver   : nvidia-driver-410 - third-party free</span>
+<span class="err">driver   : nvidia-driver-440 - distro non-free recommended</span>
+<span class="err">driver   : xserver-xorg-video-nouveau - distro free builtin</span>
 </code></pre></div>
 
 
 <p>など(一部省略)が出力されるので、推奨 (recommended) されたドライバーをインストールする。</p>
-<div class="codehilite"><pre><span></span><code>sudo apt install -y nvidia-430
+<div class="codehilite"><pre><span></span><code>sudo apt install -y nvidia-driver-440
 </code></pre></div>
 
 
