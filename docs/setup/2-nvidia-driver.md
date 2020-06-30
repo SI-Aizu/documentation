@@ -100,14 +100,20 @@ ubuntu-drivers devices
 を実行すると
 
 ```
-driver    : nvidia-415 - thrid-party free
-driver    : nvidia-430 - thrid-party free recommended
+== /sys/devices/pci0000:16/0000:16:00.0/0000:17:00.0 ==
+modalias : pci:v000010DEd00001E07sv00001043sd00008666bc03sc00i00
+vendor   : NVIDIA Corporation
+driver   : nvidia-driver-415 - third-party free
+driver   : nvidia-driver-435 - distro non-free
+driver   : nvidia-driver-410 - third-party free
+driver   : nvidia-driver-440 - distro non-free recommended
+driver   : xserver-xorg-video-nouveau - distro free builtin
 ```
 
 など(一部省略)が出力されるので、推奨 (recommended) されたドライバーをインストールする。
 
 ```sh
-sudo apt install -y nvidia-430
+sudo apt install -y nvidia-driver-440
 ```
 
 再起動した後に GPU が認識できるか確認する。
