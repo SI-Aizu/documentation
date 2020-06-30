@@ -675,13 +675,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#notes_for_rootless_docker" class="md-nav__link">
-    Notes for Rootless Docker
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -793,13 +786,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#notes_for_rootless_docker" class="md-nav__link">
-    Notes for Rootless Docker
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -900,24 +886,9 @@ sudo systemctl restart docker
 </code></pre></div>
 
 
-<h3 id="notes_for_rootless_docker">Notes for Rootless Docker<a class="headerlink" href="#notes_for_rootless_docker" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://github.com/moby/moby/issues/38729">nvidia-container-runtime doesn't work with rootless mode · Issue #38729 · moby/moby</a></li>
-</ul>
-<p>現在 Rootless Docker から GPU を利用するには上記リンク先のような対応が必要。</p>
-<div class="codehilite"><pre><span></span><code>sudo vim /etc/nvidia-container-runtime/config.toml
-</code></pre></div>
-
-
-<p>具体的には上記ファイルを以下のように書き換える。</p>
-<div class="codehilite"><pre><span></span><code><span class="gd">- #no-cgroups = false</span>
-<span class="gi">+ no-cgroups = true</span>
-</code></pre></div>
-
-
 <h2 id="container_gpu">Container から GPU を利用する<a class="headerlink" href="#container_gpu" title="Permanent link">&para;</a></h2>
 <p><code>nvidia-smi</code> で確認できる CUDA version と docker image tag の CUDA version を一致させる必要がある。</p>
-<div class="codehilite"><pre><span></span><code>docker run --rm -i -t --gpus all nvidia/cuda:10.2-devel-ubuntu18.04 bash
+<div class="codehilite"><pre><span></span><code>docker run --rm -i -t --gpus all nvidia/cuda:10.2-base-ubuntu18.04 bash
 </code></pre></div>
 
 
