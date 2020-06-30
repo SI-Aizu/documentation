@@ -1,0 +1,25 @@
+name: CI Tutorial-TensorFlow-Models
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/ci-Tutorial-TensorFlow-Models.yml'
+      - 'docs/Tutorial-TensorFlow-Models/**'
+      - '!**.md'
+  pull_request:
+    paths:
+      - '.github/workflows/ci-Tutorial-TensorFlow-Models.yml'
+      - 'docs/Tutorial-TensorFlow-Models/**'
+      - '!**.md'
+
+jobs:
+  test-Tutorial-TensorFlow-Models:
+    runs-on: ubuntu-18.04
+    defaults:
+      run:
+        working-directory: docs/Tutorial-TensorFlow-Models
+    steps:
+      - uses: actions/checkout@v2.3.1
+      - run: make build
