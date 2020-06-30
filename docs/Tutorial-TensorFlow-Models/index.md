@@ -93,5 +93,6 @@ python3 ./convert_pbtxt_label.py \
 コンテナ内。
 
 ```sh
-python scripts/detect.py -i ./path_to_image.jpg
+cd ~/models/research/object_detection_tools
+python3 scripts/detect.py -i ./test.jpg
 ```

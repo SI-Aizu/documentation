@@ -14,7 +14,8 @@ RUN apt-get update && \
     wget \
     curl \
     unzip \
-    build-essential && \
+    build-essential \
+    libsm6 libxext6 libxrender-dev && \
     rm -rf /var/lib/apt/lists/*
 
 ENV LC_ALL=C.UTF-8
@@ -54,7 +55,8 @@ WORKDIR /root/build/cocoapi/PythonAPI
 RUN eval "$(~/miniconda/bin/conda shell.bash hook)" && \
     conda activate conda && \
     make && \
-    python3 -m pip install pycocotools==2.0.0
+    python3 -m pip install --no-cache-dir pycocotools==2.0.0 && \
+    python3 -m pip install --no-cache-dir opencv-python
 
 COPY .bash_aliases /root/.bash_aliases
 WORKDIR /root/models/research/object_detection_tools
