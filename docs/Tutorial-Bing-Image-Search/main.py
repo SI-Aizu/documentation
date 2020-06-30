@@ -3,6 +3,7 @@ import os
 import datetime
 import argparse
 import json
+from typing import Dict
 
 import requests
 from PIL import Image
@@ -33,12 +34,12 @@ class BingImageSearchAPI:
     json_result = {}
     image_urls = []
 
-    def __init__(self, subscription_key: str, endpoint: str, keyword: str, num_downloads: int, is_skip_downloading_images: bool) -> None:
-        self.subscription_key = subscription_key
-        self.endpoint = endpoint
-        self.keyword = keyword
-        self.num_downloads = num_downloads
-        self.is_skip_downloading_images = is_skip_downloading_images
+    def __init__(self, options: Dict) -> None:
+        self.subscription_key = options['subscription_key']
+        self.endpoint = options['endpoint']
+        self.keyword = options['keyword']
+        self.num_downloads = options['num_downloads']
+        self.is_skip_downloading_images = options['is_skip_downloading_images']
 
     def get_json(self) -> None:
         headers = {'Ocp-Apim-Subscription-Key' : self.subscription_key}
@@ -63,8 +64,6 @@ class BingImageSearchAPI:
             json.dump(self.json_result, f)
 
     def download_images(self) -> None:
-        if self.is_skip_downloading_images:
-            return
         image_count = 0
         for i in range(num_downloads):
             image_data = requests.get(self.image_urls[image_count])
@@ -72,6 +71,17 @@ class BingImageSearchAPI:
             image = Image.open(BytesIO(image_data.content))
             image.save(f'{self.save_dir}/image_{image_count}.jpg')
             image_count += 1
+
+    def save_images(self) -> None:
+        self.generate_save_dir_name()
+        self.get_json()
+        self.save_json()
+        if self.is_skip_downloading_images:
+            return
+        else:
+            self.create_save_dir()
+            self.get_image_urls()
+            self.download_images()
 
 
 if __name__ == '__main__':
@@ -85,10 +95,12 @@ if __name__ == '__main__':
         print(f'Invalid input number of fetching images: {num_downloads}')
         exit(1)
 
-    api = BingImageSearchAPI(subscription_key, endpoint, args.keyword, num_downloads, args.skip_downloading_images)
-    api.generate_save_dir_name()
-    api.create_save_dir()
-    api.get_json()
-    api.save_json()
-    api.get_image_urls()
-    api.download_images()
+    options: Dict = {
+        'subscription_key': subscription_key,
+        'endpoint': endpoint,
+        'keyword': args.keyword,
+        'num_downloads': num_downloads,
+        'is_skip_downloading_images': args.skip_downloading_images
+    }
+    api = BingImageSearchAPI(options)
+    api.save_images()
