@@ -1,0 +1,23 @@
+{
+  "recommendations": [
+    "ms-vscode-remote.vscode-remote-extensionpack",
+    "ms-azuretools.vscode-docker",
+    "bungcip.better-toml",
+    "editorconfig.editorconfig",
+    "lfs.vscode-emacs-friendly",
+    "grapecity.gc-excelviewer",
+    "donjayamanne.githistory",
+    "github.vscode-pull-request-github",
+    "eamodio.gitlens",
+    "oderwat.indent-rainbow",
+    "yzhang.markdown-all-in-one",
+    "shd101wyy.markdown-preview-enhanced",
+    "christian-kohler.path-intellisense",
+    "ms-pyright.pyright",
+    "ms-python.python",
+    "mechatroner.rainbow-csv",
+    "satokaz.vscode-bs-ctrlchar-remover",
+    "visualstudioexptteam.vscodeintellicode",
+    "esbenp.prettier-vscode"
+  ]
+}
