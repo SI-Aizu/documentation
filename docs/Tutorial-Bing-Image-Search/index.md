@@ -8,6 +8,7 @@
 ## Start with docker-compose
 
 ```sh
+cd docs/Tutorial-Bing-Image-Search
 docker-compose build
 docker-compose run --rm dev bash
 ```
@@ -66,4 +67,10 @@ python main.py -n 4
 
 ```sh
 python main.py -k 'cat'
+```
+
+### Skip donwloading images
+
+```sh
+python main.py -k 'cat' --skip-downloading-images
 ```
