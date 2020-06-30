@@ -65,7 +65,7 @@ nohup python3 ./object_detection/model_main.py \
 ```sh
 cd docs/Tutorial-TensorFlow-Models/tensorboard
 docker build . -t tensorboard:latest
-docker run --rm -it -v ${PWD}/saved_model/cat_01:/logs -p 6006:6006 --name tensorboard tensorboard:latest
+docker run --rm -it -v ${PWD}/saved_model/cat_01:/logs -p 6006:6006 --network host --name tensorboard tensorboard:latest
 ```
 
 
