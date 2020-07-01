@@ -2,6 +2,11 @@
 
 Inception v2 base SSD 300 の転移学習 (Transfer Learning)
 
+- [tensorflow/models: Models and examples built with TensorFlow](https://github.com/tensorflow/models)
+- [Tensorflow Object Detection API v1.13.0](https://github.com/tensorflow/models/tree/v1.13.0/research/object_detection)
+- [Installation - Tensorflow Object Detection API v1.13.0](https://github.com/tensorflow/models/blob/v1.13.0/research/object_detection/g3doc/installation.md)
+- [model zoo - Tensorflow Object Detection API v1.13.0](https://github.com/tensorflow/models/blob/v1.13.0/research/object_detection/g3doc/detection_model_zoo.md)
+
 
 
 ## Prepare dataset
@@ -33,7 +38,7 @@ data
 
 ```sh
 cd docs/Tutorial-TensorFlow-Models/data
-bash ./change_tfrecord_filename.sh 
+bash ./change_tfrecord_filename.sh
 ```
 
 ### tf_label_map.pbtxt
@@ -50,6 +55,8 @@ item {
 ## config
 
 `config/ssd_inception_v2_coco.config` を編集することで前処理 (data augmentation) を追加・削除できる。
+
+その他 batch size, learning rate などの設定もここで指定できる。
 
 
 

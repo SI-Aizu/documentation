@@ -12,6 +12,7 @@ Tutorials
 - [VoTT](./Tutorial-VoTT)
 - [PyTorch](./Tutorial-PyTorch)
 - [TensorFlow](./Tutorial-TensorFlow)
+- [TensorFlow Models](./Tutorial-TensorFlow-Models)
 
 
 
