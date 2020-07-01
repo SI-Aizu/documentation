@@ -886,6 +886,12 @@
                 
                 <h1 id="tutorial">Tutorial<a class="headerlink" href="#tutorial" title="Permanent link">&para;</a></h1>
 <p>Inception v2 base SSD 300 の転移学習 (Transfer Learning)</p>
+<ul>
+<li><a href="https://github.com/tensorflow/models">tensorflow/models: Models and examples built with TensorFlow</a></li>
+<li><a href="https://github.com/tensorflow/models/tree/v1.13.0/research/object_detection">Tensorflow Object Detection API v1.13.0</a></li>
+<li><a href="https://github.com/tensorflow/models/blob/v1.13.0/research/object_detection/g3doc/installation.md">Installation - Tensorflow Object Detection API v1.13.0</a></li>
+<li><a href="https://github.com/tensorflow/models/blob/v1.13.0/research/object_detection/g3doc/detection_model_zoo.md">model zoo - Tensorflow Object Detection API v1.13.0</a></li>
+</ul>
 <h2 id="prepare_dataset">Prepare dataset<a class="headerlink" href="#prepare_dataset" title="Permanent link">&para;</a></h2>
 <h3 id="train_val">train val<a class="headerlink" href="#train_val" title="Permanent link">&para;</a></h3>
 <p><code>.tfrecord</code> を以下のように配置。</p>
@@ -912,7 +918,7 @@
 
 
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span> docs/Tutorial-TensorFlow-Models/data
-bash ./change_tfrecord_filename.sh 
+bash ./change_tfrecord_filename.sh
 </code></pre></div>
 
 
@@ -926,6 +932,7 @@ bash ./change_tfrecord_filename.sh
 
 <h2 id="config">config<a class="headerlink" href="#config" title="Permanent link">&para;</a></h2>
 <p><code>config/ssd_inception_v2_coco.config</code> を編集することで前処理 (data augmentation) を追加・削除できる。</p>
+<p>その他 batch size, learning rate などの設定もここで指定できる。</p>
 <h2 id="build_docker_image">Build Docker image<a class="headerlink" href="#build_docker_image" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span> docs/Tutorial-TensorFlow-Models
 </code></pre></div>
