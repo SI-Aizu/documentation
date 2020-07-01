@@ -1,8 +1,5 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-import pathlib
-import random
-
 import tensorflow as tf
 from tensorflow.keras import datasets
 from tensorflow.keras.layers import Dense, Flatten, Conv2D, MaxPooling2D, Dropout
@@ -13,9 +10,6 @@ BATCH = 64
 
 mnist = datasets.mnist
 (train_images, train_labels), (test_images, test_labels) = mnist.load_data()
-
-total_train = len(train_images)
-total_test = len(test_images)
 
 train_images = train_images.reshape((60000, 28, 28, 1))
 test_images = test_images.reshape((10000, 28, 28, 1))
@@ -43,7 +37,7 @@ model.compile(optimizer='adam',
               metrics=['accuracy'])
 
 model.fit(x=train_images, y=train_labels,
-          steps_per_epoch=total_train // BATCH,
+          steps_per_epoch=len(train_images) // BATCH,
           batch_size=BATCH, epochs=EPOCH )
 
 test_loss, test_acc = model.evaluate(x=test_images, y=test_labels, batch_size=1, verbose=1)
