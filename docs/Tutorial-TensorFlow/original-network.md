@@ -1,8 +1,8 @@
-# Original Layer
+# Original Network
 
 TensorFlow を使用してオリジナルネットワークを構築。MNIST データに対してモデルの学習・推論を行う。
 
-全体のコードは `mnist.py` に記載。 
+全体のコードは `mnist.py` に記載。
 
 ## Import Libralies
 
@@ -82,7 +82,7 @@ test_images = test_images / 255.0
 ## Compile and Train
 
 ```py
-model.compile(optimizer='adam', 
+model.compile(optimizer='adam',
 							loss='sparse_categorical_crossentropy',
 							metrics=['accuracy'])
 
