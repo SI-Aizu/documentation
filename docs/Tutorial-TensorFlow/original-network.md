@@ -1,6 +1,6 @@
 # Original Layer
 
-`Tensorflow` `keras` を使用してオリジナルネットワークを構築。`mnist` データに対して、モデルの学習・推論を行う。
+TensorFlow を使用してオリジナルネットワークを構築。MNIST データに対してモデルの学習・推論を行う。
 
 全体のコードは `mnist.py` に記載。 
 
@@ -28,9 +28,9 @@ BATCH = 64
 
 ## Network
 
-使用するネットワーク全体像。各層については <a href="https://si-aizu.github.io/documentation/Tutorial-TensorFlow/Layers/" target="_blank">Layers</a> を参照。
+使用するネットワーク全体像。各層については [Layers](./Layers) を参照。
 
-<img src="https://user-images.githubusercontent.com/39023477/86253506-9b948080-bbef-11ea-99b5-444d3f4f219b.jpg" style="zoom:67%;" />
+![](https://user-images.githubusercontent.com/39023477/86253506-9b948080-bbef-11ea-99b5-444d3f4f219b.jpg)
 
 ```py
 model = Sequential([
