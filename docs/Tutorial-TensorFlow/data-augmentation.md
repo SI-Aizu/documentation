@@ -6,7 +6,7 @@
 
 下の画像を元にデータを拡張。
 
-全体のコードは `augmentaion.py` に記載。
+全体のコードは `augmentation.py` に記載。
 
 ![](https://user-images.githubusercontent.com/39023477/86331234-c5978280-bc83-11ea-88cc-7793e9417ef0.jpg)
 
