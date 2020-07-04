@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  dev:
+    build: .
+    image: siaizu_documentation_dev
+    container_name: siaizu_documentation_dev
+    volumes:
+      - ${PWD}:/src
+    stdin_open: true
+    tty: true
+    command:
+      - bash

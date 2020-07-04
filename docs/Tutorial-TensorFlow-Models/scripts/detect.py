@@ -17,28 +17,15 @@ parser = argparse.ArgumentParser(
 # )
 default_model = "./models/ssd_inception_v2_coco_2018_01_28/frozen_inference_graph.pb"
 parser.add_argument(
-    "-m",
-    "--model",
-    default=default_model,
-    help=f"Set model file, default: {default_model}",
+    "-m", "--model", default=default_model, help=f"Set model file, default: {default_model}",
 )
-parser.add_argument(
-    "-c", "--camera", action="store_true", help="Use web camera, default: False"
-)
+parser.add_argument("-c", "--camera", action="store_true", help="Use web camera, default: False")
 default_video = ""
-parser.add_argument(
-    "-v", "--video", default=default_video, help=f"Give video file, default: ''"
-)
+parser.add_argument("-v", "--video", default=default_video, help="Give video file, default: ''")
 default_image = ""
-parser.add_argument(
-    "-i", "--image", default=default_image, help=f"Give image file, default: ''"
-)
-parser.add_argument(
-    "--crop", action="store_true", help=f"Crop object, default: 'False'"
-)
-parser.add_argument(
-    "--distdir", default=".", help=f"Output directory, default: '.'"
-)
+parser.add_argument("-i", "--image", default=default_image, help="Give image file, default: ''")
+parser.add_argument("--crop", action="store_true", help="Crop object, default: 'False'")
+parser.add_argument("--distdir", default=".", help="Output directory, default: '.'")
 args = parser.parse_args()
 
 detection_graph = tf.Graph()
@@ -62,9 +49,7 @@ def run_inference_for_single_image(tf_sess, image, graph, image_tensor):
 
     # all outputs are float32 numpy arrays, so convert types as appropriate
     output_dict["num_detections"] = int(output_dict["num_detections"][0])
-    output_dict["detection_classes"] = output_dict["detection_classes"][0].astype(
-        np.int64
-    )
+    output_dict["detection_classes"] = output_dict["detection_classes"][0].astype(np.int64)
     output_dict["detection_boxes"] = output_dict["detection_boxes"][0]
     output_dict["detection_scores"] = output_dict["detection_scores"][0]
     return output_dict
@@ -99,9 +84,7 @@ def predict_frame(frame, image_tensor, tf_sess):
         cv2.rectangle(frame, (box[1], box[0]), (box[3], box[2]), (0, 0, 255), 3)
         label_name = str(output_dict["detection_classes"][i])
         if label_name == "85":
-            cv2.putText(
-                frame, label_name, (10, 450), font, 2, (0, 255, 255), 2, cv2.LINE_AA
-            )
+            cv2.putText(frame, label_name, (10, 450), font, 2, (0, 255, 255), 2, cv2.LINE_AA)
     return frame
 
 
@@ -196,9 +179,7 @@ if __name__ == "__main__":
         ]:
             tensor_name = key + ":0"
             if tensor_name in all_tensor_names:
-                tensor_dict[key] = tf.get_default_graph().get_tensor_by_name(
-                    tensor_name
-                )
+                tensor_dict[key] = tf.get_default_graph().get_tensor_by_name(tensor_name)
 
         image_tensor = tf.get_default_graph().get_tensor_by_name("image_tensor:0")
 
