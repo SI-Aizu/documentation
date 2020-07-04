@@ -19,11 +19,11 @@ cifmt:
 
 .PHONY: isort
 isort:
-	${COMPOSE_BASE_COMMAND} isort ./**/*.py
+	${COMPOSE_BASE_COMMAND} isort --profile black ./**/*.py
 
 .PHONY: ciisort
 ciisort:
-	${COMPOSE_BASE_COMMAND} isort --check-only ./**/*.py
+	${COMPOSE_BASE_COMMAND} isort --profile black --check-only ./**/*.py
 
 .PHONY: lint
 lint:

@@ -1,10 +1,11 @@
-import numpy as np
-import cv2
-import time
-import tensorflow as tf
 import argparse
-import os
 import glob
+import os
+import time
+
+import cv2
+import numpy as np
+import tensorflow as tf
 
 parser = argparse.ArgumentParser(
     description="object detection tester for webcam, images, and video"
