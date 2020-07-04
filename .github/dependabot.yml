@@ -13,7 +13,7 @@ updates:
     prefix: ci
 
 - package-ecosystem: pip
-  directory: "docs"
+  directory: "docs/dev"
   schedule:
     interval: daily
     time: '10:00'
