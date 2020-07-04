@@ -1,8 +1,7 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-from tensorflow.keras import datasets
-from tensorflow.keras.layers import Dense, Flatten, Conv2D, MaxPooling2D, Dropout
-from tensorflow.keras import Sequential
+from tensorflow.keras import Sequential, datasets
+from tensorflow.keras.layers import Conv2D, Dense, Dropout, Flatten, MaxPooling2D
 
 EPOCH = 5
 BATCH = 64
