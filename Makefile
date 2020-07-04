@@ -17,6 +17,20 @@ fmt:
 cifmt:
 	${COMPOSE_BASE_COMMAND} black --check --diff .
 
+.PHONY: isort
+isort:
+	${COMPOSE_BASE_COMMAND} isort --profile black ./**/*.py
+
+.PHONY: ciisort
+ciisort:
+	${COMPOSE_BASE_COMMAND} isort --profile black --check-only ./**/*.py
+
 .PHONY: lint
 lint:
 	${COMPOSE_BASE_COMMAND} flake8 --show-source
+
+.PHONY: all
+all:
+	$(MAKE) fmt
+	$(MAKE) isort
+	$(MAKE) lint

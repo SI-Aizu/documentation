@@ -1,14 +1,13 @@
-import configparser
-import os
-import datetime
 import argparse
+import configparser
+import datetime
 import json
+import os
+from io import BytesIO
 from typing import Dict
 
 import requests
 from PIL import Image
-from io import BytesIO
-
 
 API_MAX_COUNT = 150
 

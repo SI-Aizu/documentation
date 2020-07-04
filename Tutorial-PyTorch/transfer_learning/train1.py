@@ -1,18 +1,18 @@
 # License: BSD
 # Author: Sasank Chilamkurthy
+from __future__ import division, print_function
 
-from __future__ import print_function, division
-
-import torch
-import torch.nn as nn
-import torch.optim as optim
-from torch.optim import lr_scheduler
-import numpy as np
-from torchvision import datasets, models, transforms
-import matplotlib.pyplot as plt
-import time
-import os
 import copy
+import os
+import time
+
+import numpy as np
+import torch
+from matplotlib import pyplot as plt
+from torch import nn as nn
+from torch import optim as optim
+from torch.optim import lr_scheduler
+from torchvision import datasets, models, transforms
 
 # plt.ion()  # interactive mode
 
