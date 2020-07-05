@@ -4,7 +4,9 @@ CONTAINER_NAME = siaizu_tensorflow
 
 .PHONY: build
 build:
-	docker build . -t ${IMAGE_NAME}:${TAG}
+	docker build . \
+		--cache-from=${IMAGE_NAME}:${TAG} \
+		-t ${IMAGE_NAME}:${TAG}
 
 .PHONY: run
 run:
