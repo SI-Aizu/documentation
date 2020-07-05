@@ -2,7 +2,6 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 import random
 
-import numpy as np
 import tensorflow as tf
 from tensorflow.keras import Sequential, datasets
 from tensorflow.keras.layers import Conv2D, Dense, Dropout, Flatten, MaxPooling2D
