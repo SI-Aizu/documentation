@@ -13,6 +13,17 @@ updates:
     prefix: ci
 
 - package-ecosystem: pip
+  directory: "docs/dev"
+  schedule:
+    interval: daily
+    time: '10:00'
+    timezone: Japan
+  labels:
+  - "dependencies"
+  commit-message:
+    prefix: deps
+
+- package-ecosystem: pip
   directory: "docs/Tutorial-Bing-Image-Search"
   schedule:
     interval: daily

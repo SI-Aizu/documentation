@@ -1,12 +1,12 @@
 # Data Augmentation
 
-https://www.tensorflow.org/tutorials/images/data_augmentation
+[Data augmentation  |  TensorFlow Core](https://www.tensorflow.org/tutorials/images/data_augmentation)
 
 
 
 下の画像を元にデータを拡張。
 
-全体のコードは `augmentaion.py` に記載。
+全体のコードは `augmentation.py` に記載。
 
 ![](https://user-images.githubusercontent.com/39023477/86331234-c5978280-bc83-11ea-88cc-7793e9417ef0.jpg)
 
@@ -54,7 +54,7 @@ def visualize(original, augmented, filename):
 
 
 
-## flip (left and right)
+## Flip Horizontally
 
 画像を左右反転させる。
 
@@ -66,11 +66,11 @@ visualize(image, flipped, "flipped.jpg")
 
 ![](https://user-images.githubusercontent.com/39023477/86384432-ae7b8380-bcc9-11ea-9cbb-6259c75d41af.jpg)
 
-## flip (up and down)
+## Flip Vertically
 
 画像を上下反転させる。
 
-```
+```py
 # tf.image.flip_up_down(image)
 flipped = tf.image.flip_up_down(image)
 visualize(image, flipped, "flipped_up_down.jpg")
@@ -141,15 +141,14 @@ visualize(image, rotated, "rotated.jpg")
 
 ![](https://user-images.githubusercontent.com/39023477/86392953-40d65400-bcd7-11ea-9e8a-5b107902efd5.jpg)
 
-## crop(central)
+## Crop the central region
 
 画像を中央から `central_fraction` * 100% 切り抜く。
 
-```
+```py
 # tf.image.central_crop(image, central_fraction)
 cropped = tf.image.central_crop(image, central_fraction=0.5)
 visualize(image,cropped,"cropped.jpg")
 ```
 
 ![](https://user-images.githubusercontent.com/39023477/86390108-70cf2880-bcd2-11ea-8a36-71ddf1f7099a.jpg)
-
