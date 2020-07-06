@@ -12,6 +12,7 @@ build:
 run:
 	docker run -i -t --gpus all \
 		-v ${PWD}:/src \
+		-p 8000:8000 \
 		--name ${CONTAINER_NAME} \
 		${IMAGE_NAME}:${TAG} \
 		bash
@@ -23,3 +24,7 @@ pull:
 .PHONY: push
 push:
 	docker push ${IMAGE_NAME}:${TAG}
+
+.PHONY: jupyterlab
+jupyterlab:
+	jupyter-lab --port 8000 --ip=0.0.0.0 --allow-root
