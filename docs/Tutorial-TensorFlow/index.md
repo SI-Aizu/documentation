@@ -26,3 +26,11 @@ docker login 'docker.pkg.github.com' -u 'YOUR_GITHUB_USERNAME' --password 'YOUR_
 cd docs/Tutorial-TensorFlow
 make run
 ```
+
+
+
+## Run jupyterlab
+
+```sh
+make jupyterlab
+```
