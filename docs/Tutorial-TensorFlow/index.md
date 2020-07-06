@@ -2,25 +2,27 @@
 
 
 
-## Build Docker image
+## Login to GitHub Packages
+
+### Create your personal token
+
+[Personal Access Tokens] で `read:packages` を持つ token を作成する。
+
+[Personal Access Tokens]: https://github.com/settings/tokens
+
+### Docker login
 
 ```sh
-cd docs/Tutorial-TensorFlow
+docker login 'docker.pkg.github.com' -u 'YOUR_GITHUB_USERNAME' --password 'YOUR_TOKEN'
 ```
 
-```sh
-# Build
-make build
-```
-
-ビルド済み docker image を公開しているので build せずに run でも良い。
-
-- [siaizu/tensorflow - Docker Hub](https://hub.docker.com/r/siaizu/tensorflow)
+これで GitHub Packages から Docker image を Pull できるようになる。
 
 
 
 ## Run Container
 
 ```sh
+cd docs/Tutorial-TensorFlow
 make run
 ```

@@ -27,7 +27,7 @@ MarkupSafe==1.1.1
 matplotlib==3.2.2
 numpy==1.19.0
 oauthlib==3.1.0
-opencv-python==4.2.0.34
+opencv-python==4.3.0.36
 opt-einsum==3.2.1
 pandas==1.0.5
 protobuf==3.12.2
