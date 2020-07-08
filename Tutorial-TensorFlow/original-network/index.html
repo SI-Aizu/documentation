@@ -21,7 +21,7 @@
     
     
       
-        <title>Original Layer - SI-Aizu Documentation</title>
+        <title>Original Network - SI-Aizu Documentation</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#original_layer" class="md-skip">
+        <a href="#original_network" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -94,7 +94,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Original Layer
+              Original Network
             
           </span>
         </div>
@@ -447,6 +447,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../data-augmentation/" title="Data Augmentation" class="md-nav__link">
+      Data Augmentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -458,14 +470,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Original Layer
+        Original Network
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
         </span>
       </label>
     
-    <a href="./" title="Original Layer" class="md-nav__link md-nav__link--active">
-      Original Layer
+    <a href="./" title="Original Network" class="md-nav__link md-nav__link--active">
+      Original Network
     </a>
     
       
@@ -856,9 +868,9 @@
                   
                 
                 
-                <h1 id="original_layer">Original Layer<a class="headerlink" href="#original_layer" title="Permanent link">&para;</a></h1>
+                <h1 id="original_network">Original Network<a class="headerlink" href="#original_network" title="Permanent link">&para;</a></h1>
 <p>TensorFlow を使用してオリジナルネットワークを構築。MNIST データに対してモデルの学習・推論を行う。</p>
-<p>全体のコードは <code>mnist.py</code> に記載。 </p>
+<p>全体のコードは <code>mnist.py</code> に記載。</p>
 <h2 id="import_libralies">Import Libralies<a class="headerlink" href="#import_libralies" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">unicode_literals</span>
 
@@ -916,7 +928,7 @@
 
 
 <h2 id="compile_and_train">Compile and Train<a class="headerlink" href="#compile_and_train" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> 
+<div class="codehilite"><pre><span></span><code><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
                             <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;sparse_categorical_crossentropy&#39;</span><span class="p">,</span>
                             <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
 
@@ -973,7 +985,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../Layers/" title="Layers" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../data-augmentation/" title="Data Augmentation" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -982,7 +994,7 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                Layers
+                Data Augmentation
               </div>
             </div>
           </a>

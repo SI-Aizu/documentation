@@ -11,7 +11,7 @@
         <meta name="description" content="SI-Aizu Documentation">
       
       
-        <link rel="canonical" href="https://si-aizu.github.io/documentation/setup/1-ubuntu/">
+        <link rel="canonical" href="https://si-aizu.github.io/documentation/Tutorial-TensorFlow/data-augmentation/">
       
       
         <meta name="author" content="SI-Aizu">
@@ -21,7 +21,7 @@
     
     
       
-        <title>1. Ubuntu - SI-Aizu Documentation</title>
+        <title>Data Augmentation - SI-Aizu Documentation</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1_ubuntu" class="md-skip">
+        <a href="#data_augmentation" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -94,7 +94,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              1. Ubuntu
+              Data Augmentation
             
           </span>
         </div>
@@ -396,10 +396,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
     
     <label class="md-nav__link" for="nav-6">
       Tutorial TensorFlow
@@ -423,7 +425,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Tutorial-TensorFlow/" title="Getting Started" class="md-nav__link">
+    <a href="../" title="Getting Started" class="md-nav__link">
       Getting Started
     </a>
   </li>
@@ -435,7 +437,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Tutorial-TensorFlow/Layers/" title="Layers" class="md-nav__link">
+    <a href="../Layers/" title="Layers" class="md-nav__link">
       Layers
     </a>
   </li>
@@ -445,11 +447,123 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../Tutorial-TensorFlow/data-augmentation/" title="Data Augmentation" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Data Augmentation
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Data Augmentation" class="md-nav__link md-nav__link--active">
       Data Augmentation
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#import_libraries" class="md-nav__link">
+    Import libraries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read_an_image" class="md-nav__link">
+    Read an image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show_images" class="md-nav__link">
+    show images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flip_horizontally" class="md-nav__link">
+    Flip Horizontally
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flip_vertically" class="md-nav__link">
+    Flip Vertically
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grayscale" class="md-nav__link">
+    grayscale
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saturation" class="md-nav__link">
+    saturation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#brightness" class="md-nav__link">
+    brightness
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rotation" class="md-nav__link">
+    Rotation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crop_the_central_region" class="md-nav__link">
+    Crop the central region
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apply_a_data_augmentation_randomly" class="md-nav__link">
+    Apply a data augmentation randomly
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -459,7 +573,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Tutorial-TensorFlow/original-network/" title="Original Network" class="md-nav__link">
+    <a href="../original-network/" title="Original Network" class="md-nav__link">
       Original Network
     </a>
   </li>
@@ -600,12 +714,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
     
     <label class="md-nav__link" for="nav-10">
       Setup
@@ -629,7 +741,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="環境構築" class="md-nav__link">
+    <a href="../../setup/" title="環境構築" class="md-nav__link">
       環境構築
     </a>
   </li>
@@ -639,67 +751,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        1. Ubuntu
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="1. Ubuntu" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../setup/1-ubuntu/" title="1. Ubuntu" class="md-nav__link">
       1. Ubuntu
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create_boot_usb_disk" class="md-nav__link">
-    Create Boot USB Disk
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install_ubuntu" class="md-nav__link">
-    Install Ubuntu
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#upgrade_dependencies" class="md-nav__link">
-    Upgrade dependencies
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -709,7 +765,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../2-nvidia-driver/" title="2. NVIDIA Driver" class="md-nav__link">
+    <a href="../../setup/2-nvidia-driver/" title="2. NVIDIA Driver" class="md-nav__link">
       2. NVIDIA Driver
     </a>
   </li>
@@ -721,7 +777,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../3-docker/" title="3. Docker" class="md-nav__link">
+    <a href="../../setup/3-docker/" title="3. Docker" class="md-nav__link">
       3. Docker
     </a>
   </li>
@@ -758,22 +814,78 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create_boot_usb_disk" class="md-nav__link">
-    Create Boot USB Disk
+  <a href="#import_libraries" class="md-nav__link">
+    Import libraries
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#install_ubuntu" class="md-nav__link">
-    Install Ubuntu
+  <a href="#read_an_image" class="md-nav__link">
+    Read an image
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#upgrade_dependencies" class="md-nav__link">
-    Upgrade dependencies
+  <a href="#show_images" class="md-nav__link">
+    show images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flip_horizontally" class="md-nav__link">
+    Flip Horizontally
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flip_vertically" class="md-nav__link">
+    Flip Vertically
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grayscale" class="md-nav__link">
+    grayscale
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saturation" class="md-nav__link">
+    saturation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#brightness" class="md-nav__link">
+    brightness
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rotation" class="md-nav__link">
+    Rotation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crop_the_central_region" class="md-nav__link">
+    Crop the central region
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apply_a_data_augmentation_randomly" class="md-nav__link">
+    Apply a data augmentation randomly
   </a>
   
 </li>
@@ -790,7 +902,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/SI-Aizu/documentation/edit/master/docs/setup/1-ubuntu.md" title="編集" class="md-content__button md-icon">
+                  <a href="https://github.com/SI-Aizu/documentation/edit/master/docs/Tutorial-TensorFlow/data-augmentation.md" title="編集" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -798,24 +910,147 @@
                   
                 
                 
-                <h1 id="1_ubuntu">1. Ubuntu<a class="headerlink" href="#1_ubuntu" title="Permanent link">&para;</a></h1>
-<h2 id="create_boot_usb_disk">Create Boot USB Disk<a class="headerlink" href="#create_boot_usb_disk" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://www.balena.io/etcher/">balenaEtcher - Flash OS images to SD cards &amp; USB drives</a></li>
-</ul>
-<p>balenaEtcher が便利。</p>
-<h2 id="install_ubuntu">Install Ubuntu<a class="headerlink" href="#install_ubuntu" title="Permanent link">&para;</a></h2>
-<p>TBW.</p>
-<h2 id="upgrade_dependencies">Upgrade dependencies<a class="headerlink" href="#upgrade_dependencies" title="Permanent link">&para;</a></h2>
-<p>定期的に以下を実行して、ツール等を最新版に更新した方がよい。</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ソフトウェア一覧の更新</span>
-sudo apt update
+                <h1 id="data_augmentation">Data Augmentation<a class="headerlink" href="#data_augmentation" title="Permanent link">&para;</a></h1>
+<p><a href="https://www.tensorflow.org/tutorials/images/data_augmentation">Data augmentation  |  TensorFlow Core</a></p>
+<p>下の画像を元にデータを拡張。</p>
+<p>全体のコードは <code>augmentation.py</code> に記載。</p>
+<p><img alt="" src="https://user-images.githubusercontent.com/39023477/86331234-c5978280-bc83-11ea-88cc-7793e9417ef0.jpg" /></p>
+<h2 id="import_libraries">Import libraries<a class="headerlink" href="#import_libraries" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 
-<span class="c1"># 更新可能な依存の一覧を表示</span>
-apt list --upgradable
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
 
-<span class="c1"># 更新可能な依存を更新</span>
-sudo apt upgrade -y
+
+<h2 id="read_an_image">Read an image<a class="headerlink" href="#read_an_image" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="n">image_dir_path</span> <span class="o">=</span> <span class="s2">&quot;images/&quot;</span>
+<span class="n">image_name</span> <span class="o">=</span> <span class="s2">&quot;squirrel.jpg&quot;</span>
+
+<span class="n">image_string</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">image_dir_path</span> <span class="o">+</span> <span class="n">image_name</span><span class="p">)</span>
+<span class="n">image</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">decode_jpeg</span><span class="p">(</span><span class="n">image_string</span><span class="p">,</span><span class="n">channels</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+
+
+<h2 id="show_images">show images<a class="headerlink" href="#show_images" title="Permanent link">&para;</a></h2>
+<p>オリジナル画像と拡張後の画像を見比べるための関数。</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">visualize</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">augmented</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+  <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Original image&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">original</span>   <span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Augmented image&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">augmented</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">image_dir_path</span> <span class="o">+</span> <span class="n">filename</span><span class="p">)</span>
+</code></pre></div>
+
+
+<h2 id="flip_horizontally">Flip Horizontally<a class="headerlink" href="#flip_horizontally" title="Permanent link">&para;</a></h2>
+<p>画像を左右反転させる。</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># tf.image.flip_left_right(image)</span>
+<span class="n">flipped</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">flip_left_right</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="n">visualize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">flipped</span><span class="p">,</span> <span class="s2">&quot;flipped.jpg&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p><img alt="" src="https://user-images.githubusercontent.com/39023477/86384432-ae7b8380-bcc9-11ea-9cbb-6259c75d41af.jpg" /></p>
+<h2 id="flip_vertically">Flip Vertically<a class="headerlink" href="#flip_vertically" title="Permanent link">&para;</a></h2>
+<p>画像を上下反転させる。</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># tf.image.flip_up_down(image)</span>
+<span class="n">flipped</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">flip_up_down</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="n">visualize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">flipped</span><span class="p">,</span> <span class="s2">&quot;flipped_up_down.jpg&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p><img alt="" src="https://user-images.githubusercontent.com/39023477/86389148-dae6ce00-bcd0-11ea-936d-a37fbe2ba65b.jpg" /></p>
+<h2 id="grayscale">grayscale<a class="headerlink" href="#grayscale" title="Permanent link">&para;</a></h2>
+<p>画像をグレイスケールにする。</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># tf.image.rgb_to_grayscale(images, name=None)</span>
+<span class="n">grayscaled</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">rgb_to_grayscale</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="n">visualize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">grayscaled</span><span class="p">),</span> <span class="s2">&quot;grayscaled.jpg&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grayscaled</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="c1"># (1066, 1600, 3)</span>
+<span class="c1"># (1066, 1600, 1)</span>
+</code></pre></div>
+
+
+<p><img alt="" src="https://user-images.githubusercontent.com/39023477/86385330-0ff02200-bccb-11ea-89d9-2f4736568f1f.jpg" /></p>
+<h2 id="saturation">saturation<a class="headerlink" href="#saturation" title="Permanent link">&para;</a></h2>
+<p>画像の彩度を調整する。</p>
+<p>画像を HSV に変換した後、彩度(S) に <code>saturation_factor</code> を乗算してまた RGB に戻す。</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># tf.image.adjust_saturation(image, saturation_factor, name=None)</span>
+<span class="n">saturated</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">adjust_saturation</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">visualize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">saturated</span><span class="p">,</span> <span class="s2">&quot;saturated.jpg&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p><img alt="" src="https://user-images.githubusercontent.com/39023477/86388055-0cf73080-bccf-11ea-801f-98a1350b1af9.jpg" /></p>
+<h2 id="brightness">brightness<a class="headerlink" href="#brightness" title="Permanent link">&para;</a></h2>
+<p>画像の輝度を調整する。</p>
+<p>画像を [0,1] の浮動小数型に変換した後、<code>delta</code> を各画素に加算する。加算が終了したら元のデータ型に戻す。</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">#tf.image.adjust_brightness(image, delta)</span>
+<span class="n">bright</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">adjust_brightness</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)</span>
+<span class="n">visualize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">bright</span><span class="p">,</span> <span class="s2">&quot;bright.jpg&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p><img alt="" src="https://user-images.githubusercontent.com/39023477/86390486-18e4f180-bcd3-11ea-9da8-9b5fb2dedb8b.jpg" /></p>
+<h2 id="rotation">Rotation<a class="headerlink" href="#rotation" title="Permanent link">&para;</a></h2>
+<p>画像を <code>k</code> * 90° 回転させる。</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># tf.image.rot90(image, k=1, name=None)</span>
+<span class="n">rotated</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">visualize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">rotated</span><span class="p">,</span> <span class="s2">&quot;rotated.jpg&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p><img alt="" src="https://user-images.githubusercontent.com/39023477/86392953-40d65400-bcd7-11ea-9e8a-5b107902efd5.jpg" /></p>
+<h2 id="crop_the_central_region">Crop the central region<a class="headerlink" href="#crop_the_central_region" title="Permanent link">&para;</a></h2>
+<p>画像を中央から <code>central_fraction</code> * 100% 切り抜く。</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># tf.image.central_crop(image, central_fraction)</span>
+<span class="n">cropped</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">central_crop</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">central_fraction</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">visualize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">cropped</span><span class="p">,</span><span class="s2">&quot;cropped.jpg&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p><img alt="" src="https://user-images.githubusercontent.com/39023477/86390108-70cf2880-bcd2-11ea-8a36-71ddf1f7099a.jpg" /></p>
+<h2 id="apply_a_data_augmentation_randomly">Apply a data augmentation randomly<a class="headerlink" href="#apply_a_data_augmentation_randomly" title="Permanent link">&para;</a></h2>
+<p>ランダムにデータ拡張を適用する。</p>
+<p>拡張の方法を関数にしておき、毎回ランダムにそれらの関数を選ぶような処理。</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">flip</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">flip_left_right</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">grayscale</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">rgb_to_grayscale</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">saturate</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">adjust_saturation</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">bright</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">adjust_brightness</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">crop</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">central_crop</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">central_fraction</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">funcs</span> <span class="o">=</span> <span class="p">[</span><span class="n">flip</span><span class="p">,</span> <span class="n">grayscale</span><span class="p">,</span> <span class="n">saturate</span><span class="p">,</span> <span class="n">bright</span><span class="p">,</span> <span class="n">rotate</span><span class="p">,</span> <span class="n">crop</span><span class="p">]</span>
+<span class="n">num</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">funcs</span><span class="p">)))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)):</span>
+    <span class="n">chosen</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> 
+    <span class="n">image</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">[</span><span class="n">funcs</span><span class="p">](</span><span class="n">image</span><span class="p">)</span>
+    <span class="n">num</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">chosen</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p><code>cifar10.py</code> で水増しあり・なしの比較をしてみるとよい。</p>
+<div class="codehilite"><pre><span></span><code>python cifar10.py
 </code></pre></div>
                 
               
@@ -835,7 +1070,7 @@ sudo apt upgrade -y
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../" title="環境構築" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Layers/" title="Layers" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -844,19 +1079,19 @@ sudo apt upgrade -y
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                環境構築
+                Layers
               </div>
             </div>
           </a>
         
         
-          <a href="../2-nvidia-driver/" title="2. NVIDIA Driver" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../original-network/" title="Original Network" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                2. NVIDIA Driver
+                Original Network
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
