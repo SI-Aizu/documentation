@@ -181,8 +181,7 @@ def crop(image):
 funcs = [flip, grayscale, saturate, bright, rotate, crop]
 num = list(range(len(funcs)))
 for i in range(random.randrange(1,3)):
-		chosen = random.choice(num) 
+    chosen = random.choice(num) 
     image = random.choice[funcs](image)
     num.remove(chosen)
 ```
-
