@@ -10,7 +10,7 @@ build:
 
 .PHONY: run
 run:
-	docker run -i -t --gpus all \
+	docker run -i -t --gpus '"device=0"' \
 		-v ${PWD}:/src \
 		-p 8000:8000 \
 		--name ${CONTAINER_NAME} \
