@@ -185,3 +185,9 @@ for i in range(random.randrange(1,3)):
     image = random.choice[funcs](image)
     num.remove(chosen)
 ```
+
+`cifar10.py` で水増しあり・なしの比較をしてみるとよい。
+
+```sh
+python cifar10.py
+```
