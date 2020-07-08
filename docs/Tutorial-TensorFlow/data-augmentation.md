@@ -152,3 +152,37 @@ visualize(image,cropped,"cropped.jpg")
 ```
 
 ![](https://user-images.githubusercontent.com/39023477/86390108-70cf2880-bcd2-11ea-8a36-71ddf1f7099a.jpg)
+
+## Apply a data augmentation randomly
+
+ランダムにデータ拡張を適用する。
+
+拡張の方法を関数にしておき、毎回ランダムにそれらの関数を選ぶような処理。
+
+```py
+def flip(image):
+    return tf.image.flip_left_right(image)
+
+def grayscale(image):
+    return tf.image.rgb_to_grayscale(image)
+
+def saturate(image):
+    return tf.image.adjust_saturation(image, 3)
+
+def bright(image):
+    return tf.image.adjust_brightness(image, 0.4)
+
+def rotate(image):
+    return tf.image.rot90(image,k=1)
+
+def crop(image):
+    return tf.image.central_crop(image, central_fraction=0.5)
+    
+funcs = [flip, grayscale, saturate, bright, rotate, crop]
+num = list(range(len(funcs)))
+for i in range(random.randrange(1,3)):
+		chosen = random.choice(num) 
+    image = random.choice[funcs](image)
+    num.remove(chosen)
+```
+
