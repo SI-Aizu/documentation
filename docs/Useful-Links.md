@@ -21,3 +21,10 @@
     - [WebLogo-2M Dataset](http://www.eecs.qmul.ac.uk/~hs308/WebLogo-2M.html/)
     - [QMUL-OpenLogo](https://qmul-openlogo.github.io/)
     - [Flickr Logos dataset | IVA](http://image.ntua.gr/iva/datasets/flickr_logos/)
+
+
+## CNN 可視化 cnn-explainer
+
+- live demo: [CNN Explainer](https://poloclub.github.io/cnn-explainer/)
+- repo: [poloclub/cnn-explainer: Learning Convolutional Neural Networks with Interactive Visualization.](https://github.com/poloclub/cnn-explainer)
+- GIGAZINE: [ディープラーニングの手法「CNN」の画像識別処理がアニメーションで理解できる「CNN Explainer」 - GIGAZINE](https://gigazine.net/news/20200707-cnn-explainer/)
