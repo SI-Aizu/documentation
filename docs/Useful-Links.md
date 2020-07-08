@@ -21,3 +21,4 @@
     - [WebLogo-2M Dataset](http://www.eecs.qmul.ac.uk/~hs308/WebLogo-2M.html/)
     - [QMUL-OpenLogo](https://qmul-openlogo.github.io/)
     - [Flickr Logos dataset | IVA](http://image.ntua.gr/iva/datasets/flickr_logos/)
+- [Computer Vision Datasets](https://public.roboflow.ai/)
