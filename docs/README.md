@@ -1,5 +1,7 @@
 # Home
 
+[Issues · SI-Aizu/documentation](https://github.com/SI-Aizu/documentation/issues)
+
 研究室メンバー向けドキュメント。
 
 - [環境構築](./setup)
