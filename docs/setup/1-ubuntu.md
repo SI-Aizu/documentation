@@ -10,7 +10,7 @@ balenaEtcher が便利。
 
 ## Install Ubuntu
 
-TBW.
+[Install Ubuntu desktop | Ubuntu](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview)
 
 
 ## Upgrade dependencies
