@@ -297,6 +297,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../Tutorial-GitHub/packages/" title="GitHub Packages" class="md-nav__link">
+      GitHub Packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../Tutorial-GitHub/settings/" title="Settings" class="md-nav__link">
       Settings
     </a>
@@ -463,26 +475,6 @@
   <a href="#login_to_github_packages" class="md-nav__link">
     Login to GitHub Packages
   </a>
-  
-    <nav class="md-nav" aria-label="Login to GitHub Packages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create_your_personal_token" class="md-nav__link">
-    Create your personal token
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#docker_login" class="md-nav__link">
-    Docker login
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -782,26 +774,6 @@
     Login to GitHub Packages
   </a>
   
-    <nav class="md-nav" aria-label="Login to GitHub Packages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create_your_personal_token" class="md-nav__link">
-    Create your personal token
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#docker_login" class="md-nav__link">
-    Docker login
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -840,14 +812,7 @@
                 
                 <h1 id="getting_started">Getting Started<a class="headerlink" href="#getting_started" title="Permanent link">&para;</a></h1>
 <h2 id="login_to_github_packages">Login to GitHub Packages<a class="headerlink" href="#login_to_github_packages" title="Permanent link">&para;</a></h2>
-<h3 id="create_your_personal_token">Create your personal token<a class="headerlink" href="#create_your_personal_token" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/settings/tokens">Personal Access Tokens</a> で <code>read:packages</code> を持つ token を作成する。</p>
-<h3 id="docker_login">Docker login<a class="headerlink" href="#docker_login" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code>docker login <span class="s1">&#39;docker.pkg.github.com&#39;</span> -u <span class="s1">&#39;YOUR_GITHUB_USERNAME&#39;</span> --password <span class="s1">&#39;YOUR_TOKEN&#39;</span>
-</code></pre></div>
-
-
-<p>これで GitHub Packages から Docker image を Pull できるようになる。</p>
+<p>cf. <a href="../Tutorial-GitHub/packages">Docekr login - GitHub Packages</a></p>
 <h2 id="run_container">Run Container<a class="headerlink" href="#run_container" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span> docs/Tutorial-TensorFlow
 make run
