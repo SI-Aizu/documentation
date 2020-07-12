@@ -191,3 +191,11 @@ for i in range(random.randrange(1,3)):
 ```sh
 python cifar10.py
 ```
+
+
+
+## Others
+
+Image augmentation library の albumentations というものもある。
+
+- [albumentations-team/albumentations: fast image augmentation library and easy to use wrapper around other libraries](https://github.com/albumentations-team/albumentations)
