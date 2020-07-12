@@ -34,3 +34,8 @@
 ## matplotlib
 
 - [matplotlib/cheatsheets: Official Matplotlib cheat sheets](https://github.com/matplotlib/cheatsheets)
+
+
+## Object Detection Model List
+
+- [hoya012/deep_learning_object_detection: A paper list of object detection using deep learning.](https://github.com/hoya012/deep_learning_object_detection)
