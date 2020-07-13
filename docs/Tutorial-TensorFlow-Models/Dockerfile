@@ -1,62 +1,62 @@
-FROM nvidia/cuda:10.2-base-ubuntu18.04
+FROM tensorflow/tensorflow:2.3.0-gpu
+
+# cf. https://github.com/tensorflow/models/blob/9f9b430710273163769033660ad07715b243d269/research/object_detection/dockerfiles/tf2/Dockerfile
 
 ENV DEBIAN_FRONTEND=noninteractive
-ENV NVIDIA_VISIBLE_DEVICES all
-ENV NVIDIA_DRIVER_CAPABILITIES utility,compute
-ENV CUDA_HOME="/usr/local/cuda-10.2"
-ENV LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${CUDA_HOME}/lib64
+ENV LC_ALL=C.UTF-8
+ENV LANG=C.UTF-8
 
-SHELL ["/bin/bash", "-c"]
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 RUN apt-get update && \
-    apt-get -y install --no-install-recommends \
+    apt-get install -y --no-install-recommends \
     git \
     wget \
     curl \
     unzip \
-    build-essential \
-    libsm6 libxext6 libxrender-dev && \
+    gpg-agent \
+    python3-cairocffi \
+    protobuf-compiler \
+    python3-pil \
+    python3-lxml \
+    python3-tk && \
+    apt-get autoclean && \
+    apt-get clean && \
+    apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
 
-ENV LC_ALL=C.UTF-8
-ENV LANG=C.UTF-8
+# Install gcloud and gsutil commands
+# https://cloud.google.com/sdk/docs/quickstart-debian-ubuntu
+RUN CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && \
+    export CLOUD_SDK_REPO && \
+    echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
+    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
+    google-cloud-sdk && \
+    apt-get autoclean && \
+    apt-get clean && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/apt/lists/*
 
-RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
-    mkdir ~/.conda && \
-    bash ~/miniconda.sh -b -p "${HOME}/miniconda" && \
-    rm ~/miniconda.sh && \
-    ln -s ~/miniconda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
-    echo ". ~/miniconda/etc/profile.d/conda.sh" >> ~/.bashrc && \
-    eval "$(~/miniconda/bin/conda shell.bash hook)" && \
-    conda update -n base -c defaults conda -y && \
-    echo "conda activate conda" >> ~/.bashrc
+# Add new user to avoid running as root
+RUN useradd -ms /bin/bash tensorflow
+USER tensorflow
 
-WORKDIR /root/protoc
-RUN wget -O protobuf.zip https://github.com/protocolbuffers/protobuf/releases/download/v3.9.1/protoc-3.9.1-linux-x86_64.zip
-RUN unzip -o ./protobuf.zip
-RUN mv ./bin/protoc /usr/local/bin/
-WORKDIR /root
-RUN rm -rf ./protoc
+WORKDIR /home/tensorflow
+# v2.3.0
+RUN git clone https://github.com/tensorflow/models /home/tensorflow/models
+WORKDIR /home/tensorflow/models
+RUN git checkout 9f9b430710273163769033660ad07715b243d269
+WORKDIR /home/tensorflow/models/research
+ENV PATH="/home/tensorflow/.local/bin:${PATH}"
+RUN protoc object_detection/protos/*.proto --python_out=. && \
+    cp object_detection/packages/tf2/setup.py . && \
+    python -m pip install --no-cache-dir --upgrade pip && \
+    python -m pip install --no-cache-dir .
 
-RUN git clone --depth 1 https://github.com/tensorflow/models -b v1.13.0
-WORKDIR /root/models/research
-RUN /usr/local/bin/protoc object_detection/protos/*.proto --python_out=.
-
-WORKDIR /root/build
-COPY conda.yml ./conda.yml
-# https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md
-RUN eval "$(~/miniconda/bin/conda shell.bash hook)" && \
-    conda env create -f ./conda.yml
-
-RUN git clone https://github.com/cocodataset/cocoapi.git
-WORKDIR /root/build/cocoapi/
-RUN git checkout 636becdc73d54283b3aac6d4ec363cffbb6f9b20
-WORKDIR /root/build/cocoapi/PythonAPI
-RUN eval "$(~/miniconda/bin/conda shell.bash hook)" && \
-    conda activate conda && \
-    make && \
-    python3 -m pip install --no-cache-dir pycocotools==2.0.0
+ENV TF_CPP_MIN_LOG_LEVEL=3
 
 COPY .bash_aliases /root/.bash_aliases
-WORKDIR /root/models/research/object_detection_tools
-ENTRYPOINT ["/bin/bash"]
+WORKDIR /home/tensorflow/models/research/object_detection/siaizu
+CMD ["/bin/bash"]
