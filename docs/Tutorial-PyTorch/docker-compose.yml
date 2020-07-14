@@ -7,7 +7,7 @@ services:
       context: .
       cache_from:
         - 'docker.pkg.github.com/si-aizu/documentation/pytorch:latest'
-    container_name: deep_learning_tutorial_pytorch
+    container_name: siaizu_documentation_pytorch
     ports:
       - 8888:8888
     volumes:
