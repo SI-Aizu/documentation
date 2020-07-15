@@ -9,7 +9,7 @@ services:
         - 'docker.pkg.github.com/si-aizu/documentation/pytorch:v1.5.1'
     container_name: siaizu_documentation_pytorch
     ports:
-      - 8888:8888
+      - 8000:8000
     volumes:
       - ${PWD}:/src
     stdin_open: true
