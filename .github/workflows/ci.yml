@@ -3,14 +3,28 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - '.github/workflows/ci.yml'
       - '**.py'
+      - 'docs/dev/**'
+      - 'docs/.dockerignore'
+      - 'docs/.flake8'
+      - 'docs/Dockerfile'
+      - 'docs/Makefile'
+      - 'docs/docker-compose.yml'
+      - 'docs/pyproject.toml'
   pull_request:
     paths:
       - '.github/workflows/ci.yml'
       - '**.py'
+      - 'docs/dev/**'
+      - 'docs/.dockerignore'
+      - 'docs/.flake8'
+      - 'docs/Dockerfile'
+      - 'docs/Makefile'
+      - 'docs/docker-compose.yml'
+      - 'docs/pyproject.toml'
 
 jobs:
   main:

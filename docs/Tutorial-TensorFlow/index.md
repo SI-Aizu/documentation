@@ -1,36 +1,44 @@
 # Getting Started
 
+```sh
+cd docs/Tutorial-TensorFlow
+```
+
 
 
 ## Login to GitHub Packages
 
-### Create your personal token
-
-[Personal Access Tokens] で `read:packages` を持つ token を作成する。
-
-[Personal Access Tokens]: https://github.com/settings/tokens
-
-### Docker login
-
-```sh
-docker login 'docker.pkg.github.com' -u 'YOUR_GITHUB_USERNAME' --password 'YOUR_TOKEN'
-```
-
-これで GitHub Packages から Docker image を Pull できるようになる。
+cf. [Docekr login - GitHub Packages](../Tutorial-GitHub/packages)
 
 
 
 ## Run Container
 
+### CPU
+
+docker-compose
+
 ```sh
-cd docs/Tutorial-TensorFlow
+# コンテナをバックグラウンドで起動
+docker-compose up -d
+
+# コンテナにログイン
+docker-compose exec dev bash
+
+# コンテナの終了と削除
+docker-compose down
+```
+
+### GPU
+
+```sh
 make run
 ```
 
 
 
-## Run jupyterlab
+## JupyterLab
 
 ```sh
-make jupyterlab
+make lab
 ```

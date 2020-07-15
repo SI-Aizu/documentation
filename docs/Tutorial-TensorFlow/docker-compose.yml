@@ -1,0 +1,18 @@
+version: '3.2'
+
+services:
+  dev:
+    image: 'docker.pkg.github.com/si-aizu/documentation/tensorflow:v2.2.0-gpu'
+    build:
+      context: .
+      cache_from:
+        - 'docker.pkg.github.com/si-aizu/documentation/tensorflow:v2.2.0-gpu'
+    container_name: siaizu_documentation_tensorflow
+    ports:
+      - 8000:8000
+    volumes:
+      - ${PWD}:/src
+    stdin_open: true
+    tty: true
+    command:
+      - bash

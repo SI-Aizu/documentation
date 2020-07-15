@@ -3,7 +3,7 @@ name: CI Tutorial-Bing-Image-Search
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - '.github/workflows/ci-Tutorial-Bing-Image-Search.yml'
       - 'docs/Tutorial-Bing-Image-Search/**'

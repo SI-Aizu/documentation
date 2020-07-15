@@ -1,14 +1,24 @@
 # Getting Started
 
-
-## Docker Compose
-
 ```sh
 cd ./docs/Tutorial-PyTorch
+```
 
-# コンテナをビルド
-docker-compose build
 
+
+## Login to GitHub Packages
+
+cf. [Docekr login - GitHub Packages](../Tutorial-GitHub/packages)
+
+
+
+## Docker run
+
+### CPU
+
+Docker Compose
+
+```sh
 # コンテナをバックグラウンドで起動
 docker-compose up -d
 
@@ -19,10 +29,17 @@ docker-compose exec dev bash
 docker-compose down
 ```
 
-## Jupyter Lab
+### GPU
+
+```sh
+make run
+```
+
+
+
+## JupyterLab
 
 ```sh
 # コンテナ内
-cd ./transfer_learning
-jupyter-lab --ip=0.0.0.0 --no-browser --allow-root
+make lab
 ```
