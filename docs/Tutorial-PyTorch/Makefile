@@ -11,6 +11,6 @@ run:
 		${DOCKER_IMAGE_NAME}:${DOCKER_TAG} \
 		bash
 
-.PHONY: jupyterlab
-jupyterlab:
+.PHONY: lab
+lab:
 	jupyter-lab --port 8000 --ip=0.0.0.0 --allow-root
