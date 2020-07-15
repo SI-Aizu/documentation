@@ -30,7 +30,7 @@ Jinja2==2.11.2
 joblib==0.16.0
 json5==0.9.5
 jsonschema==3.2.0
-jupyter-client==6.1.5
+jupyter-client==6.1.6
 jupyter-core==4.6.3
 jupyterlab==2.1.5
 jupyterlab-server==1.2.0
