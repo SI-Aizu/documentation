@@ -3,7 +3,7 @@ name: hadolint
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - '.github/workflows/hadolint.yml'
       - '**/.hadolint.yaml'
@@ -26,6 +26,9 @@ jobs:
         run: hadolint ./Dockerfile
       - name: Lint TensorFlow
         working-directory: 'docs/Tutorial-TensorFlow'
+        run: hadolint ./Dockerfile
+      - name: Lint TensorFlow Models
+        working-directory: 'docs/Tutorial-TensorFlow-Models'
         run: hadolint ./Dockerfile
       - name: Lint Darknet YOLO
         working-directory: 'docs/Tutorial-YOLO-Darknet'

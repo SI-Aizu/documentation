@@ -3,7 +3,7 @@ name: CI Tutorial-PyTorch
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - '.github/workflows/ci-Tutorial-PyTorch.yml'
       - 'docs/Tutorial-PyTorch/**'
@@ -28,4 +28,4 @@ jobs:
         if: github.event_name == 'pull_request'
       - run: docker-compose build
       - run: docker-compose push
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
