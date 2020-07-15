@@ -79,6 +79,6 @@ tornado==6.0.4
 tqdm==4.47.0
 traitlets==4.3.3
 urllib3==1.25.8
-wcwidth==0.2.4
+wcwidth==0.2.5
 webencodings==0.5.1
 zipp==3.1.0
