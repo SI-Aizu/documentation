@@ -6,6 +6,12 @@ cd ./docs/Tutorial-PyTorch
 
 
 
+## Login to GitHub Packages
+
+cf. [Docekr login - GitHub Packages](../Tutorial-GitHub/packages)
+
+
+
 ## Docker run
 
 ### CPU
@@ -31,9 +37,9 @@ make run
 
 
 
-## Jupyter Lab
+## JupyterLab
 
 ```sh
 # コンテナ内
-make jupyterlab
+make lab
 ```
