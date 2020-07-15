@@ -14,7 +14,7 @@ decorator==4.4.2
 defusedxml==0.6.0
 entrypoints==0.3
 gast==0.3.3
-google-auth==1.18.0
+google-auth==1.19.0
 google-auth-oauthlib==0.4.1
 google-pasta==0.2.0
 grpcio==1.30.0
@@ -30,7 +30,7 @@ Jinja2==2.11.2
 joblib==0.16.0
 json5==0.9.5
 jsonschema==3.2.0
-jupyter-client==6.1.5
+jupyter-client==6.1.6
 jupyter-core==4.6.3
 jupyterlab==2.1.5
 jupyterlab-server==1.2.0
