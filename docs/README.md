@@ -26,7 +26,7 @@ Tutorials
 - [MIT License] のもとで利用していただけます。サポートや保証は一切しません。
 - このサイトはアクセス解析ツールを設置していません。
 
-[MIT License]: https://github.com/SI-Aizu/documentation/blob/master/LICENSE
+[MIT License]: https://github.com/SI-Aizu/documentation/blob/main/LICENSE
 
 
 
