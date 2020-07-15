@@ -19,7 +19,7 @@ run:
 
 .PHONY: pull
 pull:
-	docker pull ${IMAGE_NAME}:${TAG}
+	docker pull --quiet ${IMAGE_NAME}:${TAG}
 
 .PHONY: push
 push:
