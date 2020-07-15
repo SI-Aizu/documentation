@@ -76,7 +76,7 @@ testpath==0.4.4
 torch==1.5.1
 torchvision==0.6.0a0+35d732a
 tornado==6.0.4
-tqdm==4.46.0
+tqdm==4.47.0
 traitlets==4.3.3
 urllib3==1.25.8
 wcwidth==0.2.4
