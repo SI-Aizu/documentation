@@ -5,4 +5,5 @@
 !/models/*.sh
 
 nohup.log
+nohup.*.log
 !.gitkeep

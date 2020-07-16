@@ -22,6 +22,7 @@ Inception v2 base SSD 300 の転移学習 (Transfer Learning)
 $ tree data
 data
 ├── change_tfrecord_filename.sh
+├── cat-TFRecords-export
 ├── tf_label_map.pbtxt
 ├── train
 │   ├── frame0000.tfrecord
@@ -36,10 +37,14 @@ data
 ...
 ```
 
+`cat-TFRecords-export` にすべての tfrecord が入っているものとして、
+
 ```sh
 cd docs/Tutorial-TensorFlow-Models/data
-bash ./change_tfrecord_filename.sh
+bash ./change_tfrecord_filename.sh cat-TFRecords-export
 ```
+
+あとは `train` と `val` に tfrecord を分けて配置する。
 
 ### tf_label_map.pbtxt
 
