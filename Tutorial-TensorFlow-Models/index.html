@@ -938,26 +938,29 @@
 <div class="codehilite"><pre><span></span><code><span class="gp">$</span> tree data
 <span class="go">data</span>
 <span class="go">├── change_tfrecord_filename.sh</span>
+<span class="go">├── cat-TFRecords-export</span>
 <span class="go">├── tf_label_map.pbtxt</span>
 <span class="go">├── train</span>
-<span class="go">│   ├── frame0000.tfrecord</span>
-<span class="go">│   ├── frame0001.tfrecord</span>
-<span class="go">│   ├── frame0002.tfrecord</span>
+<span class="go">│   ├── frame-fa9aee7507d749368eaea01fde15dc0f.tfrecord</span>
+<span class="go">│   ├── frame-fb52802ac5fb1d0e4465c535603cc8d1.tfrecord</span>
+<span class="go">│   ├── frame-fcca1acaa65736d0632a4c9d09f46f34.tfrecord</span>
 <span class="go">...</span>
-<span class="go">│   └── frame0305.tfrecord</span>
+<span class="go">│   └── frame-fe032dbfda72e3a42d0a9b00b62695fe.tfrecord</span>
 <span class="go">└── val</span>
-<span class="go">    ├── frame0000.tfrecord</span>
-<span class="go">    ├── frame0001.tfrecord</span>
-<span class="go">    ├── frame0002.tfrecord</span>
+<span class="go">    ├── frame-fe8158671dbeda266efea62af20d7e97.tfrecord</span>
+<span class="go">    ├── frame-ffef9a9882b57f2c6124c889a3ec9afd.tfrecord</span>
+<span class="go">    ├── frame-ffef9a9882b57f2c6124c889a3ec9afd.tfrecord</span>
 <span class="go">...</span>
 </code></pre></div>
 
 
+<p><code>cat-TFRecords-export</code> にすべての tfrecord が入っているものとして、</p>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span> docs/Tutorial-TensorFlow-Models/data
-bash ./change_tfrecord_filename.sh
+bash ./change_tfrecord_filename.sh cat-TFRecords-export
 </code></pre></div>
 
 
+<p>あとは <code>train</code> と <code>val</code> に tfrecord を分けて配置する。</p>
 <h3 id="tf_label_mappbtxt">tf_label_map.pbtxt<a class="headerlink" href="#tf_label_mappbtxt" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="err">item {</span>
 <span class="err"> id: 1</span>
