@@ -1,6 +1,11 @@
 # Home
 
-[Issues · SI-Aizu/documentation](https://github.com/SI-Aizu/documentation/issues)
+[Issues](https://github.com/SI-Aizu/documentation/issues)
+ | [Pull Request](https://github.com/SI-Aizu/documentation/pulls)
+ | [Dependabot](https://github.com/SI-Aizu/documentation/network/updates)
+ | [Actions](https://github.com/SI-Aizu/documentation/actions)
+ | [Packages](https://github.com/SI-Aizu/documentation/packages)
+ | [Releases](https://github.com/SI-Aizu/documentation/releases)
 
 研究室メンバー向けドキュメント。
 
