@@ -4,7 +4,7 @@ ENV PIP_NO_CACHE_DIR="true"
 WORKDIR /build
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    make \
+    build-essential \
     curl \
     wget \
     vim && \
