@@ -3,7 +3,7 @@ name: CI Tutorial-TensorFlow-Models
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - '.github/workflows/ci-Tutorial-TensorFlow-Models.yml'
       - 'docs/Tutorial-TensorFlow-Models/**'

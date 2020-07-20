@@ -7,7 +7,7 @@ build:
 
 .PHONY: run
 run:
-	docker run -i -t --gpus all \
+	docker run -i -t --gpus '"device=0"' \
 		-v ${PWD}:/root/models/research/object_detection_tools \
 		--name ${CONTAINER_NAME} \
 		${IMAGE_NAME}

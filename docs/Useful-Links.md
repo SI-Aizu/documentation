@@ -29,3 +29,13 @@
 - live demo: [CNN Explainer](https://poloclub.github.io/cnn-explainer/)
 - repo: [poloclub/cnn-explainer: Learning Convolutional Neural Networks with Interactive Visualization.](https://github.com/poloclub/cnn-explainer)
 - GIGAZINE: [ディープラーニングの手法「CNN」の画像識別処理がアニメーションで理解できる「CNN Explainer」 - GIGAZINE](https://gigazine.net/news/20200707-cnn-explainer/)
+
+
+## matplotlib
+
+- [matplotlib/cheatsheets: Official Matplotlib cheat sheets](https://github.com/matplotlib/cheatsheets)
+
+
+## Object Detection Model List
+
+- [hoya012/deep_learning_object_detection: A paper list of object detection using deep learning.](https://github.com/hoya012/deep_learning_object_detection)
