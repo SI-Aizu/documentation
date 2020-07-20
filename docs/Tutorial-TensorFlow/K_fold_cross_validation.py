@@ -1,7 +1,5 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-import random
-
 import tensorflow as tf
 from tensorflow.keras import Sequential, datasets
 from tensorflow.keras.layers import Conv2D, Dense, Dropout, Flatten, MaxPooling2D
@@ -10,6 +8,7 @@ AUTOTUNE = tf.data.experimental.AUTOTUNE
 EPOCH = 5
 BATCH = 128
 K = 5
+
 
 def convert(image, label):
     image = tf.image.convert_image_dtype(image, tf.float32)
@@ -43,7 +42,9 @@ def main():
 
     num_train_images = train_images.shape[0]
     train_images = tf.reshape(train_images, (60000, 28, 28, 1))
-    ds_train = tf.data.Dataset.from_tensor_slices((train_images, train_labels)).map(convert, num_parallel_calls=AUTOTUNE)
+    ds_train = tf.data.Dataset.from_tensor_slices((train_images, train_labels)).map(
+        convert, num_parallel_calls=AUTOTUNE
+    )
     tmp_ds_train = ds_train
     all_acc = []
 
@@ -54,13 +55,13 @@ def main():
 
         for x in range(K):
             if y == x:
-                validation_batches = ds_train.take(num_train_images//K).batch(BATCH)
+                validation_batches = ds_train.take(num_train_images // K).batch(BATCH)
 
             else:
-                part_train_batches = ds_train.take(num_train_images//K)
+                part_train_batches = ds_train.take(num_train_images // K)
 
                 train_batches = train_batches.concatenate(part_train_batches)
-            ds_train = ds_train.skip(num_train_images//K)
+            ds_train = ds_train.skip(num_train_images // K)
 
         model = create_model()
         model.fit(train_batches.batch(BATCH), epochs=EPOCH, validation_data=validation_batches)
@@ -69,10 +70,11 @@ def main():
 
     avg_acc = 0
     for i in range(len(all_acc)):
-        print("{}-th accracy: {:.3f}".format(i+1, all_acc[i]))
+        print("{}-th accracy: {:.3f}".format(i + 1, all_acc[i]))
         avg_acc += all_acc[i]
 
-    print("average accuracy: {:.3f}".format(avg_acc/K))
+    print("average accuracy: {:.3f}".format(avg_acc / K))
+
 
 if __name__ == "__main__":
     main()
