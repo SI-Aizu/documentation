@@ -76,7 +76,7 @@ soupsieve==2.0.1
 terminado==0.8.3
 testpath==0.4.4
 threadpoolctl==2.1.0
-torch==1.5.1
+torch==1.6.0
 torchvision==0.6.0a0+35d732a
 tornado==6.0.4
 tqdm==4.48.0
