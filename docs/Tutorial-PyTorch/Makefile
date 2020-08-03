@@ -1,5 +1,5 @@
 DOCKER_IMAGE_NAME := docker.pkg.github.com/si-aizu/documentation/pytorch
-DOCKER_TAG := v1.5.1
+DOCKER_TAG := v1.6.0
 DOCKER_CONTAINER_NAME := siaizu_documentation_pytorch
 
 .PHONY: run
