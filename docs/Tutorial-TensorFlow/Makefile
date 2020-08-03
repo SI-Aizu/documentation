@@ -1,5 +1,5 @@
 IMAGE_NAME = docker.pkg.github.com/si-aizu/documentation/tensorflow
-TAG = v2.2.0-gpu
+TAG = v2.3.0-gpu
 CONTAINER_NAME = siaizu_tensorflow
 
 .PHONY: run
