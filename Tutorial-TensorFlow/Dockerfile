@@ -1,5 +1,7 @@
 FROM tensorflow/tensorflow:2.3.0-gpu
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
     vim \
@@ -14,8 +16,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-gi-cairo \
     gir1.2-gtk-3.0 \
     pkg-config \
-    python3-dev && \
+    python3-dev \
+    libopencv-dev && \
+    apt-get autoclean && \
     apt-get clean && \
+    apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /build
