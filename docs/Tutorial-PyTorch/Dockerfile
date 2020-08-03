@@ -11,6 +11,9 @@ RUN apt-get update && \
     wget \
     vim \
     libopencv-dev && \
+    apt-get autoclean && \
+    apt-get clean && \
+    apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt requirements.txt
