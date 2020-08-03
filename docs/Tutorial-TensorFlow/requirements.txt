@@ -1,4 +1,5 @@
 absl-py==0.9.0
+argon2-cffi==20.1.0
 asn1crypto==1.4.0
 astunparse==1.6.3
 attrs==19.3.0
@@ -46,7 +47,7 @@ mistune==0.8.4
 nbconvert==5.6.1
 nbformat==5.0.7
 notebook==6.1.0
-numpy==1.19.1
+numpy==1.18.5
 oauthlib==3.1.0
 opencv-python==4.3.0.36
 opt-einsum==3.3.0
@@ -56,6 +57,7 @@ pandocfilters==1.4.2
 parso==0.7.1
 pexpect==4.8.0
 pickleshare==0.7.5
+Pillow==7.2.0
 prometheus-client==0.8.0
 prompt-toolkit==3.0.5
 protobuf==3.12.4
@@ -85,10 +87,10 @@ SecretStorage==3.1.2
 Send2Trash==1.5.0
 six==1.15.0
 sklearn==0.0
-tensorboard==2.2.2
+tensorboard==2.3.0
 tensorboard-plugin-wit==1.7.0
-tensorflow-estimator==2.2.0
-tensorflow-gpu==2.2.0
+tensorflow-estimator==2.3.0
+tensorflow-gpu==2.3.0
 termcolor==1.1.0
 terminado==0.8.3
 testpath==0.4.4
