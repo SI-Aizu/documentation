@@ -55,8 +55,7 @@ WORKDIR /root/build/cocoapi/PythonAPI
 RUN eval "$(~/miniconda/bin/conda shell.bash hook)" && \
     conda activate conda && \
     make && \
-    python3 -m pip install --no-cache-dir pycocotools==2.0.0 && \
-    python3 -m pip install --no-cache-dir opencv-python
+    python3 -m pip install --no-cache-dir pycocotools==2.0.0
 
 COPY .bash_aliases /root/.bash_aliases
 WORKDIR /root/models/research/object_detection_tools
