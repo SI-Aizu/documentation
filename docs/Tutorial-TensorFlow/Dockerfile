@@ -16,8 +16,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-gi-cairo \
     gir1.2-gtk-3.0 \
     pkg-config \
-    python3-dev \
-    libopencv-dev && \
+    python3-dev && \
+    apt-get install -y libopencv-dev && \
     apt-get autoclean && \
     apt-get clean && \
     apt-get autoremove -y && \
