@@ -9,8 +9,8 @@ RUN apt-get update && \
     build-essential \
     curl \
     wget \
-    vim \
-    libopencv-dev && \
+    vim && \
+    apt-get install -y libopencv-dev && \
     apt-get autoclean && \
     apt-get clean && \
     apt-get autoremove -y && \
