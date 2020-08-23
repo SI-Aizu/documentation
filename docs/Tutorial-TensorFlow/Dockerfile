@@ -17,7 +17,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gir1.2-gtk-3.0 \
     pkg-config \
     python3-dev && \
-    apt-get install -y libopencv-dev && \
+    apt-get autoclean && \
+    apt-get clean && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/apt/lists/*
+# hadolint ignore=DL3015
+RUN apt-get update && apt-get install -y libopencv-dev && \
     apt-get autoclean && \
     apt-get clean && \
     apt-get autoremove -y && \
