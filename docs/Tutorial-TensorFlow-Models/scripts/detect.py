@@ -18,7 +18,7 @@ parser = argparse.ArgumentParser(
 # )
 default_model = "./models/ssd_inception_v2_coco_2018_01_28/frozen_inference_graph.pb"
 parser.add_argument(
-    "-m", "--model", default=default_model, help=f"Set model file, default: {default_model}",
+    "-m", "--model", default=default_model, help=f"Set model file, default: {default_model}"
 )
 parser.add_argument("-c", "--camera", action="store_true", help="Use web camera, default: False")
 default_video = ""
