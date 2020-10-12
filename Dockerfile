@@ -1,4 +1,4 @@
-FROM python:3.8-slim-buster
+FROM python:3-slim-buster
 
 WORKDIR /build
 ENV PIP_NO_CACHE_DIR="true"
