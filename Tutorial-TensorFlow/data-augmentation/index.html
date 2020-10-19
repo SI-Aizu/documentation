@@ -15,7 +15,7 @@
         <meta name="author" content="SI-Aizu">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
     
     
       
@@ -23,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.38780c08.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f72e892.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
         
           
           
@@ -77,7 +77,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://si-aizu.github.io/documentation" title="SI-Aizu Documentation" class="md-header-nav__button md-logo" aria-label="SI-Aizu Documentation">
       
@@ -162,7 +164,9 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="https://si-aizu.github.io/documentation" title="SI-Aizu Documentation" class="md-nav__button md-logo" aria-label="SI-Aizu Documentation">
       
@@ -916,7 +920,6 @@
 <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
 
-
 <h2 id="read_an_image">Read an image<a class="headerlink" href="#read_an_image" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code><span class="n">image_dir_path</span> <span class="o">=</span> <span class="s2">&quot;images/&quot;</span>
 <span class="n">image_name</span> <span class="o">=</span> <span class="s2">&quot;squirrel.jpg&quot;</span>
@@ -924,7 +927,6 @@
 <span class="n">image_string</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">image_dir_path</span> <span class="o">+</span> <span class="n">image_name</span><span class="p">)</span>
 <span class="n">image</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">decode_jpeg</span><span class="p">(</span><span class="n">image_string</span><span class="p">,</span><span class="n">channels</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
-
 
 <h2 id="show_images">show images<a class="headerlink" href="#show_images" title="Permanent link">&para;</a></h2>
 <p>オリジナル画像と拡張後の画像を見比べるための関数。</p>
@@ -939,14 +941,12 @@
   <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">image_dir_path</span> <span class="o">+</span> <span class="n">filename</span><span class="p">)</span>
 </code></pre></div>
 
-
 <h2 id="flip_horizontally">Flip Horizontally<a class="headerlink" href="#flip_horizontally" title="Permanent link">&para;</a></h2>
 <p>画像を左右反転させる。</p>
 <div class="codehilite"><pre><span></span><code><span class="c1"># tf.image.flip_left_right(image)</span>
 <span class="n">flipped</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">flip_left_right</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 <span class="n">visualize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">flipped</span><span class="p">,</span> <span class="s2">&quot;flipped.jpg&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p><img alt="" src="https://user-images.githubusercontent.com/39023477/86384432-ae7b8380-bcc9-11ea-9cbb-6259c75d41af.jpg" /></p>
 <h2 id="flip_vertically">Flip Vertically<a class="headerlink" href="#flip_vertically" title="Permanent link">&para;</a></h2>
@@ -956,7 +956,6 @@
 <span class="n">visualize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">flipped</span><span class="p">,</span> <span class="s2">&quot;flipped_up_down.jpg&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p><img alt="" src="https://user-images.githubusercontent.com/39023477/86389148-dae6ce00-bcd0-11ea-936d-a37fbe2ba65b.jpg" /></p>
 <h2 id="grayscale">grayscale<a class="headerlink" href="#grayscale" title="Permanent link">&para;</a></h2>
 <p>画像をグレイスケールにする。</p>
@@ -965,13 +964,11 @@
 <span class="n">visualize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">grayscaled</span><span class="p">),</span> <span class="s2">&quot;grayscaled.jpg&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-
 <div class="codehilite"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">grayscaled</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="c1"># (1066, 1600, 3)</span>
 <span class="c1"># (1066, 1600, 1)</span>
 </code></pre></div>
-
 
 <p><img alt="" src="https://user-images.githubusercontent.com/39023477/86385330-0ff02200-bccb-11ea-89d9-2f4736568f1f.jpg" /></p>
 <h2 id="saturation">saturation<a class="headerlink" href="#saturation" title="Permanent link">&para;</a></h2>
@@ -982,7 +979,6 @@
 <span class="n">visualize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">saturated</span><span class="p">,</span> <span class="s2">&quot;saturated.jpg&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p><img alt="" src="https://user-images.githubusercontent.com/39023477/86388055-0cf73080-bccf-11ea-801f-98a1350b1af9.jpg" /></p>
 <h2 id="brightness">brightness<a class="headerlink" href="#brightness" title="Permanent link">&para;</a></h2>
 <p>画像の輝度を調整する。</p>
@@ -992,7 +988,6 @@
 <span class="n">visualize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">bright</span><span class="p">,</span> <span class="s2">&quot;bright.jpg&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p><img alt="" src="https://user-images.githubusercontent.com/39023477/86390486-18e4f180-bcd3-11ea-9da8-9b5fb2dedb8b.jpg" /></p>
 <h2 id="rotation">Rotation<a class="headerlink" href="#rotation" title="Permanent link">&para;</a></h2>
 <p>画像を <code>k</code> * 90° 回転させる。</p>
@@ -1001,7 +996,6 @@
 <span class="n">visualize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">rotated</span><span class="p">,</span> <span class="s2">&quot;rotated.jpg&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p><img alt="" src="https://user-images.githubusercontent.com/39023477/86392953-40d65400-bcd7-11ea-9e8a-5b107902efd5.jpg" /></p>
 <h2 id="crop_the_central_region">Crop the central region<a class="headerlink" href="#crop_the_central_region" title="Permanent link">&para;</a></h2>
 <p>画像を中央から <code>central_fraction</code> * 100% 切り抜く。</p>
@@ -1009,7 +1003,6 @@
 <span class="n">cropped</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">central_crop</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">central_fraction</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">visualize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">cropped</span><span class="p">,</span><span class="s2">&quot;cropped.jpg&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p><img alt="" src="https://user-images.githubusercontent.com/39023477/86390108-70cf2880-bcd2-11ea-8a36-71ddf1f7099a.jpg" /></p>
 <h2 id="apply_a_data_augmentation_randomly">Apply a data augmentation randomly<a class="headerlink" href="#apply_a_data_augmentation_randomly" title="Permanent link">&para;</a></h2>
@@ -1041,11 +1034,9 @@
     <span class="n">num</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">chosen</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p><code>cifar10.py</code> で水増しあり・なしの比較をしてみるとよい。</p>
 <div class="codehilite"><pre><span></span><code>python cifar10.py
 </code></pre></div>
-
 
 <h2 id="others">Others<a class="headerlink" href="#others" title="Permanent link">&para;</a></h2>
 <p>Image augmentation library の albumentations というものもある。</p>
@@ -1135,8 +1126,8 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
-      <script src="../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({

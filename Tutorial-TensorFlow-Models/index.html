@@ -15,7 +15,7 @@
         <meta name="author" content="SI-Aizu">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
     
     
       
@@ -23,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.38780c08.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.3f72e892.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
         
           
           
@@ -77,7 +77,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://si-aizu.github.io/documentation" title="SI-Aizu Documentation" class="md-header-nav__button md-logo" aria-label="SI-Aizu Documentation">
       
@@ -162,7 +164,9 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="https://si-aizu.github.io/documentation" title="SI-Aizu Documentation" class="md-nav__button md-logo" aria-label="SI-Aizu Documentation">
       
@@ -920,12 +924,10 @@
 <span class="go">...</span>
 </code></pre></div>
 
-
 <p><code>cat-TFRecords-export</code> にすべての tfrecord が入っているものとして、</p>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span> docs/Tutorial-TensorFlow-Models/data
 bash ./change_tfrecord_filename.sh cat-TFRecords-export
 </code></pre></div>
-
 
 <p>あとは <code>train</code> と <code>val</code> に tfrecord を分けて配置する。</p>
 <h3 id="tf_label_mappbtxt">tf_label_map.pbtxt<a class="headerlink" href="#tf_label_mappbtxt" title="Permanent link">&para;</a></h3>
@@ -935,7 +937,6 @@ bash ./change_tfrecord_filename.sh cat-TFRecords-export
 <span class="err">}</span>
 </code></pre></div>
 
-
 <h2 id="config">config<a class="headerlink" href="#config" title="Permanent link">&para;</a></h2>
 <p><code>config/ssd_inception_v2_coco.config</code> を編集することで前処理 (data augmentation) を追加・削除できる。</p>
 <p>その他 batch size, learning rate などの設定もここで指定できる。</p>
@@ -943,35 +944,29 @@ bash ./change_tfrecord_filename.sh cat-TFRecords-export
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span> docs/Tutorial-TensorFlow-Models
 </code></pre></div>
 
-
 <div class="codehilite"><pre><span></span><code><span class="c1"># Build</span>
 make build
 </code></pre></div>
 
-
 <h2 id="run_container">Run Container<a class="headerlink" href="#run_container" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code>make run
 </code></pre></div>
-
 
 <p>コンテナにログインしたら以下を毎回実行する。</p>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span> ~/models/research
 <span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="si">${</span><span class="nv">PYTHONPATH</span><span class="si">}</span>:<span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:<span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/slim
 </code></pre></div>
 
-
 <p>動作テスト</p>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span> ~/models/research
 python3 ./object_detection/builders/model_builder_test.py
 </code></pre></div>
-
 
 <h2 id="train">Train<a class="headerlink" href="#train" title="Permanent link">&para;</a></h2>
 <p>ホストマシンで公開されている事前学習済みモデルをダウンロード。</p>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span> models
 bash get_ssd_inception_v2_coco_model.sh
 </code></pre></div>
-
 
 <p>コンテナ内。</p>
 <div class="codehilite"><pre><span></span><code>nohup python3 ./object_detection/model_main.py <span class="se">\</span>
@@ -981,14 +976,12 @@ bash get_ssd_inception_v2_coco_model.sh
     --alsologtostderr &gt; ./object_detection_tools/nohup.log <span class="p">&amp;</span>
 </code></pre></div>
 
-
 <p><code>ctrl+p+q</code> でコンテナから抜ける。</p>
 <h2 id="tensorboard">Tensorboard<a class="headerlink" href="#tensorboard" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span> docs/Tutorial-TensorFlow-Models/tensorboard
 docker build . -t tensorboard:latest
 docker run --rm -it -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>/saved_model/cat_01:/logs -p <span class="m">6006</span>:6006 --network host --name tensorboard tensorboard:latest
 </code></pre></div>
-
 
 <h2 id="_1">モデル変換<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>コンテナ内。</p>
@@ -1002,7 +995,6 @@ python3 ./convert_pbtxt_label.py <span class="se">\</span>
     -l<span class="o">=</span><span class="s1">&#39;./object_detection_tools/data/tf_label_map.pbtxt&#39;</span> <span class="se">\</span>
     &gt; ./object_detection_tools/exported_graphs/cat_01/labels.txt
 </code></pre></div>
-
 
 <h2 id="_2">推論の実行<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>コンテナ内。</p>
@@ -1092,8 +1084,8 @@ python3 scripts/detect.py -i ./test.jpg
       
     </div>
     
-      <script src="../assets/javascripts/vendor.77e55a48.min.js"></script>
-      <script src="../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({

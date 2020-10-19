@@ -15,7 +15,7 @@
         <meta name="author" content="SI-Aizu">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
     
     
       
@@ -23,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.38780c08.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.3f72e892.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
         
           
           
@@ -77,7 +77,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://si-aizu.github.io/documentation" title="SI-Aizu Documentation" class="md-header-nav__button md-logo" aria-label="SI-Aizu Documentation">
       
@@ -162,7 +164,9 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="https://si-aizu.github.io/documentation" title="SI-Aizu Documentation" class="md-nav__button md-logo" aria-label="SI-Aizu Documentation">
       
@@ -827,7 +831,6 @@
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span> ./docs/Tutorial-YOLO-Darknet
 </code></pre></div>
 
-
 <h3 id="edit_makefile">Edit Makefile<a class="headerlink" href="#edit_makefile" title="Permanent link">&para;</a></h3>
 <p>利用する GPU ごとに <code>Makefile</code> を編集する必要がある。</p>
 <p>GeForce RTX 2080 Ti であれば以下のようにする。(デフォルト)</p>
@@ -838,7 +841,6 @@
 <span class="c"># ARCH= -gencode arch=compute_61,code=sm_61 -gencode arch=compute_61,code=compute_61</span>
 </code></pre></div>
 
-
 <p>GTX 1080 であれば以下のようにする。</p>
 <div class="codehilite"><pre><span></span><code><span class="c"># GeForce RTX 2080 Ti, RTX 2080, RTX 2070, Quadro RTX 8000, Quadro RTX 6000, Quadro RTX 5000, Tesla T4, XNOR Tensor Cores</span>
 <span class="c"># ARCH= -gencode arch=compute_75,code=[sm_75,compute_75]</span>
@@ -847,22 +849,18 @@
 <span class="nv">ARCH</span><span class="o">=</span> -gencode <span class="nv">arch</span><span class="o">=</span>compute_61,code<span class="o">=</span>sm_61 -gencode <span class="nv">arch</span><span class="o">=</span>compute_61,code<span class="o">=</span>compute_61
 </code></pre></div>
 
-
 <h3 id="build">Build<a class="headerlink" href="#build" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="gp">$</span> nvidia-smi
 <span class="go">NVIDIA-SMI 440.82       Driver Version: 440.82       CUDA Version: 10.2</span>
 </code></pre></div>
 
-
 <p><code>nvidia-smi</code> で確認できる CUDA Version と Base Docker image <code>nvidia/cuda</code> の tag を一致させる。</p>
 <div class="codehilite"><pre><span></span><code>docker build . -t darknet-yolo:latest --build-arg <span class="nv">BASE_IMAGE</span><span class="o">=</span><span class="s2">&quot;nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04&quot;</span>
 </code></pre></div>
 
-
 <h2 id="run_container">Run Container<a class="headerlink" href="#run_container" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code>docker run --rm -i -t --gpus all darknet-yolo:latest bash
 </code></pre></div>
-
 
 <h2 id="predict">Predict<a class="headerlink" href="#predict" title="Permanent link">&para;</a></h2>
 <p>推論の実行例を以下に示す。</p>
@@ -875,7 +873,6 @@
 <span class="go">...</span>
 </code></pre></div>
 
-
 <div class="codehilite"><pre><span></span><code><span class="gp">$</span> ./darknet detector <span class="nb">test</span> cfg/coco.data cfg/yolov4.cfg yolov4.weights data/dog.jpg
 <span class="go">...</span>
 <span class="go">data/dog.jpg: Predicted in 24.482000 milli-seconds.</span>
@@ -885,7 +882,6 @@
 <span class="go">pottedplant: 33%</span>
 <span class="go">...</span>
 </code></pre></div>
-
 
 <div class="codehilite"><pre><span></span><code><span class="gp">$</span> python3 darknet.py
 <span class="go">...</span>
@@ -900,7 +896,6 @@
 <span class="go">Unable to show image: No module named &#39;skimage&#39;</span>
 <span class="go">[(&#39;dog&#39;, 0.9787506461143494, (220.98822021484375, 383.2079772949219, 184.41787719726562, 316.5090637207031)), (&#39;bicycle&#39;, 0.921798586845398, (343.4819641113281, 276.87603759765625, 458.0648193359375, 298.7120361328125)), (&#39;truck&#39;, 0.91830974817276, (574.2606201171875, 123.24830627441406, 220.67361450195312, 93.20550537109375)), (&#39;pottedplant&#39;, 0.33072134852409363, (699.3265380859375, 131.88845825195312, 36.533931732177734, 45.44673538208008))]</span>
 </code></pre></div>
-
 
 <table>
 <thead>
@@ -999,8 +994,8 @@
       
     </div>
     
-      <script src="../assets/javascripts/vendor.77e55a48.min.js"></script>
-      <script src="../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
