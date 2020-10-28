@@ -1,5 +1,7 @@
 # Tutorial
 
+TensorFlow v2.3.0
+
 Inception v2 base SSD 300 の転移学習 (Transfer Learning)
 
 - [tensorflow/models: Models and examples built with TensorFlow](https://github.com/tensorflow/models)
@@ -59,13 +61,24 @@ item {
 
 ## config
 
-`config/ssd_inception_v2_coco.config` を編集することで前処理 (data augmentation) を追加・削除できる。
+`config/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.config` を編集することで前処理 (data augmentation) を追加・削除できる。
 
 その他 batch size, learning rate などの設定もここで指定できる。
 
+- `num_classes`: number of classes
+- `fine_tune_checkpoint`: pre-trained model
+- `num_steps` Maximum number of steps
+- `data_augmentation_options` 画像の前処理・水増し
 
 
-## Build Docker image
+
+## Pull Docker image
+
+### Login to GitHub Packages
+
+cf. [Docekr login - GitHub Packages](../Tutorial-GitHub/packages)
+
+### Pull
 
 ```sh
 cd docs/Tutorial-TensorFlow-Models
@@ -73,29 +86,37 @@ cd docs/Tutorial-TensorFlow-Models
 
 ```sh
 # Build
-make build
+docker-compose pull
 ```
 
 
 
 ## Run Container
 
+### CPU
+
+```sh
+# コンテナをバックグラウンドで起動
+docker-compose up -d
+
+# コンテナにログイン
+docker-compose exec dev bash
+
+# コンテナの終了と削除
+docker-compose down
+```
+
+### GPU
+
 ```sh
 make run
 ```
 
-コンテナにログインしたら以下を毎回実行する。
+### 動作確認
 
 ```sh
-cd ~/models/research
-export PYTHONPATH=${PYTHONPATH}:$(pwd):$(pwd)/slim
-```
-
-動作テスト
-
-```sh
-cd ~/models/research
-python3 ./object_detection/builders/model_builder_test.py
+cd /src/models/research
+python object_detection/builders/model_builder_tf2_test.py
 ```
 
 
@@ -106,17 +127,17 @@ python3 ./object_detection/builders/model_builder_test.py
 
 ```sh
 cd models
-bash get_ssd_inception_v2_coco_model.sh
+bash ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.sh
 ```
 
 コンテナ内。
 
 ```sh
-nohup python3 ./object_detection/model_main.py \
-    --pipeline_config_path="./object_detection_tools/config/ssd_inception_v2_coco.config" \
-    --model_dir="./object_detection_tools/saved_model/cat_01" \
-    --num_train_steps=20000 \
-    --alsologtostderr > ./object_detection_tools/nohup.log &
+cd /src/models/research
+nohup python3 ./object_detection/model_main_tf2.py \
+    --pipeline_config_path="./object_detection/siaizu/config/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.config" \
+    --model_dir="./object_detection/siaizu/saved_model/cat_01" \
+    --alsologtostderr > ./object_detection/siaizu/nohup.log &
 ```
 
 `ctrl+p+q` でコンテナから抜ける。
@@ -126,9 +147,13 @@ nohup python3 ./object_detection/model_main.py \
 ## Tensorboard
 
 ```sh
-cd docs/Tutorial-TensorFlow-Models/tensorboard
-docker build . -t tensorboard:latest
-docker run --rm -it -v ${PWD}/saved_model/cat_01:/logs -p 6006:6006 --network host --name tensorboard tensorboard:latest
+docker run --rm -i -t \
+  -v ${PWD}/saved_model/cat_01:/logs \
+  -p 6006:6006 \
+  --net host \
+  --name siaizu_tensorflow_models_tensorboard \
+  docker.pkg.github.com/si-aizu/documentation/tensorflow-models:v2.3.0-gpu \
+  tensorboard --logdir /logs
 ```
 
 
@@ -140,13 +165,13 @@ docker run --rm -it -v ${PWD}/saved_model/cat_01:/logs -p 6006:6006 --network ho
 ```sh
 python3 ./object_detection/export_inference_graph.py \
     --input_type image_tensor \
-    --pipeline_config_path ./object_detection_tools/config/ssd_inception_v2_coco.config \
-    --output_directory ./object_detection_tools/exported_graphs/cat_01 \
-    --trained_checkpoint_prefix ./object_detection_tools/saved_model/cat_01/model.ckpt-5555
-cp ./object_detection_tools/scripts/convert_pbtxt_label.py .
+    --pipeline_config_path ./object_detection/siaizu/config/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.config \
+    --output_directory ./object_detection/siaizu/exported_graphs/cat_01 \
+    --trained_checkpoint_prefix ./object_detection/siaizu/saved_model/cat_01/model.ckpt-5555
+cp ./object_detection/siaizu/scripts/convert_pbtxt_label.py .
 python3 ./convert_pbtxt_label.py \
-    -l='./object_detection_tools/data/tf_label_map.pbtxt' \
-    > ./object_detection_tools/exported_graphs/cat_01/labels.txt
+    -l='./object_detection/siaizu/data/tf_label_map.pbtxt' \
+    > ./object_detection/siaizu/exported_graphs/cat_01/labels.txt
 ```
 
 
@@ -156,6 +181,6 @@ python3 ./convert_pbtxt_label.py \
 コンテナ内。
 
 ```sh
-cd ~/models/research/object_detection_tools
+cd ~/models/research/siaizu
 python3 scripts/detect.py -i ./test.jpg
 ```
