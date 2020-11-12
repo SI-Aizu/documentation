@@ -11,6 +11,8 @@ updates:
   - "CI/CD"
   commit-message:
     prefix: ci
+  reviewers:
+    - "peaceiris"
 
 - package-ecosystem: pip
   directory: "docs/dev"
@@ -22,6 +24,8 @@ updates:
   - "dependencies"
   commit-message:
     prefix: deps
+  reviewers:
+    - "peaceiris"
 
 # - package-ecosystem: pip
 #   directory: "docs/Tutorial-Bing-Image-Search"
