@@ -11,5 +11,6 @@ services:
     stdin_open: true
     tty: true
     command:
+      - "mkdocs"
       - "serve"
       - "--dev-addr=0.0.0.0:8888"
