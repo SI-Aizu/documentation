@@ -17,8 +17,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt requirements.txt
-RUN python3 -m pip install --upgrade pip && \
-    python3 -m pip install -r ./requirements.txt && \
+RUN python3 -m pip install --no-cache-dir --upgrade pip && \
+    python3 -m pip install --no-cache-dir -r ./requirements.txt && \
     python3 -m pip check && \
     rm -rf /build
 
