@@ -2,6 +2,7 @@ version: '3'
 
 services:
   mkdocs:
+    # https://github.com/peaceiris/mkdocs-material-boilerplate
     image: ghcr.io/peaceiris/mkdocs-material:v3.1.14
     container_name: siaizu_documentation_mkdocs
     ports:
