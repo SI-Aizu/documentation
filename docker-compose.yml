@@ -2,7 +2,7 @@ version: '3'
 
 services:
   mkdocs:
-    image: ghcr.io/peaceiris/mkdocs-material:v3.1.11
+    image: ghcr.io/peaceiris/mkdocs-material:v3.1.14
     container_name: siaizu_documentation_mkdocs
     ports:
       - 8888:8888
