@@ -7,7 +7,7 @@ isort==5.7.0
 mccabe==0.6.1
 pathspec==0.8.1
 pycodestyle==2.6.0
-pyflakes==2.2.0
+pyflakes==2.3.0
 regex==2021.3.17
 toml==0.10.2
 typed-ast==1.4.2
