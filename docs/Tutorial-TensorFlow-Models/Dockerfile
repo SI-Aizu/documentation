@@ -32,7 +32,7 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86
     echo "conda activate conda" >> ~/.bashrc
 
 WORKDIR /root/protoc
-RUN wget -O protobuf.zip https://github.com/protocolbuffers/protobuf/releases/download/v3.9.1/protoc-3.9.1-linux-x86_64.zip
+RUN wget --quiet -O protobuf.zip https://github.com/protocolbuffers/protobuf/releases/download/v3.9.1/protoc-3.9.1-linux-x86_64.zip
 RUN unzip -o ./protobuf.zip
 RUN mv ./bin/protoc /usr/local/bin/
 WORKDIR /root
