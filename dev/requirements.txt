@@ -1,5 +1,5 @@
 appdirs==1.4.4
-attrs==20.3.0
+attrs==21.1.0
 black==21.5b0
 click==7.1.2
 flake8==3.8.4
