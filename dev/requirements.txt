@@ -3,7 +3,7 @@ attrs==21.2.0
 black==21.6b0
 click==8.0.1
 flake8==3.8.4
-isort==5.9.1
+isort==5.9.2
 mccabe==0.6.1
 pathspec==0.8.1
 pycodestyle==2.6.0
