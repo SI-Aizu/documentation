@@ -22,6 +22,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2.3.4
 
+      - name: Docker login
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
+
       - run: docker-compose pull --quiet
       - run: docker-compose run --rm mkdocs mkdocs build
 
