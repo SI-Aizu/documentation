@@ -1,7 +1,7 @@
 appdirs==1.4.4
 attrs==21.2.0
 black==21.9b0
-click==8.0.1
+click==8.0.3
 flake8==3.8.4
 isort==5.9.3
 mccabe==0.6.1
