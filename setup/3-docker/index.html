@@ -967,11 +967,11 @@
 <div class="codehilite"><pre><span></span><code>sudo apt install -y curl jq
 </code></pre></div>
 
-<p>以下のコマンドで compose のインストールとアップグレードができる。</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">DOCKER_COMPOSE_VERSION</span><span class="o">=</span><span class="k">$(</span>curl -s https://api.github.com/repos/docker/compose/releases/latest <span class="p">|</span> jq -r <span class="s1">&#39;.tag_name&#39;</span><span class="k">)</span>
-sudo curl -L <span class="s2">&quot;https://github.com/docker/compose/releases/download/</span><span class="si">${</span><span class="nv">DOCKER_COMPOSE_VERSION</span><span class="si">}</span><span class="s2">/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&quot;</span> -o /usr/local/bin/docker-compose <span class="o">&amp;&amp;</span> <span class="se">\</span>
-    sudo chmod +x /usr/local/bin/docker-compose <span class="o">&amp;&amp;</span> <span class="se">\</span>
-    docker-compose --version
+<p>以下のコマンドで compose (v2) のインストールとアップグレードができる。</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">COMPOSE_VERSION</span><span class="o">=</span><span class="k">$(</span>curl -s https://api.github.com/repos/docker/compose/releases/latest <span class="p">|</span> jq -r <span class="s1">&#39;.tag_name&#39;</span><span class="k">)</span>
+curl -L <span class="s2">&quot;https://github.com/docker/compose/releases/download/</span><span class="si">${</span><span class="nv">COMPOSE_VERSION</span><span class="si">}</span><span class="s2">/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&quot;</span> -o <span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.docker/cli-plugins/docker-compose&quot;</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+    chmod a+x <span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.docker/cli-plugins/docker-compose&quot;</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+    docker compose version
 </code></pre></div>
 
 <h2 id="install_nvidia-docker">Install nvidia-docker<a class="headerlink" href="#install_nvidia-docker" title="Permanent link">&para;</a></h2>
