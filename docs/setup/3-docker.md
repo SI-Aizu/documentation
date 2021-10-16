@@ -29,13 +29,13 @@ compose のインストールに利用するツールをインストールする
 sudo apt install -y curl jq
 ```
 
-以下のコマンドで compose のインストールとアップグレードができる。
+以下のコマンドで compose (v2) のインストールとアップグレードができる。
 
 ```sh
-export DOCKER_COMPOSE_VERSION=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r '.tag_name')
-sudo curl -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
-    sudo chmod +x /usr/local/bin/docker-compose && \
-    docker-compose --version
+export COMPOSE_VERSION=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r '.tag_name')
+curl -L "https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o "${HOME}/.docker/cli-plugins/docker-compose" && \
+    chmod a+x "${HOME}/.docker/cli-plugins/docker-compose" && \
+    docker compose version
 ```
 
 
