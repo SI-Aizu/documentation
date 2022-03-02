@@ -20,7 +20,7 @@ jobs:
     container:
       image: 'hadolint/hadolint:v1.19.0-alpine'
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v3
       - name: Lint PyTorch
         working-directory: 'docs/Tutorial-PyTorch'
         run: hadolint ./Dockerfile
