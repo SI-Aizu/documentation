@@ -14,30 +14,18 @@ on:
       - '**/.hadolint.yaml'
       - '**/Dockerfile'
 
-jobs:
-  get-matrix:
-    runs-on: ubuntu-20.04
-    outputs:
-      matrix: ${{ steps.get-matrix.outputs.matrix }}
-    steps:
-      - uses: actions/checkout@v3
-      - name: Get matrix
-        id: get-matrix
-        run: |
-          DIR=$(find . -type f -name "Dockerfile" -exec dirname {} \;)
-          JSON=$(jq -n --arg v "${DIR}" '{ "dir": $v | split("\n") }' | jq -c .)
-          echo "::set-output name=matrix::${JSON}"
+permissions:
+  contents: read
 
+jobs:
   hadolint:
-    needs: get-matrix
     runs-on: ubuntu-20.04
     container:
       image: 'hadolint/hadolint:v2.9.1-alpine'
-    strategy:
-      fail-fast: false
-      matrix: ${{ fromJson(needs.get-matrix.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v3
-      - name: Lint ${{ matrix.dir }}/Dockerfile
-        working-directory: ${{ matrix.dir }}
-        run: hadolint ./Dockerfile
+      - name: Lint Dockerfile
+        run: |
+          for d in $(find . -type f -name "Dockerfile" -exec dirname {} \;); do
+            (cd ${d} && hadolint Dockerfile)
+          done
