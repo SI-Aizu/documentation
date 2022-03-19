@@ -15,24 +15,29 @@ on:
       - '**/Dockerfile'
 
 jobs:
+  get-matrix:
+    runs-on: ubuntu-20.04
+    outputs:
+      matrix: ${{ steps.get-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Get matrix
+        id: get-matrix
+        run: |
+          DIR=$(find . -type f -name "Dockerfile" -exec dirname {} \;)
+          JSON=$(jq -n --arg v "${DIR}" '{ "dir": $v | split("\n") }' | jq -c .)
+          echo "::set-output name=matrix::${JSON}"
+
   hadolint:
+    needs: get-matrix
     runs-on: ubuntu-20.04
     container:
       image: 'hadolint/hadolint:v2.9.1-alpine'
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.get-matrix.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v3
-      - name: Lint PyTorch
-        working-directory: 'docs/Tutorial-PyTorch'
-        run: hadolint ./Dockerfile
-      - name: Lint TensorFlow
-        working-directory: 'docs/Tutorial-TensorFlow'
-        run: hadolint ./Dockerfile
-      - name: Lint TensorFlow Models
-        working-directory: 'docs/Tutorial-TensorFlow-Models'
-        run: hadolint ./Dockerfile
-      - name: Lint Darknet YOLO
-        working-directory: 'docs/Tutorial-YOLO-Darknet'
-        run: hadolint ./Dockerfile
-      - name: Lint Bing Image Search
-        working-directory: 'docs/Tutorial-Bing-Image-Search'
+      - name: Lint ${{ matrix.dir }}/Dockerfile
+        working-directory: ${{ matrix.dir }}
         run: hadolint ./Dockerfile
