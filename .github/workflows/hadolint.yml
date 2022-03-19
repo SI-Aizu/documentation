@@ -16,9 +16,9 @@ on:
 
 jobs:
   hadolint:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     container:
-      image: 'hadolint/hadolint:v1.19.0-alpine'
+      image: 'hadolint/hadolint:v2.9.1-alpine'
     steps:
       - uses: actions/checkout@v3
       - name: Lint PyTorch
