@@ -16,7 +16,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     defaults:
       run:
         working-directory: docs/Tutorial-PyTorch
@@ -26,6 +26,7 @@ jobs:
         run: echo '${{ secrets.GITHUB_TOKEN }}' | docker login 'docker.pkg.github.com' -u 'peaceiris' --password-stdin
       - run: docker-compose pull --quiet
         if: github.event_name == 'pull_request'
+        continue-on-error: true
       - run: docker-compose build
       - run: docker-compose push
         if: github.ref == 'refs/heads/main'
