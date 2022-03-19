@@ -1,15 +1,6 @@
-DOCKER_IMAGE_NAME := docker.pkg.github.com/si-aizu/documentation/pytorch
-DOCKER_TAG := v1.6.0
-DOCKER_CONTAINER_NAME := siaizu_documentation_pytorch
-
 .PHONY: run
 run:
-	docker run -i -t --gpus '"device=0"' \
-		-v ${PWD}:/src \
-		-p 8000:8000 \
-		--name ${DOCKER_CONTAINER_NAME} \
-		${DOCKER_IMAGE_NAME}:${DOCKER_TAG} \
-		bash
+	sudo docker run --rm -i -t --gpus all -v ${PWD}:/src -p 8000:8000 docker.pkg.github.com/si-aizu/documentation/pytorch:v1.11.0
 
 .PHONY: lab
 lab:

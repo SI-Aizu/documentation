@@ -437,29 +437,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker_run" class="md-nav__link">
-    Docker run
-  </a>
-  
-    <nav class="md-nav" aria-label="Docker run">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cpu" class="md-nav__link">
-    CPU
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#gpu" class="md-nav__link">
-    GPU
+    GPU 付きでコンテナを起動
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -904,29 +884,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker_run" class="md-nav__link">
-    Docker run
-  </a>
-  
-    <nav class="md-nav" aria-label="Docker run">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cpu" class="md-nav__link">
-    CPU
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#gpu" class="md-nav__link">
-    GPU
+    GPU 付きでコンテナを起動
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -961,21 +921,9 @@
 
 <h2 id="login_to_github_packages">Login to GitHub Packages<a class="headerlink" href="#login_to_github_packages" title="Permanent link">&para;</a></h2>
 <p>cf. <a href="../Tutorial-GitHub/packages">Docekr login - GitHub Packages</a></p>
-<h2 id="docker_run">Docker run<a class="headerlink" href="#docker_run" title="Permanent link">&para;</a></h2>
-<h3 id="cpu">CPU<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h3>
-<p>Docker Compose</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># コンテナをバックグラウンドで起動</span>
-docker-compose up -d
-
-<span class="c1"># コンテナにログイン</span>
-docker-compose <span class="nb">exec</span> dev bash
-
-<span class="c1"># コンテナの終了と削除</span>
-docker-compose down
-</code></pre></div>
-
-<h3 id="gpu">GPU<a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code>make run
+<h2 id="gpu">GPU 付きでコンテナを起動<a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="c1"># コンテナにログイン</span>
+make run
 </code></pre></div>
 
 <h2 id="jupyterlab">JupyterLab<a class="headerlink" href="#jupyterlab" title="Permanent link">&para;</a></h2>
